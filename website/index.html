@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenSMS — SMS Banking Assistant</title>
+  <meta name="description" content="Read, parse and act on your bank SMS messages. Free, offline, no registration." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --green-dim: rgba(34,197,94,.12);
+      --bg: #0f172a;
+      --bg2: #1e293b;
+      --bg3: #334155;
+      --text: #f1f5f9;
+      --text-dim: #94a3b8;
+      --radius: 14px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      border-bottom: 1px solid var(--bg3);
+      position: sticky; top: 0;
+      background: rgba(15,23,42,.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; }
+    .logo-dot { width: 28px; height: 28px; background: var(--green); border-radius: 8px; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 24px; font-size: .9rem; color: var(--text-dim); }
+    .nav-links a { color: var(--text-dim); }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 96px 24px 72px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green-dim);
+      color: var(--green);
+      border: 1px solid rgba(34,197,94,.3);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: .8rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: .04em;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -.02em;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      transition: background .15s;
+    }
+    .btn-primary:hover { background: var(--green-dark); text-decoration: none; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg2);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--bg3);
+      transition: background .15s;
+    }
+    .btn-secondary:hover { background: var(--bg3); text-decoration: none; }
+
+    /* NOTICE */
+    .notice {
+      background: var(--green-dim);
+      border: 1px solid rgba(34,197,94,.25);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      font-size: .85rem;
+      color: var(--text-dim);
+      max-width: 480px;
+      margin: 28px auto 0;
+      text-align: left;
+    }
+    .notice strong { color: var(--green); }
+
+    /* FEATURES */
+    .section { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      text-align: center;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 48px;
+      letter-spacing: -.01em;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--bg2);
+      border: 1px solid var(--bg3);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: var(--green-dim);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: .88rem; color: var(--text-dim); line-height: 1.55; }
+
+    /* BANKS */
+    .banks-grid {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+      margin-top: 20px;
+    }
+    .bank-tag {
+      background: var(--bg2);
+      border: 1px solid var(--bg3);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: .82rem;
+      color: var(--text-dim);
+    }
+
+    /* SUPPORT */
+    .support-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--bg3);
+      border-bottom: 1px solid var(--bg3);
+    }
+    .support-inner {
+      max-width: 700px; margin: 0 auto; padding: 72px 24px;
+      text-align: center;
+    }
+    .support-inner h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+    .support-inner p { color: var(--text-dim); margin-bottom: 36px; }
+    .donate-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      text-align: left;
+    }
+    .donate-card {
+      background: var(--bg);
+      border: 1px solid var(--bg3);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .donate-card .donate-name {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+    .donate-card .donate-val {
+      font-size: .88rem;
+      color: var(--text-dim);
+      font-family: monospace;
+      word-break: break-all;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: .82rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--bg3);
+    }
+    footer a { color: var(--text-dim); }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 18px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-dot"></div>
+    GreenSMS
+  </div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#banks">Banks</a>
+    <a href="#support">Support</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">Free &amp; Open · No Registration</div>
+  <h1>Your bank SMS,<br /><span>understood instantly</span></h1>
+  <p>GreenSMS reads your bank notifications, parses amounts and balances, and lets you send transfers via QR or USSD — all offline, on your device.</p>
+  <div class="btn-row">
+    <a class="btn-primary" href="https://github.com/YOUR_GITHUB/greensms/releases/latest/download/app-free-release.apk" download>
+      ↓ Download APK
+    </a>
+    <a class="btn-secondary" href="#features">See features</a>
+  </div>
+  <div class="notice">
+    <strong>Android only.</strong> Sideload required — no Google Play.
+    <a href="#install">Installation guide ↓</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-label">What it does</div>
+  <h2>Everything local, nothing leaves your phone</h2>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">📲</div>
+      <h3>SMS Parsing</h3>
+      <p>Automatically reads your last bank SMS messages and extracts amount, balance, card last-4 and operation type.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📷</div>
+      <h3>QR Transfers</h3>
+      <p>Generate your personal QR code. Scan a recipient's QR and instantly form the correct SMS or USSD transfer command.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔌</div>
+      <h3>USSD &amp; SMS</h3>
+      <p>Supports both SMS-based (Sberbank 900) and USSD-based transfers (GTBank, FirstBank, SBI and more).</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌍</div>
+      <h3>Multi-country</h3>
+      <p>Works with banks in Russia, Nigeria, India, Armenia and more. 12 interface languages included.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Fully Offline</h3>
+      <p>No internet permission. No accounts. No data leaves your device — ever. SQLite storage only.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💸</div>
+      <h3>Daily Limit</h3>
+      <p>Built-in daily transfer limit tracker. Set your own limit and see remaining balance at a glance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BANKS -->
+<section class="section" id="banks" style="padding-top: 0;">
+  <div class="section-label">Supported banks</div>
+  <h2>Works with your bank</h2>
+  <div class="banks-grid">
+    <span class="bank-tag">Sberbank 🇷🇺</span>
+    <span class="bank-tag">GTBank 🇳🇬</span>
+    <span class="bank-tag">FirstBank 🇳🇬</span>
+    <span class="bank-tag">Zenith 🇳🇬</span>
+    <span class="bank-tag">UBA 🇳🇬</span>
+    <span class="bank-tag">Access Bank 🇳🇬</span>
+    <span class="bank-tag">SBI 🇮🇳</span>
+    <span class="bank-tag">Axis Bank 🇮🇳</span>
+    <span class="bank-tag">HDFC 🇮🇳</span>
+    <span class="bank-tag">ICICI 🇮🇳</span>
+    <span class="bank-tag">VivaCell 🇦🇲</span>
+    <span class="bank-tag">+ more via Pro</span>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="section" id="install" style="padding-top: 0; max-width: 680px;">
+  <div class="section-label">Installation</div>
+  <h2>How to install</h2>
+  <div style="display:flex; flex-direction:column; gap:14px;">
+    <div class="feature-card" style="display:flex; gap:16px; align-items:flex-start;">
+      <div style="background:var(--green);color:#fff;border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;">1</div>
+      <div><strong>Download the APK</strong> using the button above.</div>
+    </div>
+    <div class="feature-card" style="display:flex; gap:16px; align-items:flex-start;">
+      <div style="background:var(--green);color:#fff;border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;">2</div>
+      <div><strong>Allow installs from unknown sources</strong> in Android Settings → Security.</div>
+    </div>
+    <div class="feature-card" style="display:flex; gap:16px; align-items:flex-start;">
+      <div style="background:var(--green);color:#fff;border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;">3</div>
+      <div><strong>Open the downloaded APK</strong> and tap Install. Grant SMS and Camera permissions when asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<div class="support-section" id="support">
+  <div class="support-inner">
+    <h2>Support the project</h2>
+    <p>GreenSMS is free and will stay free. If it saves you time, consider buying a coffee.</p>
+    <div class="donate-cards">
+      <div class="donate-card">
+        <div class="donate-name">Ko-fi</div>
+        <div class="donate-val"><a href="https://ko-fi.com/greensms" target="_blank">ko-fi.com/greensms</a></div>
+      </div>
+      <div class="donate-card">
+        <div class="donate-name">Boosty</div>
+        <div class="donate-val"><a href="https://boosty.to/greensms" target="_blank">boosty.to/greensms</a></div>
+      </div>
+      <div class="donate-card">
+        <div class="donate-name">TON</div>
+        <div class="donate-val">UQ...wallet...</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>GreenSMS Free · Android · <a href="https://github.com/YOUR_GITHUB/greensms">GitHub</a> · <a href="#support">Support</a></p>
+  <p style="margin-top:8px;">Not affiliated with any bank. Use at your own risk.</p>
+</footer>
+
+</body>
+</html>
