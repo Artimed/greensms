@@ -183,6 +183,7 @@
     }
 
     @media (max-width: 480px) {
+      body { overflow-x: hidden; }
       nav { padding: 12px 16px; }
       .nav-links { display: none; }
       .hero { padding: 44px 16px 36px; gap: 28px; }
@@ -190,11 +191,12 @@
       .hero p { font-size: 1rem; }
       .btn-row { flex-direction: column; width: 100%; }
       .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-      .section { padding: 48px 16px; }
+      .section { padding: 48px 16px; width: 100%; }
+      .steps, .features, .countries, .donate-cards { grid-template-columns: 1fr; width: 100%; }
+      .step, .feature-card, .country-card, .donate-card { width: 100%; }
       .support-inner { padding: 44px 16px; }
-      .privacy-inner { padding: 36px 16px; gap: 20px; }
-      .steps, .features, .countries { grid-template-columns: 1fr; }
-      .donate-cards { grid-template-columns: 1fr; }
+      .privacy-inner { padding: 36px 16px; gap: 20px; grid-template-columns: 1fr 1fr; }
+      .install-steps { width: 100%; }
     }
 
     /* SECTIONS */
