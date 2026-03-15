@@ -1,0 +1,630 @@
+{
+  "@@locale": "bn",
+  "appName": "Green SMS",
+  "@appName": {
+    "description": "Application name"
+  },
+  "cancel": "বাতিল",
+  "@cancel": {},
+  "save": "সংরক্ষণ করুন",
+  "@save": {},
+  "back": "ফিরে যান",
+  "@back": {},
+  "allow": "অনুমতি দিন",
+  "@allow": {},
+  "confirm": "নিশ্চিত করুন",
+  "@confirm": {},
+  "clear": "মুছুন",
+  "@clear": {},
+  "settingsTitle": "সেটিংস",
+  "@settingsTitle": {},
+  "onboardingSubtitle": "SMS ব্যাংকিং কাজের জন্য ভিজ্যুয়াল সহকারী",
+  "@onboardingSubtitle": {},
+  "onboardingFeatureLocal": "লোকালভাবে কাজ করে, ইন্টারনেট দরকার নেই",
+  "@onboardingFeatureLocal": {},
+  "onboardingFeatureSms": "শুধু শেষ ১০টি SMS পড়ে",
+  "@onboardingFeatureSms": {},
+  "onboardingFeaturePrivacy": "ডেটা কখনও বাইরে পাঠানো হয় না",
+  "@onboardingFeaturePrivacy": {},
+  "onboardingFeatureQr": "QR শুধু ফোন নম্বর শেয়ার করতে ব্যবহৃত হয়",
+  "@onboardingFeatureQr": {},
+  "onboardingButton": "অনুমতি দিন এবং চালিয়ে যান",
+  "@onboardingButton": {},
+  "accounts": "অ্যাকাউন্ট",
+  "@accounts": {},
+  "noAccountsYet": "এখনও কোনো অ্যাকাউন্ট শনাক্ত হয়নি।",
+  "@noAccountsYet": {},
+  "latestSms": "সর্বশেষ SMS",
+  "@latestSms": {},
+  "smsNotLoaded": "SMS এখনও লোড হয়নি।",
+  "@smsNotLoaded": {},
+  "qrModeTitle": "QR মোড",
+  "@qrModeTitle": {},
+  "qrModeSubtitle": "ফুল-স্ক্রিন ক্যামেরা খুলুন",
+  "@qrModeSubtitle": {},
+  "smsDetailsTitle": "SMS Details",
+  "@smsDetailsTitle": {},
+  "smsDetailsSender": "Sender: {sender}",
+  "@smsDetailsSender": {
+    "placeholders": {
+      "sender": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsTime": "Time: {time}",
+  "@smsDetailsTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4": "Card: {last4}",
+  "@smsDetailsLast4": {
+    "placeholders": {
+      "last4": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4NotFound": "not found",
+  "@smsDetailsLast4NotFound": {},
+  "smsDetailsAmount": "Amount: {amount}",
+  "@smsDetailsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsBalance": "Balance: {balance}",
+  "@smsDetailsBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsReference": "Ref: {reference}",
+  "@smsDetailsReference": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsType": "Type: {type}",
+  "@smsDetailsType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "transferRulesTooltip": "Transfer rules",
+  "@transferRulesTooltip": {},
+  "accountsLabel": "Accounts",
+  "@accountsLabel": {},
+  "refreshSmsButton": "Refresh SMS",
+  "@refreshSmsButton": {},
+  "dailyLimitNotSet": "Daily limit not set",
+  "@dailyLimitNotSet": {},
+  "setLimitInSettings": "Set limit in settings",
+  "@setLimitInSettings": {},
+  "dailyTransferLimit": "দৈনিক ট্রান্সফার সীমা",
+  "@dailyTransferLimit": {},
+  "usedToday": "Used today",
+  "@usedToday": {},
+  "remaining": "Remaining",
+  "@remaining": {},
+  "limitExceeded": "Limit exceeded",
+  "@limitExceeded": {},
+  "limitWarning80": "More than 80% of daily limit used",
+  "@limitWarning80": {},
+  "limitExceededBlocked": "Daily limit exceeded. QR transfers are blocked.",
+  "@limitExceededBlocked": {},
+  "accountBalanceLabel": "Balance: {balance}",
+  "@accountBalanceLabel": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "parsedLabel": "parsed",
+  "@parsedLabel": {},
+  "rawLabel": "raw",
+  "@rawLabel": {},
+  "devicePhoneTitle": "ডিভাইস ফোন",
+  "@devicePhoneTitle": {},
+  "devicePhoneDesc": "আপনার নম্বর দিয়ে QR তৈরিতে ব্যবহৃত হয়",
+  "@devicePhoneDesc": {},
+  "phoneNumberLabel": "ফোন নম্বর",
+  "@phoneNumberLabel": {},
+  "dailyLimitDesc": "Maximum daily transfer amount through this app. Resets at midnight. Leave empty to remove the limit.",
+  "@dailyLimitDesc": {},
+  "limitLabel": "সীমা",
+  "@limitLabel": {},
+  "limitHint": "e.g. 50000",
+  "@limitHint": {},
+  "removeLimitButton": "Remove limit",
+  "@removeLimitButton": {},
+  "themeTitle": "চেহারা",
+  "@themeTitle": {},
+  "languageTitle": "ভাষা",
+  "@languageTitle": {},
+  "bankRoutingTitle": "দেশ ও ব্যাংক",
+  "@bankRoutingTitle": {},
+  "bankRoutingDesc": "Choose country first. If there are multiple banks, select the bank for payment commands.",
+  "@bankRoutingDesc": {},
+  "countryLabel": "দেশ",
+  "@countryLabel": {},
+  "bankLabel": "ব্যাংক",
+  "@bankLabel": {},
+  "bankAutoSelectedHint": "Only one bank is available for this country, selected automatically.",
+  "@bankAutoSelectedHint": {},
+  "referenceOnlyBadge": "reference only",
+  "@referenceOnlyBadge": {},
+  "bankReferenceOnlyHint": "For this country, the bank is available as a reference source for limits and rules only. Direct payment commands are not currently verified.",
+  "@bankReferenceOnlyHint": {},
+  "languageEnglish": "English",
+  "@languageEnglish": {},
+  "languageRussian": "Russian",
+  "@languageRussian": {},
+  "languageHindi": "Hindi",
+  "@languageHindi": {},
+  "languageKazakh": "Kazakh",
+  "@languageKazakh": {},
+  "languageUzbek": "Uzbek",
+  "@languageUzbek": {},
+  "languageTagalog": "Tagalog",
+  "@languageTagalog": {},
+  "languageIndonesian": "Indonesian",
+  "@languageIndonesian": {},
+  "permissionsTitle": "অনুমতিসমূহ",
+  "@permissionsTitle": {},
+  "readSmsTitle": "SMS পড়া",
+  "@readSmsTitle": {},
+  "readSmsDesc": "Allows reading incoming SMS for transaction parsing",
+  "@readSmsDesc": {},
+  "directSmsTitle": "সরাসরি SMS পাঠানো",
+  "@directSmsTitle": {},
+  "directSmsDesc": "Send SMS directly from app without opening messaging app",
+  "@directSmsDesc": {},
+  "directSmsPermissionRequired": "SEND_SMS permission is required. Grant it in system app settings.",
+  "@directSmsPermissionRequired": {},
+  "directSmsEnabledSnack": "Direct SMS sending enabled",
+  "@directSmsEnabledSnack": {},
+  "directSmsDisabledSnack": "Direct SMS sending disabled",
+  "@directSmsDisabledSnack": {},
+  "openSettingsButton": "Settings",
+  "@openSettingsButton": {},
+  "permissionsManageInSystem": "You can disable permissions in system app settings.",
+  "@permissionsManageInSystem": {},
+  "cameraTitle": "ক্যামেরা",
+  "@cameraTitle": {},
+  "cameraDesc": "For scanning QR",
+  "@cameraDesc": {},
+  "clearLocalDataTitle": "লোকাল ডেটা মুছুন",
+  "@clearLocalDataTitle": {},
+  "clearLocalDataDesc": "SMS, accounts, QR profiles and history",
+  "@clearLocalDataDesc": {},
+  "aboutTitle": "অ্যাপ সম্পর্কে",
+  "@aboutTitle": {},
+  "aboutVersion": "Green SMS v1.0\nলোকাল অ্যাপ, ইন্টারনেট দরকার নেই",
+  "@aboutVersion": {},
+  "snackLimitRemoved": "Limit removed",
+  "@snackLimitRemoved": {},
+  "snackLimitSet": "Limit set: {amount}",
+  "@snackLimitSet": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "snackPhoneSaved": "Phone saved",
+  "@snackPhoneSaved": {},
+  "snackDataCleared": "Local data cleared",
+  "@snackDataCleared": {},
+  "clearDataDialogTitle": "Clear data?",
+  "@clearDataDialogTitle": {},
+  "clearDataDialogContent": "SMS, accounts, QR profiles and history will be deleted.",
+  "@clearDataDialogContent": {},
+  "cameraPermissionNeeded": "Camera access required",
+  "@cameraPermissionNeeded": {},
+  "scanHint": "Point camera at QR code",
+  "@scanHint": {},
+  "scanButton": "Scan",
+  "@scanButton": {},
+  "phoneTransferButton": "By phone",
+  "@phoneTransferButton": {},
+  "limitWarningTitle": "Daily limit exceeded",
+  "@limitWarningTitle": {},
+  "limitWarningContent": "Transfer amount: {amount}\nLimit remaining: {remaining}\n\nTransfer exceeds daily limit. Proceed anyway?",
+  "@limitWarningContent": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "sendAnywayButton": "Send anyway",
+  "@sendAnywayButton": {},
+  "createSmsDialogTitle": "Create SMS?",
+  "@createSmsDialogTitle": {},
+  "createSmsPhone": "Phone: {phone}",
+  "@createSmsPhone": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "createSmsText": "Text: {text}",
+  "@createSmsText": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognized": "QR not recognized as internal format.",
+  "@qrNotRecognized": {},
+  "transferCancelledLimit": "Transfer cancelled — limit exceeded.",
+  "@transferCancelledLimit": {},
+  "smsSentSuccess": "SMS created. Confirm sending in the messaging app.",
+  "@smsSentSuccess": {},
+  "scanningContinues": "Scanning continues.",
+  "@scanningContinues": {},
+  "noQrInImage": "No QR code found in the selected image.",
+  "@noQrInImage": {},
+  "qrFoundNoData": "QR found but no data.",
+  "@qrFoundNoData": {},
+  "setPhoneFirst": "First set the device phone in settings.",
+  "@setPhoneFirst": {},
+  "setAccountFirst": "প্রথমে সেটিংসে অ্যাকাউন্ট নম্বর সেট করুন।",
+  "@setAccountFirst": {},
+  "chooseChannelTitle": "ট্রান্সফার চ্যানেল বেছে নিন",
+  "@chooseChannelTitle": {},
+  "scanningActive": "Scanning active.",
+  "@scanningActive": {},
+  "phoneQrTitle": "Phone QR",
+  "@phoneQrTitle": {},
+  "phoneLabel": "Phone: {phone}",
+  "@phoneLabel": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "qrGenerationTitle": "QR Generation",
+  "@qrGenerationTitle": {},
+  "noProfile": "No profile",
+  "@noProfile": {},
+  "profileLabel": "Profile",
+  "@profileLabel": {},
+  "profileNameLabel": "Profile name",
+  "@profileNameLabel": {},
+  "recipientPhone": "Recipient phone",
+  "@recipientPhone": {},
+  "phoneTransferInputTitle": "Transfer without QR",
+  "@phoneTransferInputTitle": {},
+  "enterPhoneError": "Enter a phone number",
+  "@enterPhoneError": {},
+  "amountOptional": "Amount (optional)",
+  "@amountOptional": {},
+  "amountRequiredLabel": "Transfer amount (required)",
+  "@amountRequiredLabel": {},
+  "enterAmountError": "Enter transfer amount",
+  "@enterAmountError": {},
+  "sourceLast4Optional": "Source card/account last4 (optional)",
+  "@sourceLast4Optional": {},
+  "sourceLast4Hint": "Example: 1234",
+  "@sourceLast4Hint": {},
+  "invalidLast4Error": "Enter exactly 4 digits",
+  "@invalidLast4Error": {},
+  "sourceAccountOptionalSection": "Source account (optional)",
+  "@sourceAccountOptionalSection": {},
+  "sberAmountRequired": "Amount is required for transfer via 900.",
+  "@sberAmountRequired": {},
+  "smsTarget900": "To: 900",
+  "@smsTarget900": {},
+  "noteOptional": "Note (optional)",
+  "@noteOptional": {},
+  "myQrButton": "My QR",
+  "@myQrButton": {},
+  "qrAmountButton": "QR with amount",
+  "@qrAmountButton": {},
+  "showQrButton": "Show QR",
+  "@showQrButton": {},
+  "saveProfileButton": "Save profile",
+  "@saveProfileButton": {},
+  "composeSmsButton": "Compose SMS",
+  "@composeSmsButton": {},
+  "qrHintPhoneOnly": "Show this QR to the recipient — they will enter amount and source account before sending",
+  "@qrHintPhoneOnly": {},
+  "qrHint": "Show this QR to the recipient — they will scan and make the transfer",
+  "@qrHint": {},
+  "profileSaved": "Profile saved",
+  "@profileSaved": {},
+  "qrError": "QR error: {error}",
+  "@qrError": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "transferLimitsTitle": "Transfer limits and rules",
+  "@transferLimitsTitle": {},
+  "openSberSiteTooltip": "Open Sberbank website",
+  "@openSberSiteTooltip": {},
+  "infoActualBanner": "Information is current as of this app version. Limits and conditions may change — check at sberbank.ru or call 900.",
+  "@infoActualBanner": {},
+  "smsCommandsTitle": "SMS commands (to number 900)",
+  "@smsCommandsTitle": {},
+  "limitsTitle": "Transfer limits",
+  "@limitsTitle": {},
+  "notificationFormatsTitle": "Sberbank SMS notification formats",
+  "@notificationFormatsTitle": {},
+  "importantRulesTitle": "Important rules",
+  "@importantRulesTitle": {},
+  "feesTitle": "Fees",
+  "@feesTitle": {},
+  "cannotOpenBrowser": "Could not open browser",
+  "@cannotOpenBrowser": {},
+  "number900Copied": "Number 900 copied",
+  "@number900Copied": {},
+  "copiedCommand": "Copied: {command}",
+  "@copiedCommand": {
+    "placeholders": {
+      "command": {
+        "type": "String"
+      }
+    }
+  },
+  "officialSberSite": "Official Sberbank website",
+  "@officialSberSite": {},
+  "officialSiteButton": "Official website",
+  "@officialSiteButton": {},
+  "helpContact900": "Help: contact 900",
+  "@helpContact900": {},
+  "disclaimerText": "This app is not an official Sberbank product. It only helps read SMS and compose commands — all transfers are made via standard SMS commands through your mobile carrier.",
+  "@disclaimerText": {},
+  "personalLimitBanner": "To check your personal limit — send SMS «ЛИМИТ» to 900. Limits may vary depending on your tariff and transaction history.",
+  "@personalLimitBanner": {},
+  "phoneCopied": "Phone number copied",
+  "@phoneCopied": {},
+  "copyPhoneButton": "Copy phone",
+  "@copyPhoneButton": {},
+  "noteLabel": "Note: {note}",
+  "@noteLabel": {
+    "placeholders": {
+      "note": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognizedWithRaw": "QR is not recognized as internal format: {raw}",
+  "@qrNotRecognizedWithRaw": {
+    "placeholders": {
+      "raw": {
+        "type": "String"
+      }
+    }
+  },
+  "cmdTransferMain": "ПЕРЕВОД [phone] [amount]",
+  "@cmdTransferMain": {},
+  "cmdTransferMainDesc": "Transfer to a phone number from the main card.\nExample: ПЕРЕВОД 79161234567 1000",
+  "@cmdTransferMainDesc": {},
+  "cmdTransferWithCard": "ПЕРЕВОД [phone] [amount] [last4]",
+  "@cmdTransferWithCard": {},
+  "cmdTransferWithCardDesc": "Transfer from a specific card.\nExample: ПЕРЕВОД 79161234567 500 1234",
+  "@cmdTransferWithCardDesc": {},
+  "cmdBalance": "БАЛАНС",
+  "@cmdBalance": {},
+  "cmdBalanceDesc": "Main card balance.",
+  "@cmdBalanceDesc": {},
+  "cmdBalanceCard": "БАЛАНС [last4]",
+  "@cmdBalanceCard": {},
+  "cmdBalanceCardDesc": "Specific card balance.",
+  "@cmdBalanceCardDesc": {},
+  "cmdHistory": "ИСТОРИЯ",
+  "@cmdHistory": {},
+  "cmdHistoryDesc": "Last 5 transactions on the main card.",
+  "@cmdHistoryDesc": {},
+  "cmdBlock": "БЛОКИРОВКА [last4]",
+  "@cmdBlock": {},
+  "cmdBlockDesc": "Temporary card block.",
+  "@cmdBlockDesc": {},
+  "cmdLimit": "ЛИМИТ",
+  "@cmdLimit": {},
+  "cmdLimitDesc": "Check your current transfer limits via SMS.",
+  "@cmdLimitDesc": {},
+  "limitEconomyPerTxLabel": "Mobile Bank \"Economy\" — per transaction",
+  "@limitEconomyPerTxLabel": {},
+  "limitEconomyPerTxValue": "8,000 ₽",
+  "@limitEconomyPerTxValue": {},
+  "limitEconomyPerDayLabel": "Mobile Bank \"Economy\" — per day",
+  "@limitEconomyPerDayLabel": {},
+  "limitEconomyPerDayValue": "8,000 ₽",
+  "@limitEconomyPerDayValue": {},
+  "limitFullPerTxLabel": "Mobile Bank \"Full\" — per transaction",
+  "@limitFullPerTxLabel": {},
+  "limitFullPerTxValue": "up to 50,000 ₽",
+  "@limitFullPerTxValue": {},
+  "limitFullPerDayLabel": "Mobile Bank \"Full\" — per day",
+  "@limitFullPerDayLabel": {},
+  "limitFullPerDayValue": "up to 500,000 ₽",
+  "@limitFullPerDayValue": {},
+  "limitCardToCardLabel": "Card to card (online)",
+  "@limitCardToCardLabel": {},
+  "limitCardToCardValue": "up to 150,000 ₽",
+  "@limitCardToCardValue": {},
+  "exampleIncomingLabel": "Incoming",
+  "@exampleIncomingLabel": {},
+  "exampleIncomingText": "SBERBANK Incoming 10000 RUB Card *1234 Balance: 25000 RUB",
+  "@exampleIncomingText": {},
+  "examplePurchaseLabel": "Purchase",
+  "@examplePurchaseLabel": {},
+  "examplePurchaseText": "SBERBANK Purchase 1500 RUB Card *1234 STORE NAME Balance: 23500 RUB",
+  "@examplePurchaseText": {},
+  "exampleTransferLabel": "Transfer",
+  "@exampleTransferLabel": {},
+  "exampleTransferText": "Transfer 5000 RUB from card *1234 completed. Balance: 18500 RUB.",
+  "@exampleTransferText": {},
+  "exampleCashWithdrawalLabel": "Cash withdrawal",
+  "@exampleCashWithdrawalLabel": {},
+  "exampleCashWithdrawalText": "Cash withdrawal 3000 RUB. Card *1234. Balance: 15500 RUB.",
+  "@exampleCashWithdrawalText": {},
+  "ruleRecipientClient": "Recipient must be a Sberbank client and have Mobile Bank enabled.",
+  "@ruleRecipientClient": {},
+  "rulePhoneLinked": "Phone number must be linked to recipient's card.",
+  "@rulePhoneLinked": {},
+  "ruleSmsIrreversible": "SMS transfer cannot be reversed — verify recipient number before confirmation.",
+  "@ruleSmsIrreversible": {},
+  "ruleSpecifyLast4": "If you have multiple cards, specify source card last4 to avoid mistakes.",
+  "@ruleSpecifyLast4": {},
+  "ruleEconomyVsFull": "\"Economy\" tariff (free) — 8,000 ₽/day limit. \"Full\" tariff (paid) — up to 100,000 ₽/day.",
+  "@ruleEconomyVsFull": {},
+  "ruleResetAtMidnight": "Daily limit resets at 00:00 Moscow time.",
+  "@ruleResetAtMidnight": {},
+  "feeEconomyLabel": "\"Economy\" tariff — transfer fee",
+  "@feeEconomyLabel": {},
+  "feeEconomyValue": "1% (min. 30 ₽)",
+  "@feeEconomyValue": {},
+  "feeFullLabel": "\"Full\" tariff — transfer fee",
+  "@feeFullLabel": {},
+  "feeFullValue": "Free",
+  "@feeFullValue": {},
+  "feeSubscriptionLabel": "\"Full\" tariff subscription",
+  "@feeSubscriptionLabel": {},
+  "feeSubscriptionValue": "60 ₽/month",
+  "@feeSubscriptionValue": {},
+  "opIncoming": "incoming",
+  "@opIncoming": {},
+  "opOutgoing": "outgoing",
+  "@opOutgoing": {},
+  "opTransfer": "transfer",
+  "@opTransfer": {},
+  "opUnknown": "unknown",
+  "@opUnknown": {},
+  "smsTargetLabel": "To: {number}",
+  "@smsTargetLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "amountRequiredForTransfer": "Amount is required for this transfer.",
+  "@amountRequiredForTransfer": {},
+  "ussdDialogTitle": "Open USSD?",
+  "@ussdDialogTitle": {},
+  "openDialerButton": "Open Dialer",
+  "@openDialerButton": {},
+  "ussdSentHint": "USSD dialed. Confirm the transfer in the dialer.",
+  "@ussdSentHint": {},
+  "bankNotAvailable": "Bank commands not configured for your region.",
+  "@bankNotAvailable": {},
+  "transferSmsCommandTitle": "SMS transfer command",
+  "@transferSmsCommandTitle": {},
+  "transferUssdCommandTitle": "USSD transfer command",
+  "@transferUssdCommandTitle": {},
+  "sendToLabel": "Send to: {number}",
+  "@sendToLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "exampleLabelShort": "Example",
+  "@exampleLabelShort": {},
+  "bankLimitsContactBanner": "Transfer limits and fees depend on your plan. Contact {bankName} for up-to-date information.",
+  "@bankLimitsContactBanner": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationExamplesTitle": "SMS notification examples",
+  "@notificationExamplesTitle": {},
+  "noBankSelectedBanner": "No bank selected. Choose a country and bank in Settings.",
+  "@noBankSelectedBanner": {},
+  "helpContactNumber": "Help: contact {number}",
+  "@helpContactNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "bankDisclaimerGeneric": "This app is not affiliated with {bankName}. Transfers use standard SMS or USSD commands through your mobile carrier.",
+  "@bankDisclaimerGeneric": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "infoActualBannerGeneric": "Information is based on publicly available data. Limits and conditions may change — check with your bank.",
+  "@infoActualBannerGeneric": {},
+  "officialDataTitle": "Official data",
+  "@officialDataTitle": {},
+  "officialStatusLabel": "Source status",
+  "@officialStatusLabel": {},
+  "officialChannelLabel": "Panel channel",
+  "@officialChannelLabel": {},
+  "officialLastVerifiedLabel": "Verified on",
+  "@officialLastVerifiedLabel": {},
+  "officialStatusVerifiedPublic": "Verified by public source",
+  "@officialStatusVerifiedPublic": {},
+  "officialStatusLimitedPublic": "Public source is limited",
+  "@officialStatusLimitedPublic": {},
+  "officialStatusManualVerificationRequired": "Manual verification required",
+  "@officialStatusManualVerificationRequired": {},
+  "officialStatusUnknown": "Not specified",
+  "@officialStatusUnknown": {},
+  "officialWarningLimited": "Official public limits and rules for this exact channel are only partially confirmed. Treat the values as reference and verify with the bank.",
+  "@officialWarningLimited": {},
+  "officialWarningManual": "This bank or channel does not have enough current public official confirmation. The values are shown for reference only.",
+  "@officialWarningManual": {},
+  "commandChannelUnavailableBanner": "A direct SMS or USSD command channel is not currently verified for this bank. The info panel is shown as a reference to official public data.",
+  "@commandChannelUnavailableBanner": {},
+  "directTransferButton": "Transfer",
+  "createSmsAccount": "Account: {account}",
+  "@createSmsAccount": {
+    "placeholders": {
+      "account": {
+        "type": "String"
+      }
+    }
+  },
+  "recipientAccount": "Recipient account",
+  "enterAccountError": "Enter an account number",
+  "routeLabel": "Transfer channel",
+  "routeSmsPhone": "SMS by phone",
+  "routeSmsAccount": "SMS by account",
+  "routeUssdPhone": "USSD by phone",
+  "routeUssdAccount": "USSD by account",
+  "accountQrTitle": "Account QR",
+  "qrHintAccountOnly": "Show this QR to the sender — they will use your account in their bank flow before sending",
+  "yourAccountTitle": "আপনার অ্যাকাউন্ট",
+  "@yourAccountTitle": {},
+  "yourAccountDesc": "আপনার অ্যাকাউন্ট নম্বর দিয়ে QR তৈরি করতে ব্যবহৃত হয়",
+  "@yourAccountDesc": {},
+  "accountNumberLabel": "অ্যাকাউন্ট নম্বর",
+  "@accountNumberLabel": {},
+  "snackAccountSaved": "অ্যাকাউন্ট সংরক্ষিত হয়েছে",
+  "@snackAccountSaved": {},
+  "selectBankFirstHint": "কনফিগার করতে উপরে ব্যাংক নির্বাচন করুন এবং সংরক্ষণ করুন",
+  "@selectBankFirstHint": {}
+}

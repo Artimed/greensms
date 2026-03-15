@@ -1,0 +1,758 @@
+{
+  "version": 2,
+  "updated": "2026-03-14",
+  "project": "Green SMS",
+  "description": "Bank and system template registry for offline SMS/USSD payment automation. Only full SMS commands and full one-line USSD templates. No interactive USSD menus.",
+  "selection_policy": {
+    "include_only": [
+      "full_sms_command_supported",
+      "full_ussd_template_supported"
+    ],
+    "exclude": [
+      "interactive_ussd_menu_only",
+      "manual_step_by_step_ussd_only"
+    ]
+  },
+  "tiers": {
+    "1": "SMS command only (primary method)",
+    "2": "SMS command + USSD full one-line (both supported)",
+    "3": "USSD full one-line only (no SMS send command)"
+  },
+  "countries": [
+    {
+      "country_code": "RU",
+      "country_name": "Russia",
+      "locale": "ru-RU",
+      "currency": "RUB",
+      "languages": ["ru"],
+      "banks": [
+        {
+          "bank_id": "sberbank_ru",
+          "bank_name": "Sberbank",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 1,
+          "status": "verified",
+          "sms": {
+            "enabled": true,
+            "number": "900",
+            "template": "ПЕРЕВОД {phone} {amount}",
+            "variables": ["phone", "amount"],
+            "example": "ПЕРЕВОД 9123456789 1000"
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "ru",
+              "text": "СЧЁТ 8036: зачисление 2 500 ₽. Баланс 12 000 ₽."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "ru",
+              "text": "КАРТА 8036: покупка 499 ₽. Баланс 11 501 ₽."
+            },
+            {
+              "type": "transfer_credit",
+              "language": "ru",
+              "text": "****8036: перевод +1 000 ₽. Баланс 15 200 ₽."
+            }
+          ],
+          "notes": "Only verified full SMS command in project. Ready for production."
+        },
+        {
+          "bank_id": "tbank_ru",
+          "bank_name": "T-Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "generic_credit",
+              "language": "ru",
+              "text": "Счет *8036. Пополнение 2 500 ₽. Доступно 12 000 ₽."
+            },
+            {
+              "type": "generic_debit",
+              "language": "ru",
+              "text": "Счет *8036. Списание 499 ₽. Доступно 11 501 ₽."
+            }
+          ],
+          "notes": "Parser examples available. No verified public outgoing transfer template."
+        },
+        {
+          "bank_id": "vtb_ru",
+          "bank_name": "VTB",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "generic_credit",
+              "language": "ru",
+              "text": "Счет 8036: зачисление 2 500 ₽. Баланс 12 000 ₽."
+            },
+            {
+              "type": "generic_debit",
+              "language": "ru",
+              "text": "Счет 8036: списание 499 ₽. Баланс 11 501 ₽."
+            }
+          ],
+          "notes": "Parser examples available. No verified public outgoing transfer template."
+        },
+        {
+          "bank_id": "alfabank_ru",
+          "bank_name": "Alfa-Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "generic_credit",
+              "language": "ru",
+              "text": "Счет 8036 пополнение 2 500 ₽. Баланс 12 000 ₽."
+            },
+            {
+              "type": "generic_debit",
+              "language": "ru",
+              "text": "Счет 8036 списание 499 ₽. Баланс 11 501 ₽."
+            }
+          ],
+          "notes": "Parser examples available. No verified public outgoing transfer template."
+        }
+      ]
+    },
+    {
+      "country_code": "NG",
+      "country_name": "Nigeria",
+      "locale": "en-NG",
+      "currency": "NGN",
+      "languages": ["en"],
+      "banks": [
+        {
+          "bank_id": "gtbank_ng",
+          "bank_name": "GTBank (Guaranty Trust Bank)",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 3,
+          "status": "verified",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*737*1*{amount}*{account}#",
+            "variables": ["amount", "account"],
+            "example": "*737*1*1000*0123456789#",
+            "android_uri": "tel:*737*1*1000*0123456789%23"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "en",
+              "text": "Transfer of NGN1,000.00 from Acct XX8036 to 0123456789 was successful."
+            }
+          ],
+          "notes": "Full one-line USSD transfer. No interactive menu. Verified."
+        },
+        {
+          "bank_id": "firstbank_ng",
+          "bank_name": "FirstBank Nigeria",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "verified",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*894*{amount}*{account}#",
+            "variables": ["amount", "account"],
+            "example": "*894*1000*0123456789#",
+            "android_uri": "tel:*894*1000*0123456789%23"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "Transfer successful."
+            },
+            {
+              "type": "debit_notification",
+              "language": "en",
+              "text": "Your account has been debited."
+            }
+          ],
+          "notes": "Full one-line USSD transfer. No interactive menu. Verified."
+        },
+        {
+          "bank_id": "zenith_ng",
+          "bank_name": "Zenith Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*966*{amount}*{account}#",
+            "variables": ["amount", "account"],
+            "example": "*966*1000*0123456789#",
+            "android_uri": "tel:*966*1000*0123456789%23"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "Your transfer of NGN1,000.00 to 0123456789 was successful."
+            }
+          ],
+          "notes": "Full one-line USSD. Needs manual confirmation before production use."
+        },
+        {
+          "bank_id": "uba_ng",
+          "bank_name": "UBA (United Bank for Africa)",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*919*4*{account}*{amount}#",
+            "variables": ["account", "amount"],
+            "example": "*919*4*0123456789*1000#",
+            "android_uri": "tel:*919*4*0123456789*1000%23"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "Transfer of NGN1,000.00 to 0123456789 successful."
+            }
+          ],
+          "notes": "Full one-line USSD. Note: variable order is account then amount. Needs manual confirmation."
+        },
+        {
+          "bank_id": "access_ng",
+          "bank_name": "Access Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*901*{amount}*{account}#",
+            "variables": ["amount", "account"],
+            "example": "*901*1000*0123456789#",
+            "android_uri": "tel:*901*1000*0123456789%23"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "Transaction successful. NGN1,000.00 sent to 0123456789."
+            }
+          ],
+          "notes": "Full one-line USSD. Needs manual confirmation before production use."
+        }
+      ]
+    },
+    {
+      "country_code": "IN",
+      "country_name": "India",
+      "locale": "en-IN",
+      "currency": "INR",
+      "languages": ["en", "hi"],
+      "banks": [
+        {
+          "bank_id": "sbi_in",
+          "bank_name": "State Bank of India",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 2,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": true,
+            "number": null,
+            "template": "IMPS {phone} {amount}",
+            "variables": ["phone", "amount"],
+            "example": "IMPS 9123456789 1000"
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*99*1*{phone}*{amount}#",
+            "variables": ["phone", "amount"],
+            "example": "*99*1*9123456789*1000#",
+            "android_uri": "tel:*99*1*9123456789*1000%23"
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "INR 1,000 credited to A/C XX8036 via IMPS. Avl Bal INR 15,200."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            },
+            {
+              "type": "mixed_language_credit",
+              "language": "hi-en",
+              "text": "A/c XX8036 me INR 2500 credit hua. Available balance INR 12000."
+            }
+          ],
+          "notes": "IMPS SMS and USSD *99# both require manual verification before enabling by default."
+        },
+        {
+          "bank_id": "axisbank_in",
+          "bank_name": "Axis Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "A/C XX8036 credited with INR 2,500. Avl Bal INR 12,000."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            }
+          ],
+          "notes": "Parser examples available. No verified public P2P outgoing transfer template."
+        },
+        {
+          "bank_id": "hdfcbank_in",
+          "bank_name": "HDFC Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "A/C XX8036 credited with INR 2,500. Avl Bal INR 12,000."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            }
+          ],
+          "notes": "Parser examples available. No verified public P2P outgoing transfer template."
+        },
+        {
+          "bank_id": "icicibank_in",
+          "bank_name": "ICICI Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "A/C XX8036 credited with INR 2,500. Avl Bal INR 12,000."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            }
+          ],
+          "notes": "Parser examples available. No verified public P2P outgoing transfer template."
+        }
+      ]
+    },
+    {
+      "country_code": "PK",
+      "country_name": "Pakistan",
+      "locale": "en-PK",
+      "currency": "PKR",
+      "languages": ["en", "ur"],
+      "banks": [
+        {
+          "bank_id": "ubl_pk",
+          "bank_name": "UBL (United Bank Limited)",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 1,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": true,
+            "number": null,
+            "template": "SEND {phone} {amount}",
+            "variables": ["phone", "amount"],
+            "example": "SEND 03001234567 1000"
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "Transaction successful."
+            },
+            {
+              "type": "balance",
+              "language": "en",
+              "text": "Available balance PKR 12,000."
+            }
+          ],
+          "notes": "SMS template from research. Needs manual verification before enabling by default."
+        }
+      ]
+    },
+    {
+      "country_code": "BD",
+      "country_name": "Bangladesh",
+      "locale": "en-BD",
+      "currency": "BDT",
+      "languages": ["en", "bn"],
+      "banks": [
+        {
+          "bank_id": "bkash_bd",
+          "bank_name": "bKash",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": 1,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": true,
+            "number": null,
+            "template": "SEND {phone} {amount}",
+            "variables": ["phone", "amount"],
+            "example": "SEND 01712345678 500"
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": [],
+            "note": "bKash *247# is an interactive menu — excluded per project policy"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "Cash In Successful."
+            },
+            {
+              "type": "balance",
+              "language": "en",
+              "text": "Available balance BDT 12,000."
+            }
+          ],
+          "notes": "CAUTION: SMS send template needs manual confirmation. bKash *247# is interactive menu only — not included per project policy."
+        }
+      ]
+    },
+    {
+      "country_code": "ID",
+      "country_name": "Indonesia",
+      "locale": "id-ID",
+      "currency": "IDR",
+      "languages": ["id"],
+      "banks": [
+        {
+          "bank_id": "mandiri_id",
+          "bank_name": "Bank Mandiri",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 1,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": true,
+            "number": null,
+            "template": "TRF {phone} {amount}",
+            "variables": ["phone", "amount"],
+            "example": "TRF 08123456789 100000"
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "id",
+              "text": "Transfer berhasil."
+            },
+            {
+              "type": "balance",
+              "language": "id",
+              "text": "Saldo tersedia IDR 120000."
+            }
+          ],
+          "notes": "SMS template from research. Needs manual verification before enabling by default."
+        }
+      ]
+    },
+    {
+      "country_code": "PH",
+      "country_name": "Philippines",
+      "locale": "en-PH",
+      "currency": "PHP",
+      "languages": ["en", "fil"],
+      "banks": [
+        {
+          "bank_id": "gcash_ph",
+          "bank_name": "GCash / Smart Money",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": 1,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": true,
+            "number": null,
+            "template": "SEND {phone} {amount}",
+            "variables": ["phone", "amount"],
+            "example": "SEND 09171234567 500"
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "You have sent PHP 500."
+            },
+            {
+              "type": "balance",
+              "language": "en",
+              "text": "Remaining balance PHP 1,200."
+            }
+          ],
+          "notes": "SMS template from research. Needs manual verification before enabling by default."
+        }
+      ]
+    },
+    {
+      "country_code": "VN",
+      "country_name": "Vietnam",
+      "locale": "vi-VN",
+      "currency": "VND",
+      "languages": ["vi"],
+      "banks": [
+        {
+          "bank_id": "vietcombank_vn",
+          "bank_name": "Vietcombank",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 1,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": true,
+            "number": null,
+            "template": "VCB TRANSFER {phone} {amount}",
+            "variables": ["phone", "amount"],
+            "example": "VCB TRANSFER 0912345678 500000"
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "vi",
+              "text": "Giao dich thanh cong."
+            },
+            {
+              "type": "balance",
+              "language": "vi",
+              "text": "So du hien tai VND 1200000."
+            }
+          ],
+          "notes": "SMS template from research. Needs manual verification before enabling by default."
+        }
+      ]
+    },
+    {
+      "country_code": "GH",
+      "country_name": "Ghana",
+      "locale": "en-GH",
+      "currency": "GHS",
+      "languages": ["en"],
+      "banks": [
+        {
+          "bank_id": "vodafone_gh",
+          "bank_name": "Vodafone Cash / Telecel Cash",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": 3,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*516*{phone}*{amount}*{pin}#",
+            "variables": ["phone", "amount", "pin"],
+            "example": "*516*0241234567*50*1234#",
+            "android_uri": "tel:*516*0241234567*50*1234%23",
+            "note": "PIN is embedded in the USSD string — user must enter their own PIN"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "GHS50.00 sent to 0241234567 successfully."
+            }
+          ],
+          "notes": "Unique: PIN embedded in full USSD string. User must provide PIN. Needs manual verification."
+        }
+      ]
+    },
+    {
+      "country_code": "AM",
+      "country_name": "Armenia",
+      "locale": "hy-AM",
+      "currency": "AMD",
+      "languages": ["hy", "ru"],
+      "banks": [
+        {
+          "bank_id": "vivacell_am",
+          "bank_name": "VivaCell-MTS (VivaMoney)",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": 3,
+          "status": "needs_verification",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*126*{phone}*{amount}#",
+            "variables": ["phone", "amount"],
+            "example": "*126*093123456*5000#",
+            "android_uri": "tel:*126*093123456*5000%23"
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "hy",
+              "text": "Փոխանցումը կատարվեց։"
+            }
+          ],
+          "notes": "Full one-line USSD transfer. Needs manual verification before enabling by default."
+        }
+      ]
+    }
+  ]
+}

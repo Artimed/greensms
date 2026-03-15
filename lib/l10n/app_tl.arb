@@ -1,0 +1,630 @@
+{
+  "@@locale": "tl",
+  "appName": "Green SMS",
+  "@appName": {
+    "description": "Application name"
+  },
+  "cancel": "Kanselahin",
+  "@cancel": {},
+  "save": "I-save",
+  "@save": {},
+  "back": "Bumalik",
+  "@back": {},
+  "allow": "Payagan",
+  "@allow": {},
+  "confirm": "Kumpirmahin",
+  "@confirm": {},
+  "clear": "Linisin",
+  "@clear": {},
+  "settingsTitle": "Mga Setting",
+  "@settingsTitle": {},
+  "onboardingSubtitle": "Visual assistant para sa SMS banking operations",
+  "@onboardingSubtitle": {},
+  "onboardingFeatureLocal": "Gumagana nang lokal, hindi kailangan ng internet",
+  "@onboardingFeatureLocal": {},
+  "onboardingFeatureSms": "Binabasa lang ang huling 10 SMS",
+  "@onboardingFeatureSms": {},
+  "onboardingFeaturePrivacy": "Hindi ipinapadala sa labas ang data",
+  "@onboardingFeaturePrivacy": {},
+  "onboardingFeatureQr": "Ginagamit lang ang QR para ibahagi ang numero ng telepono",
+  "@onboardingFeatureQr": {},
+  "onboardingButton": "Humingi ng permiso at magpatuloy",
+  "@onboardingButton": {},
+  "accounts": "Mga account",
+  "@accounts": {},
+  "noAccountsYet": "Wala pang nakilalang account.",
+  "@noAccountsYet": {},
+  "latestSms": "Pinakabagong SMS",
+  "@latestSms": {},
+  "smsNotLoaded": "Hindi pa na-load ang SMS.",
+  "@smsNotLoaded": {},
+  "qrModeTitle": "Mode ng QR",
+  "@qrModeTitle": {},
+  "qrModeSubtitle": "Buksan ang full-screen camera",
+  "@qrModeSubtitle": {},
+  "smsDetailsTitle": "Detalye ng SMS",
+  "@smsDetailsTitle": {},
+  "smsDetailsSender": "Nagpadala: {sender}",
+  "@smsDetailsSender": {
+    "placeholders": {
+      "sender": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsTime": "Oras: {time}",
+  "@smsDetailsTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4": "Kard: {last4}",
+  "@smsDetailsLast4": {
+    "placeholders": {
+      "last4": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4NotFound": "hindi nahanap",
+  "@smsDetailsLast4NotFound": {},
+  "smsDetailsAmount": "Halaga: {amount}",
+  "@smsDetailsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsBalance": "Balanse: {balance}",
+  "@smsDetailsBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsReference": "Ref: {reference}",
+  "@smsDetailsReference": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsType": "Uri: {type}",
+  "@smsDetailsType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "transferRulesTooltip": "Mga tuntunin ng transfer",
+  "@transferRulesTooltip": {},
+  "accountsLabel": "Mga account",
+  "@accountsLabel": {},
+  "refreshSmsButton": "I-refresh ang SMS",
+  "@refreshSmsButton": {},
+  "dailyLimitNotSet": "Hindi pa nakatakda ang daily limit",
+  "@dailyLimitNotSet": {},
+  "setLimitInSettings": "Itakda ang limit sa settings",
+  "@setLimitInSettings": {},
+  "dailyTransferLimit": "Arawang limit sa transfer",
+  "@dailyTransferLimit": {},
+  "usedToday": "Nagamit ngayon",
+  "@usedToday": {},
+  "remaining": "Natitira",
+  "@remaining": {},
+  "limitExceeded": "Lumampas sa limit",
+  "@limitExceeded": {},
+  "limitWarning80": "Mahigit 80% ng daily limit ang nagamit",
+  "@limitWarning80": {},
+  "limitExceededBlocked": "Lumampas sa daily limit. Naka-block ang QR transfers.",
+  "@limitExceededBlocked": {},
+  "accountBalanceLabel": "Balanse: {balance}",
+  "@accountBalanceLabel": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "parsedLabel": "na-parse",
+  "@parsedLabel": {},
+  "rawLabel": "orihinal",
+  "@rawLabel": {},
+  "devicePhoneTitle": "Telepono ng device",
+  "@devicePhoneTitle": {},
+  "devicePhoneDesc": "Ginagamit para gumawa ng QR gamit ang iyong numero",
+  "@devicePhoneDesc": {},
+  "phoneNumberLabel": "Numero ng telepono",
+  "@phoneNumberLabel": {},
+  "dailyLimitDesc": "Pinakamataas na daily transfer sa app na ito. Nare-reset sa hatinggabi. Iwanang blangko para alisin ang limit.",
+  "@dailyLimitDesc": {},
+  "limitLabel": "Limitasyon",
+  "@limitLabel": {},
+  "limitHint": "hal. 50000",
+  "@limitHint": {},
+  "removeLimitButton": "Alisin ang limit",
+  "@removeLimitButton": {},
+  "themeTitle": "Hitsura",
+  "@themeTitle": {},
+  "languageTitle": "Wika",
+  "@languageTitle": {},
+  "bankRoutingTitle": "Bansa at bangko",
+  "@bankRoutingTitle": {},
+  "bankRoutingDesc": "Piliin muna ang bansa. Kung higit sa isa ang bangko, pumili ng bangko para sa payment commands.",
+  "@bankRoutingDesc": {},
+  "countryLabel": "Bansa",
+  "@countryLabel": {},
+  "bankLabel": "Bangko",
+  "@bankLabel": {},
+  "bankAutoSelectedHint": "Isang bangko lang ang available para sa bansang ito, auto-selected na ito.",
+  "@bankAutoSelectedHint": {},
+  "referenceOnlyBadge": "reference only",
+  "@referenceOnlyBadge": {},
+  "bankReferenceOnlyHint": "For this country, the bank is available as a reference source for limits and rules only. Direct payment commands are not currently verified.",
+  "@bankReferenceOnlyHint": {},
+  "languageEnglish": "Ingles",
+  "@languageEnglish": {},
+  "languageRussian": "Ruso",
+  "@languageRussian": {},
+  "languageHindi": "Wikang Hindi",
+  "@languageHindi": {},
+  "languageKazakh": "Wikang Kazakh",
+  "@languageKazakh": {},
+  "languageUzbek": "Wikang Uzbek",
+  "@languageUzbek": {},
+  "languageTagalog": "Tagalog",
+  "@languageTagalog": {},
+  "languageIndonesian": "Wikang Indonesian",
+  "@languageIndonesian": {},
+  "permissionsTitle": "Mga permiso",
+  "@permissionsTitle": {},
+  "readSmsTitle": "Basahin ang SMS",
+  "@readSmsTitle": {},
+  "readSmsDesc": "Kailangan para mabasa ang mga papasok na SMS at ma-update ang data.",
+  "@readSmsDesc": {},
+  "directSmsTitle": "Direktang pagpapadala ng SMS",
+  "@directSmsTitle": {},
+  "directSmsDesc": "Magpadala ng SMS nang direkta nang hindi binubuksan ang messaging app",
+  "@directSmsDesc": {},
+  "directSmsPermissionRequired": "Kailangan ang pahintulot na SEND_SMS. Ibigay ito sa system app settings.",
+  "@directSmsPermissionRequired": {},
+  "directSmsEnabledSnack": "Naka-enable ang direktang pagpapadala ng SMS",
+  "@directSmsEnabledSnack": {},
+  "directSmsDisabledSnack": "Naka-disable ang direktang pagpapadala ng SMS",
+  "@directSmsDisabledSnack": {},
+  "openSettingsButton": "Mga setting",
+  "@openSettingsButton": {},
+  "permissionsManageInSystem": "Sa system app settings lang puwedeng i-disable ang permiso.",
+  "@permissionsManageInSystem": {},
+  "cameraTitle": "Kamera",
+  "@cameraTitle": {},
+  "cameraDesc": "Para sa QR scanning",
+  "@cameraDesc": {},
+  "clearLocalDataTitle": "I-clear ang lokal na data",
+  "@clearLocalDataTitle": {},
+  "clearLocalDataDesc": "SMS, accounts, QR profiles, at history",
+  "@clearLocalDataDesc": {},
+  "aboutTitle": "Tungkol sa app",
+  "@aboutTitle": {},
+  "aboutVersion": "Green SMS v1.0\nLokal na app, walang internet",
+  "@aboutVersion": {},
+  "snackLimitRemoved": "Inalis ang limit",
+  "@snackLimitRemoved": {},
+  "snackLimitSet": "Naitakda ang limit: {amount}",
+  "@snackLimitSet": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "snackPhoneSaved": "Na-save ang telepono",
+  "@snackPhoneSaved": {},
+  "snackDataCleared": "Na-clear ang lokal na data",
+  "@snackDataCleared": {},
+  "clearDataDialogTitle": "I-clear ang data?",
+  "@clearDataDialogTitle": {},
+  "clearDataDialogContent": "Mabubura ang SMS, accounts, QR profiles, at history.",
+  "@clearDataDialogContent": {},
+  "cameraPermissionNeeded": "Kailangan ang access sa camera",
+  "@cameraPermissionNeeded": {},
+  "scanHint": "Itutok ang camera sa QR code",
+  "@scanHint": {},
+  "scanButton": "I-scan",
+  "@scanButton": {},
+  "phoneTransferButton": "Sa telepono",
+  "@phoneTransferButton": {},
+  "limitWarningTitle": "Lumampas sa daily limit",
+  "@limitWarningTitle": {},
+  "limitWarningContent": "Halaga ng transfer: {amount}\nNatitirang limit: {remaining}\n\nLumalagpas ang transfer sa daily limit. Ituloy pa rin?",
+  "@limitWarningContent": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "sendAnywayButton": "Ituloy pa rin",
+  "@sendAnywayButton": {},
+  "createSmsDialogTitle": "Gumawa ng SMS?",
+  "@createSmsDialogTitle": {},
+  "createSmsPhone": "Telepono: {phone}",
+  "@createSmsPhone": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "createSmsText": "Teksto: {text}",
+  "@createSmsText": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognized": "Hindi nakilala ang QR bilang internal format.",
+  "@qrNotRecognized": {},
+  "transferCancelledLimit": "Kinansela ang transfer — lampas sa limit.",
+  "@transferCancelledLimit": {},
+  "smsSentSuccess": "Nabuo ang SMS. Kumpirmahin ang pagpapadala sa messaging app.",
+  "@smsSentSuccess": {},
+  "scanningContinues": "Tuloy ang pag-scan.",
+  "@scanningContinues": {},
+  "noQrInImage": "Walang QR code sa napiling larawan.",
+  "@noQrInImage": {},
+  "qrFoundNoData": "May nahanap na QR pero walang data.",
+  "@qrFoundNoData": {},
+  "setPhoneFirst": "Itakda muna ang telepono ng device sa settings.",
+  "@setPhoneFirst": {},
+  "setAccountFirst": "Itakda muna ang numero ng account sa settings.",
+  "@setAccountFirst": {},
+  "chooseChannelTitle": "Pumili ng channel ng transfer",
+  "@chooseChannelTitle": {},
+  "scanningActive": "Aktibo ang pag-scan.",
+  "@scanningActive": {},
+  "phoneQrTitle": "QR ng Telepono",
+  "@phoneQrTitle": {},
+  "phoneLabel": "Telepono: {phone}",
+  "@phoneLabel": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "qrGenerationTitle": "Pagbuo ng QR",
+  "@qrGenerationTitle": {},
+  "noProfile": "Walang profile",
+  "@noProfile": {},
+  "profileLabel": "Profil",
+  "@profileLabel": {},
+  "profileNameLabel": "Pangalan ng profile",
+  "@profileNameLabel": {},
+  "recipientPhone": "Telepono ng tatanggap",
+  "@recipientPhone": {},
+  "phoneTransferInputTitle": "Transfer na walang QR",
+  "@phoneTransferInputTitle": {},
+  "enterPhoneError": "Maglagay ng numero ng telepono",
+  "@enterPhoneError": {},
+  "amountOptional": "Halaga (opsyonal)",
+  "@amountOptional": {},
+  "amountRequiredLabel": "Halaga ng transfer (kailangan)",
+  "@amountRequiredLabel": {},
+  "enterAmountError": "Ilagay ang halaga ng transfer",
+  "@enterAmountError": {},
+  "sourceLast4Optional": "Pinanggalingang card/account last4 (opsyonal)",
+  "@sourceLast4Optional": {},
+  "sourceLast4Hint": "Halimbawa: 1234",
+  "@sourceLast4Hint": {},
+  "invalidLast4Error": "Maglagay ng eksaktong 4 na digit",
+  "@invalidLast4Error": {},
+  "sourceAccountOptionalSection": "Source account (opsyonal)",
+  "@sourceAccountOptionalSection": {},
+  "sberAmountRequired": "Kailangan ang halaga para sa transfer sa 900.",
+  "@sberAmountRequired": {},
+  "smsTarget900": "Numero: 900",
+  "@smsTarget900": {},
+  "noteOptional": "Tala (opsyonal)",
+  "@noteOptional": {},
+  "myQrButton": "My QR",
+  "@myQrButton": {},
+  "qrAmountButton": "QR na may halaga",
+  "@qrAmountButton": {},
+  "showQrButton": "Ipakita ang QR",
+  "@showQrButton": {},
+  "saveProfileButton": "I-save ang profile",
+  "@saveProfileButton": {},
+  "composeSmsButton": "Bumuo ng SMS",
+  "@composeSmsButton": {},
+  "qrHintPhoneOnly": "Ipakita ang QR na ito sa tatanggap — siya ang maglalagay ng halaga at source account bago magpadala",
+  "@qrHintPhoneOnly": {},
+  "qrHint": "Ipakita ang QR na ito sa tatanggap — i-scan niya ito at gagawa ng transfer",
+  "@qrHint": {},
+  "profileSaved": "Na-save ang profile",
+  "@profileSaved": {},
+  "qrError": "Error sa QR: {error}",
+  "@qrError": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "transferLimitsTitle": "Mga limit at tuntunin ng transfer",
+  "@transferLimitsTitle": {},
+  "openSberSiteTooltip": "Buksan ang website ng Sberbank",
+  "@openSberSiteTooltip": {},
+  "infoActualBanner": "Ang impormasyong ito ay para sa kasalukuyang bersyon ng app. Maaaring magbago ang limits at kondisyon — tingnan sa sberbank.ru o tumawag sa 900.",
+  "@infoActualBanner": {},
+  "smsCommandsTitle": "SMS commands (sa numerong 900)",
+  "@smsCommandsTitle": {},
+  "limitsTitle": "Mga limit ng transfer",
+  "@limitsTitle": {},
+  "notificationFormatsTitle": "Mga format ng SMS notification ng Sberbank",
+  "@notificationFormatsTitle": {},
+  "importantRulesTitle": "Mahalagang tuntunin",
+  "@importantRulesTitle": {},
+  "feesTitle": "Mga bayarin",
+  "@feesTitle": {},
+  "cannotOpenBrowser": "Hindi mabuksan ang browser",
+  "@cannotOpenBrowser": {},
+  "number900Copied": "Nakopya ang numerong 900",
+  "@number900Copied": {},
+  "copiedCommand": "Nakopya: {command}",
+  "@copiedCommand": {
+    "placeholders": {
+      "command": {
+        "type": "String"
+      }
+    }
+  },
+  "officialSberSite": "Opisyal na website ng Sberbank",
+  "@officialSberSite": {},
+  "officialSiteButton": "Opisyal na website",
+  "@officialSiteButton": {},
+  "helpContact900": "Tulong: makipag-ugnayan sa 900",
+  "@helpContact900": {},
+  "disclaimerText": "Hindi opisyal na produkto ng Sberbank ang app na ito. Tinutulungan lang nito ang pagbasa ng SMS at pagbuo ng commands — lahat ng transfer ay ginagawa sa standard SMS commands sa pamamagitan ng iyong mobile carrier.",
+  "@disclaimerText": {},
+  "personalLimitBanner": "Para malaman ang personal mong limit — magpadala ng SMS «ЛИМИТ» sa 900. Maaaring mag-iba ang limit ayon sa iyong tariff at history ng transaksyon.",
+  "@personalLimitBanner": {},
+  "phoneCopied": "Nakopya ang numero ng telepono",
+  "@phoneCopied": {},
+  "copyPhoneButton": "Kopyahin ang telepono",
+  "@copyPhoneButton": {},
+  "noteLabel": "Tala: {note}",
+  "@noteLabel": {
+    "placeholders": {
+      "note": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognizedWithRaw": "Hindi nakilala ang QR bilang internal format: {raw}",
+  "@qrNotRecognizedWithRaw": {
+    "placeholders": {
+      "raw": {
+        "type": "String"
+      }
+    }
+  },
+  "cmdTransferMain": "ПЕРЕВОД [phone] [amount]",
+  "@cmdTransferMain": {},
+  "cmdTransferMainDesc": "Transfer sa numero ng telepono mula sa pangunahing card.\nHalimbawa: ПЕРЕВОД 79161234567 1000",
+  "@cmdTransferMainDesc": {},
+  "cmdTransferWithCard": "ПЕРЕВОД [phone] [amount] [last4]",
+  "@cmdTransferWithCard": {},
+  "cmdTransferWithCardDesc": "Transfer mula sa partikular na card.\nHalimbawa: ПЕРЕВОД 79161234567 500 1234",
+  "@cmdTransferWithCardDesc": {},
+  "cmdBalance": "БАЛАНС",
+  "@cmdBalance": {},
+  "cmdBalanceDesc": "Balanse ng pangunahing card.",
+  "@cmdBalanceDesc": {},
+  "cmdBalanceCard": "БАЛАНС [last4]",
+  "@cmdBalanceCard": {},
+  "cmdBalanceCardDesc": "Balanse ng partikular na card.",
+  "@cmdBalanceCardDesc": {},
+  "cmdHistory": "ИСТОРИЯ",
+  "@cmdHistory": {},
+  "cmdHistoryDesc": "Huling 5 transaksyon sa pangunahing card.",
+  "@cmdHistoryDesc": {},
+  "cmdBlock": "БЛОКИРОВКА [last4]",
+  "@cmdBlock": {},
+  "cmdBlockDesc": "Pansamantalang pag-block ng card.",
+  "@cmdBlockDesc": {},
+  "cmdLimit": "ЛИМИТ",
+  "@cmdLimit": {},
+  "cmdLimitDesc": "Tingnan ang kasalukuyang transfer limits sa pamamagitan ng SMS.",
+  "@cmdLimitDesc": {},
+  "limitEconomyPerTxLabel": "Mobile Bank \"Economy\" — bawat transaksyon",
+  "@limitEconomyPerTxLabel": {},
+  "limitEconomyPerTxValue": "8,000 ₽",
+  "@limitEconomyPerTxValue": {},
+  "limitEconomyPerDayLabel": "Mobile Bank \"Economy\" — bawat araw",
+  "@limitEconomyPerDayLabel": {},
+  "limitEconomyPerDayValue": "8,000 ₽",
+  "@limitEconomyPerDayValue": {},
+  "limitFullPerTxLabel": "Mobile Bank \"Full\" — bawat transaksyon",
+  "@limitFullPerTxLabel": {},
+  "limitFullPerTxValue": "hanggang 50,000 ₽",
+  "@limitFullPerTxValue": {},
+  "limitFullPerDayLabel": "Mobile Bank \"Full\" — bawat araw",
+  "@limitFullPerDayLabel": {},
+  "limitFullPerDayValue": "hanggang 500,000 ₽",
+  "@limitFullPerDayValue": {},
+  "limitCardToCardLabel": "Kard sa kard (online)",
+  "@limitCardToCardLabel": {},
+  "limitCardToCardValue": "hanggang 150,000 ₽",
+  "@limitCardToCardValue": {},
+  "exampleIncomingLabel": "Pagpasok",
+  "@exampleIncomingLabel": {},
+  "exampleIncomingText": "SBERBANK Pagpasok 10000 RUB Card *1234 Balanse: 25000 RUB",
+  "@exampleIncomingText": {},
+  "examplePurchaseLabel": "Pagbili",
+  "@examplePurchaseLabel": {},
+  "examplePurchaseText": "SBERBANK Pagbili 1500 RUB Card *1234 PANGALAN NG TINDAHAN Balanse: 23500 RUB",
+  "@examplePurchaseText": {},
+  "exampleTransferLabel": "Paglipat",
+  "@exampleTransferLabel": {},
+  "exampleTransferText": "Transfer 5000 RUB mula sa card *1234 naisagawa. Balanse: 18500 RUB.",
+  "@exampleTransferText": {},
+  "exampleCashWithdrawalLabel": "Pag-withdraw ng cash",
+  "@exampleCashWithdrawalLabel": {},
+  "exampleCashWithdrawalText": "Cash withdrawal 3000 RUB. Card *1234. Balanse: 15500 RUB.",
+  "@exampleCashWithdrawalText": {},
+  "ruleRecipientClient": "Dapat kliyente ng Sberbank ang tatanggap at naka-enable ang Mobile Bank.",
+  "@ruleRecipientClient": {},
+  "rulePhoneLinked": "Dapat naka-link ang numero ng telepono sa card ng tatanggap.",
+  "@rulePhoneLinked": {},
+  "ruleSmsIrreversible": "Hindi naibabalik ang SMS transfer — suriin ang numero bago kumpirmahin.",
+  "@ruleSmsIrreversible": {},
+  "ruleSpecifyLast4": "Kung marami kang card, ilagay ang last4 ng source card para maiwasan ang error.",
+  "@ruleSpecifyLast4": {},
+  "ruleEconomyVsFull": "Tariff na \"Economy\" (libre) — limit na 8,000 ₽/araw. Tariff na \"Full\" (bayad) — hanggang 100,000 ₽/araw.",
+  "@ruleEconomyVsFull": {},
+  "ruleResetAtMidnight": "Nare-reset ang daily limit sa 00:00 oras ng Moscow.",
+  "@ruleResetAtMidnight": {},
+  "feeEconomyLabel": "Tariff na \"Economy\" — bayad sa transfer",
+  "@feeEconomyLabel": {},
+  "feeEconomyValue": "1% (hindi bababa sa 30 ₽)",
+  "@feeEconomyValue": {},
+  "feeFullLabel": "Tariff na \"Full\" — bayad sa transfer",
+  "@feeFullLabel": {},
+  "feeFullValue": "Libre",
+  "@feeFullValue": {},
+  "feeSubscriptionLabel": "Subscription ng \"Full\" tariff",
+  "@feeSubscriptionLabel": {},
+  "feeSubscriptionValue": "60 ₽/buwan",
+  "@feeSubscriptionValue": {},
+  "opIncoming": "papasok",
+  "@opIncoming": {},
+  "opOutgoing": "palabas",
+  "@opOutgoing": {},
+  "opTransfer": "paglipat",
+  "@opTransfer": {},
+  "opUnknown": "hindi alam",
+  "@opUnknown": {},
+  "smsTargetLabel": "To: {number}",
+  "@smsTargetLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "amountRequiredForTransfer": "Amount is required for this transfer.",
+  "@amountRequiredForTransfer": {},
+  "ussdDialogTitle": "Open USSD?",
+  "@ussdDialogTitle": {},
+  "openDialerButton": "Open Dialer",
+  "@openDialerButton": {},
+  "ussdSentHint": "USSD dialed. Confirm the transfer in the dialer.",
+  "@ussdSentHint": {},
+  "bankNotAvailable": "Bank commands not configured for your region.",
+  "@bankNotAvailable": {},
+  "transferSmsCommandTitle": "SMS transfer command",
+  "@transferSmsCommandTitle": {},
+  "transferUssdCommandTitle": "USSD transfer command",
+  "@transferUssdCommandTitle": {},
+  "sendToLabel": "Send to: {number}",
+  "@sendToLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "exampleLabelShort": "Example",
+  "@exampleLabelShort": {},
+  "bankLimitsContactBanner": "Transfer limits and fees depend on your plan. Contact {bankName} for up-to-date information.",
+  "@bankLimitsContactBanner": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationExamplesTitle": "SMS notification examples",
+  "@notificationExamplesTitle": {},
+  "noBankSelectedBanner": "No bank selected. Choose a country and bank in Settings.",
+  "@noBankSelectedBanner": {},
+  "helpContactNumber": "Help: contact {number}",
+  "@helpContactNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "bankDisclaimerGeneric": "This app is not affiliated with {bankName}. Transfers use standard SMS or USSD commands through your mobile carrier.",
+  "@bankDisclaimerGeneric": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "infoActualBannerGeneric": "Information is based on publicly available data. Limits and conditions may change — check with your bank.",
+  "@infoActualBannerGeneric": {},
+  "officialDataTitle": "Official data",
+  "@officialDataTitle": {},
+  "officialStatusLabel": "Source status",
+  "@officialStatusLabel": {},
+  "officialChannelLabel": "Panel channel",
+  "@officialChannelLabel": {},
+  "officialLastVerifiedLabel": "Verified on",
+  "@officialLastVerifiedLabel": {},
+  "officialStatusVerifiedPublic": "Verified by public source",
+  "@officialStatusVerifiedPublic": {},
+  "officialStatusLimitedPublic": "Public source is limited",
+  "@officialStatusLimitedPublic": {},
+  "officialStatusManualVerificationRequired": "Manual verification required",
+  "@officialStatusManualVerificationRequired": {},
+  "officialStatusUnknown": "Not specified",
+  "@officialStatusUnknown": {},
+  "officialWarningLimited": "Official public limits and rules for this exact channel are only partially confirmed. Treat the values as reference and verify with the bank.",
+  "@officialWarningLimited": {},
+  "officialWarningManual": "This bank or channel does not have enough current public official confirmation. The values are shown for reference only.",
+  "@officialWarningManual": {},
+  "commandChannelUnavailableBanner": "A direct SMS or USSD command channel is not currently verified for this bank. The info panel is shown as a reference to official public data.",
+  "@commandChannelUnavailableBanner": {},
+  "directTransferButton": "Transfer",
+  "createSmsAccount": "Account: {account}",
+  "@createSmsAccount": {
+    "placeholders": {
+      "account": {
+        "type": "String"
+      }
+    }
+  },
+  "recipientAccount": "Recipient account",
+  "enterAccountError": "Enter an account number",
+  "routeLabel": "Transfer channel",
+  "routeSmsPhone": "SMS by phone",
+  "routeSmsAccount": "SMS by account",
+  "routeUssdPhone": "USSD by phone",
+  "routeUssdAccount": "USSD by account",
+  "accountQrTitle": "Account QR",
+  "qrHintAccountOnly": "Show this QR to the sender — they will use your account in their bank flow before sending",
+  "yourAccountTitle": "Ang iyong account",
+  "@yourAccountTitle": {},
+  "yourAccountDesc": "Ginagamit para gumawa ng QR gamit ang iyong account number",
+  "@yourAccountDesc": {},
+  "accountNumberLabel": "Numero ng account",
+  "@accountNumberLabel": {},
+  "snackAccountSaved": "Nai-save ang account",
+  "@snackAccountSaved": {},
+  "selectBankFirstHint": "Pumili at i-save ang bangko sa itaas para i-configure",
+  "@selectBankFirstHint": {}
+}

@@ -1,0 +1,630 @@
+{
+  "@@locale": "id",
+  "appName": "Green SMS",
+  "@appName": {
+    "description": "Application name"
+  },
+  "cancel": "Batal",
+  "@cancel": {},
+  "save": "Simpan",
+  "@save": {},
+  "back": "Kembali",
+  "@back": {},
+  "allow": "Izinkan",
+  "@allow": {},
+  "confirm": "Konfirmasi",
+  "@confirm": {},
+  "clear": "Bersihkan",
+  "@clear": {},
+  "settingsTitle": "Pengaturan",
+  "@settingsTitle": {},
+  "onboardingSubtitle": "Asisten visual untuk operasi SMS perbankan",
+  "@onboardingSubtitle": {},
+  "onboardingFeatureLocal": "Berjalan lokal, tanpa internet",
+  "@onboardingFeatureLocal": {},
+  "onboardingFeatureSms": "Hanya membaca 10 SMS terakhir",
+  "@onboardingFeatureSms": {},
+  "onboardingFeaturePrivacy": "Data tidak pernah dikirim ke luar",
+  "@onboardingFeaturePrivacy": {},
+  "onboardingFeatureQr": "QR hanya digunakan untuk berbagi nomor telepon",
+  "@onboardingFeatureQr": {},
+  "onboardingButton": "Minta izin dan lanjutkan",
+  "@onboardingButton": {},
+  "accounts": "Akun",
+  "@accounts": {},
+  "noAccountsYet": "Belum ada akun yang dikenali.",
+  "@noAccountsYet": {},
+  "latestSms": "SMS terbaru",
+  "@latestSms": {},
+  "smsNotLoaded": "SMS belum dimuat.",
+  "@smsNotLoaded": {},
+  "qrModeTitle": "Mode QR",
+  "@qrModeTitle": {},
+  "qrModeSubtitle": "Buka kamera layar penuh",
+  "@qrModeSubtitle": {},
+  "smsDetailsTitle": "Detail SMS",
+  "@smsDetailsTitle": {},
+  "smsDetailsSender": "Pengirim: {sender}",
+  "@smsDetailsSender": {
+    "placeholders": {
+      "sender": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsTime": "Waktu: {time}",
+  "@smsDetailsTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4": "Kartu: {last4}",
+  "@smsDetailsLast4": {
+    "placeholders": {
+      "last4": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4NotFound": "tidak ditemukan",
+  "@smsDetailsLast4NotFound": {},
+  "smsDetailsAmount": "Jumlah: {amount}",
+  "@smsDetailsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsBalance": "Saldo: {balance}",
+  "@smsDetailsBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsReference": "Ref: {reference}",
+  "@smsDetailsReference": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsType": "Tipe: {type}",
+  "@smsDetailsType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "transferRulesTooltip": "Aturan transfer",
+  "@transferRulesTooltip": {},
+  "accountsLabel": "Akun",
+  "@accountsLabel": {},
+  "refreshSmsButton": "Segarkan SMS",
+  "@refreshSmsButton": {},
+  "dailyLimitNotSet": "Batas harian belum diatur",
+  "@dailyLimitNotSet": {},
+  "setLimitInSettings": "Atur batas di pengaturan",
+  "@setLimitInSettings": {},
+  "dailyTransferLimit": "Batas transfer harian",
+  "@dailyTransferLimit": {},
+  "usedToday": "Terpakai hari ini",
+  "@usedToday": {},
+  "remaining": "Sisa",
+  "@remaining": {},
+  "limitExceeded": "Batas terlampaui",
+  "@limitExceeded": {},
+  "limitWarning80": "Lebih dari 80% batas harian terpakai",
+  "@limitWarning80": {},
+  "limitExceededBlocked": "Batas harian terlampaui. Transfer QR diblokir.",
+  "@limitExceededBlocked": {},
+  "accountBalanceLabel": "Saldo: {balance}",
+  "@accountBalanceLabel": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "parsedLabel": "terurai",
+  "@parsedLabel": {},
+  "rawLabel": "mentah",
+  "@rawLabel": {},
+  "devicePhoneTitle": "Nomor perangkat",
+  "@devicePhoneTitle": {},
+  "devicePhoneDesc": "Digunakan untuk membuat QR dengan nomor Anda",
+  "@devicePhoneDesc": {},
+  "phoneNumberLabel": "Nomor telepon",
+  "@phoneNumberLabel": {},
+  "dailyLimitDesc": "Jumlah maksimum transfer harian melalui aplikasi ini. Direset pada tengah malam. Biarkan kosong untuk menghapus batas.",
+  "@dailyLimitDesc": {},
+  "limitLabel": "Batas",
+  "@limitLabel": {},
+  "limitHint": "mis. 50000",
+  "@limitHint": {},
+  "removeLimitButton": "Hapus batas",
+  "@removeLimitButton": {},
+  "themeTitle": "Tampilan",
+  "@themeTitle": {},
+  "languageTitle": "Bahasa",
+  "@languageTitle": {},
+  "bankRoutingTitle": "Negara dan bank",
+  "@bankRoutingTitle": {},
+  "bankRoutingDesc": "Pilih negara terlebih dahulu. Jika bank lebih dari satu, pilih bank untuk perintah pembayaran.",
+  "@bankRoutingDesc": {},
+  "countryLabel": "Negara",
+  "@countryLabel": {},
+  "bankLabel": "Bank",
+  "@bankLabel": {},
+  "bankAutoSelectedHint": "Hanya ada satu bank untuk negara ini, dipilih otomatis.",
+  "@bankAutoSelectedHint": {},
+  "referenceOnlyBadge": "reference only",
+  "@referenceOnlyBadge": {},
+  "bankReferenceOnlyHint": "For this country, the bank is available as a reference source for limits and rules only. Direct payment commands are not currently verified.",
+  "@bankReferenceOnlyHint": {},
+  "languageEnglish": "Inggris",
+  "@languageEnglish": {},
+  "languageRussian": "Rusia",
+  "@languageRussian": {},
+  "languageHindi": "Bahasa Hindi",
+  "@languageHindi": {},
+  "languageKazakh": "Bahasa Kazakh",
+  "@languageKazakh": {},
+  "languageUzbek": "Bahasa Uzbek",
+  "@languageUzbek": {},
+  "languageTagalog": "Bahasa Tagalog",
+  "@languageTagalog": {},
+  "languageIndonesian": "Indonesia",
+  "@languageIndonesian": {},
+  "permissionsTitle": "Izin",
+  "@permissionsTitle": {},
+  "readSmsTitle": "Baca SMS",
+  "@readSmsTitle": {},
+  "readSmsDesc": "Diperlukan untuk membaca SMS masuk dan memperbarui data.",
+  "@readSmsDesc": {},
+  "directSmsTitle": "Pengiriman SMS langsung",
+  "@directSmsTitle": {},
+  "directSmsDesc": "Kirim SMS langsung tanpa membuka aplikasi pesan",
+  "@directSmsDesc": {},
+  "directSmsPermissionRequired": "Izin SEND_SMS diperlukan. Berikan izin di pengaturan aplikasi sistem.",
+  "@directSmsPermissionRequired": {},
+  "directSmsEnabledSnack": "Pengiriman SMS langsung diaktifkan",
+  "@directSmsEnabledSnack": {},
+  "directSmsDisabledSnack": "Pengiriman SMS langsung dinonaktifkan",
+  "@directSmsDisabledSnack": {},
+  "openSettingsButton": "Pengaturan",
+  "@openSettingsButton": {},
+  "permissionsManageInSystem": "Menonaktifkan izin dilakukan di pengaturan aplikasi sistem.",
+  "@permissionsManageInSystem": {},
+  "cameraTitle": "Kamera",
+  "@cameraTitle": {},
+  "cameraDesc": "Untuk memindai QR",
+  "@cameraDesc": {},
+  "clearLocalDataTitle": "Hapus data lokal",
+  "@clearLocalDataTitle": {},
+  "clearLocalDataDesc": "SMS, akun, profil QR, dan riwayat",
+  "@clearLocalDataDesc": {},
+  "aboutTitle": "Tentang",
+  "@aboutTitle": {},
+  "aboutVersion": "Green SMS v1.0\nAplikasi lokal, tanpa internet",
+  "@aboutVersion": {},
+  "snackLimitRemoved": "Batas dihapus",
+  "@snackLimitRemoved": {},
+  "snackLimitSet": "Batas ditetapkan: {amount}",
+  "@snackLimitSet": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "snackPhoneSaved": "Nomor tersimpan",
+  "@snackPhoneSaved": {},
+  "snackDataCleared": "Data lokal dihapus",
+  "@snackDataCleared": {},
+  "clearDataDialogTitle": "Hapus data?",
+  "@clearDataDialogTitle": {},
+  "clearDataDialogContent": "SMS, akun, profil QR, dan riwayat akan dihapus.",
+  "@clearDataDialogContent": {},
+  "cameraPermissionNeeded": "Akses kamera diperlukan",
+  "@cameraPermissionNeeded": {},
+  "scanHint": "Arahkan kamera ke kode QR",
+  "@scanHint": {},
+  "scanButton": "Pindai",
+  "@scanButton": {},
+  "phoneTransferButton": "Lewat telepon",
+  "@phoneTransferButton": {},
+  "limitWarningTitle": "Batas harian terlampaui",
+  "@limitWarningTitle": {},
+  "limitWarningContent": "Jumlah transfer: {amount}\nSisa batas: {remaining}\n\nTransfer melebihi batas harian. Tetap lanjut?",
+  "@limitWarningContent": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "sendAnywayButton": "Tetap kirim",
+  "@sendAnywayButton": {},
+  "createSmsDialogTitle": "Buat SMS?",
+  "@createSmsDialogTitle": {},
+  "createSmsPhone": "Telepon: {phone}",
+  "@createSmsPhone": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "createSmsText": "Teks: {text}",
+  "@createSmsText": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognized": "QR tidak dikenali sebagai format internal.",
+  "@qrNotRecognized": {},
+  "transferCancelledLimit": "Transfer dibatalkan — batas terlampaui.",
+  "@transferCancelledLimit": {},
+  "smsSentSuccess": "SMS dibuat. Konfirmasikan pengiriman di aplikasi pesan.",
+  "@smsSentSuccess": {},
+  "scanningContinues": "Pemindaian berlanjut.",
+  "@scanningContinues": {},
+  "noQrInImage": "Tidak ada kode QR di gambar yang dipilih.",
+  "@noQrInImage": {},
+  "qrFoundNoData": "QR ditemukan, tetapi tanpa data.",
+  "@qrFoundNoData": {},
+  "setPhoneFirst": "Atur dulu nomor perangkat di pengaturan.",
+  "@setPhoneFirst": {},
+  "setAccountFirst": "Atur dulu nomor rekening di pengaturan.",
+  "@setAccountFirst": {},
+  "chooseChannelTitle": "Pilih saluran transfer",
+  "@chooseChannelTitle": {},
+  "scanningActive": "Pemindaian aktif.",
+  "@scanningActive": {},
+  "phoneQrTitle": "QR Telepon",
+  "@phoneQrTitle": {},
+  "phoneLabel": "Telepon: {phone}",
+  "@phoneLabel": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "qrGenerationTitle": "Pembuatan QR",
+  "@qrGenerationTitle": {},
+  "noProfile": "Tanpa profil",
+  "@noProfile": {},
+  "profileLabel": "Profil",
+  "@profileLabel": {},
+  "profileNameLabel": "Nama profil",
+  "@profileNameLabel": {},
+  "recipientPhone": "Nomor penerima",
+  "@recipientPhone": {},
+  "phoneTransferInputTitle": "Transfer tanpa QR",
+  "@phoneTransferInputTitle": {},
+  "enterPhoneError": "Masukkan nomor telepon",
+  "@enterPhoneError": {},
+  "amountOptional": "Jumlah (opsional)",
+  "@amountOptional": {},
+  "amountRequiredLabel": "Jumlah transfer (wajib)",
+  "@amountRequiredLabel": {},
+  "enterAmountError": "Masukkan jumlah transfer",
+  "@enterAmountError": {},
+  "sourceLast4Optional": "Kartu/rekening sumber last4 (opsional)",
+  "@sourceLast4Optional": {},
+  "sourceLast4Hint": "Contoh: 1234",
+  "@sourceLast4Hint": {},
+  "invalidLast4Error": "Masukkan tepat 4 digit",
+  "@invalidLast4Error": {},
+  "sourceAccountOptionalSection": "Rekening sumber (opsional)",
+  "@sourceAccountOptionalSection": {},
+  "sberAmountRequired": "Jumlah wajib untuk transfer via 900.",
+  "@sberAmountRequired": {},
+  "smsTarget900": "Nomor: 900",
+  "@smsTarget900": {},
+  "noteOptional": "Catatan (opsional)",
+  "@noteOptional": {},
+  "myQrButton": "QR Saya",
+  "@myQrButton": {},
+  "qrAmountButton": "QR dengan jumlah",
+  "@qrAmountButton": {},
+  "showQrButton": "Tampilkan QR",
+  "@showQrButton": {},
+  "saveProfileButton": "Simpan profil",
+  "@saveProfileButton": {},
+  "composeSmsButton": "Susun SMS",
+  "@composeSmsButton": {},
+  "qrHintPhoneOnly": "Tunjukkan QR ini ke penerima — sebelum kirim, dia akan mengisi jumlah dan rekening sumber",
+  "@qrHintPhoneOnly": {},
+  "qrHint": "Tunjukkan QR ini ke penerima — ia akan memindai dan melakukan transfer",
+  "@qrHint": {},
+  "profileSaved": "Profil tersimpan",
+  "@profileSaved": {},
+  "qrError": "Kesalahan QR: {error}",
+  "@qrError": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "transferLimitsTitle": "Batas dan aturan transfer",
+  "@transferLimitsTitle": {},
+  "openSberSiteTooltip": "Buka situs Sberbank",
+  "@openSberSiteTooltip": {},
+  "infoActualBanner": "Informasi berlaku pada versi aplikasi ini. Batas dan ketentuan dapat berubah — cek di sberbank.ru atau hubungi 900.",
+  "@infoActualBanner": {},
+  "smsCommandsTitle": "Perintah SMS (ke nomor 900)",
+  "@smsCommandsTitle": {},
+  "limitsTitle": "Batas transfer",
+  "@limitsTitle": {},
+  "notificationFormatsTitle": "Format notifikasi SMS Sberbank",
+  "@notificationFormatsTitle": {},
+  "importantRulesTitle": "Aturan penting",
+  "@importantRulesTitle": {},
+  "feesTitle": "Biaya",
+  "@feesTitle": {},
+  "cannotOpenBrowser": "Tidak dapat membuka browser",
+  "@cannotOpenBrowser": {},
+  "number900Copied": "Nomor 900 disalin",
+  "@number900Copied": {},
+  "copiedCommand": "Disalin: {command}",
+  "@copiedCommand": {
+    "placeholders": {
+      "command": {
+        "type": "String"
+      }
+    }
+  },
+  "officialSberSite": "Situs resmi Sberbank",
+  "@officialSberSite": {},
+  "officialSiteButton": "Situs resmi",
+  "@officialSiteButton": {},
+  "helpContact900": "Bantuan: hubungi 900",
+  "@helpContact900": {},
+  "disclaimerText": "Aplikasi ini bukan produk resmi Sberbank. Aplikasi hanya membantu membaca SMS dan menyusun perintah — semua transfer dilakukan melalui perintah SMS standar lewat operator seluler Anda.",
+  "@disclaimerText": {},
+  "personalLimitBanner": "Untuk mengecek batas pribadi Anda — kirim SMS «ЛИМИТ» ke 900. Batas dapat berbeda tergantung paket dan riwayat transaksi Anda.",
+  "@personalLimitBanner": {},
+  "phoneCopied": "Nomor telepon disalin",
+  "@phoneCopied": {},
+  "copyPhoneButton": "Salin nomor",
+  "@copyPhoneButton": {},
+  "noteLabel": "Catatan: {note}",
+  "@noteLabel": {
+    "placeholders": {
+      "note": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognizedWithRaw": "QR tidak dikenali sebagai format internal: {raw}",
+  "@qrNotRecognizedWithRaw": {
+    "placeholders": {
+      "raw": {
+        "type": "String"
+      }
+    }
+  },
+  "cmdTransferMain": "ПЕРЕВОД [phone] [amount]",
+  "@cmdTransferMain": {},
+  "cmdTransferMainDesc": "Transfer ke nomor telepon dari kartu utama.\nContoh: ПЕРЕВОД 79161234567 1000",
+  "@cmdTransferMainDesc": {},
+  "cmdTransferWithCard": "ПЕРЕВОД [phone] [amount] [last4]",
+  "@cmdTransferWithCard": {},
+  "cmdTransferWithCardDesc": "Transfer dari kartu tertentu.\nContoh: ПЕРЕВОД 79161234567 500 1234",
+  "@cmdTransferWithCardDesc": {},
+  "cmdBalance": "БАЛАНС",
+  "@cmdBalance": {},
+  "cmdBalanceDesc": "Saldo kartu utama.",
+  "@cmdBalanceDesc": {},
+  "cmdBalanceCard": "БАЛАНС [last4]",
+  "@cmdBalanceCard": {},
+  "cmdBalanceCardDesc": "Saldo kartu tertentu.",
+  "@cmdBalanceCardDesc": {},
+  "cmdHistory": "ИСТОРИЯ",
+  "@cmdHistory": {},
+  "cmdHistoryDesc": "5 transaksi terakhir pada kartu utama.",
+  "@cmdHistoryDesc": {},
+  "cmdBlock": "БЛОКИРОВКА [last4]",
+  "@cmdBlock": {},
+  "cmdBlockDesc": "Blokir kartu sementara.",
+  "@cmdBlockDesc": {},
+  "cmdLimit": "ЛИМИТ",
+  "@cmdLimit": {},
+  "cmdLimitDesc": "Lihat batas transfer Anda saat ini via SMS.",
+  "@cmdLimitDesc": {},
+  "limitEconomyPerTxLabel": "Mobile Bank \"Economy\" — per transaksi",
+  "@limitEconomyPerTxLabel": {},
+  "limitEconomyPerTxValue": "8.000 ₽",
+  "@limitEconomyPerTxValue": {},
+  "limitEconomyPerDayLabel": "Mobile Bank \"Economy\" — per hari",
+  "@limitEconomyPerDayLabel": {},
+  "limitEconomyPerDayValue": "8.000 ₽",
+  "@limitEconomyPerDayValue": {},
+  "limitFullPerTxLabel": "Mobile Bank \"Full\" — per transaksi",
+  "@limitFullPerTxLabel": {},
+  "limitFullPerTxValue": "hingga 50.000 ₽",
+  "@limitFullPerTxValue": {},
+  "limitFullPerDayLabel": "Mobile Bank \"Full\" — per hari",
+  "@limitFullPerDayLabel": {},
+  "limitFullPerDayValue": "hingga 500.000 ₽",
+  "@limitFullPerDayValue": {},
+  "limitCardToCardLabel": "Kartu ke kartu (online)",
+  "@limitCardToCardLabel": {},
+  "limitCardToCardValue": "hingga 150.000 ₽",
+  "@limitCardToCardValue": {},
+  "exampleIncomingLabel": "Masuk",
+  "@exampleIncomingLabel": {},
+  "exampleIncomingText": "SBERBANK Kredit 10000 RUB Kartu *1234 Saldo: 25000 RUB",
+  "@exampleIncomingText": {},
+  "examplePurchaseLabel": "Pembelian",
+  "@examplePurchaseLabel": {},
+  "examplePurchaseText": "SBERBANK Pembelian 1500 RUB Kartu *1234 NAMA TOKO Saldo: 23500 RUB",
+  "@examplePurchaseText": {},
+  "exampleTransferLabel": "Transfer dana",
+  "@exampleTransferLabel": {},
+  "exampleTransferText": "Transfer 5000 RUB dari kartu *1234 selesai. Saldo: 18500 RUB.",
+  "@exampleTransferText": {},
+  "exampleCashWithdrawalLabel": "Tarik tunai",
+  "@exampleCashWithdrawalLabel": {},
+  "exampleCashWithdrawalText": "Tarik tunai 3000 RUB. Kartu *1234. Saldo: 15500 RUB.",
+  "@exampleCashWithdrawalText": {},
+  "ruleRecipientClient": "Penerima harus menjadi nasabah Sberbank dan mengaktifkan Mobile Bank.",
+  "@ruleRecipientClient": {},
+  "rulePhoneLinked": "Nomor telepon harus terhubung ke kartu penerima.",
+  "@rulePhoneLinked": {},
+  "ruleSmsIrreversible": "Transfer SMS tidak dapat dibatalkan — periksa nomor penerima sebelum konfirmasi.",
+  "@ruleSmsIrreversible": {},
+  "ruleSpecifyLast4": "Jika Anda punya beberapa kartu, sebutkan last4 kartu sumber untuk menghindari kesalahan.",
+  "@ruleSpecifyLast4": {},
+  "ruleEconomyVsFull": "Tarif \"Economy\" (gratis) — batas 8.000 ₽/hari. Tarif \"Full\" (berbayar) — hingga 100.000 ₽/hari.",
+  "@ruleEconomyVsFull": {},
+  "ruleResetAtMidnight": "Batas harian direset pukul 00:00 waktu Moskow.",
+  "@ruleResetAtMidnight": {},
+  "feeEconomyLabel": "Tarif \"Economy\" — biaya transfer",
+  "@feeEconomyLabel": {},
+  "feeEconomyValue": "1% (minimal 30 ₽)",
+  "@feeEconomyValue": {},
+  "feeFullLabel": "Tarif \"Full\" — biaya transfer",
+  "@feeFullLabel": {},
+  "feeFullValue": "Gratis",
+  "@feeFullValue": {},
+  "feeSubscriptionLabel": "Langganan tarif \"Full\"",
+  "@feeSubscriptionLabel": {},
+  "feeSubscriptionValue": "60 ₽/bulan",
+  "@feeSubscriptionValue": {},
+  "opIncoming": "masuk",
+  "@opIncoming": {},
+  "opOutgoing": "keluar",
+  "@opOutgoing": {},
+  "opTransfer": "transfer dana",
+  "@opTransfer": {},
+  "opUnknown": "tidak diketahui",
+  "@opUnknown": {},
+  "smsTargetLabel": "To: {number}",
+  "@smsTargetLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "amountRequiredForTransfer": "Amount is required for this transfer.",
+  "@amountRequiredForTransfer": {},
+  "ussdDialogTitle": "Open USSD?",
+  "@ussdDialogTitle": {},
+  "openDialerButton": "Open Dialer",
+  "@openDialerButton": {},
+  "ussdSentHint": "USSD dialed. Confirm the transfer in the dialer.",
+  "@ussdSentHint": {},
+  "bankNotAvailable": "Bank commands not configured for your region.",
+  "@bankNotAvailable": {},
+  "transferSmsCommandTitle": "SMS transfer command",
+  "@transferSmsCommandTitle": {},
+  "transferUssdCommandTitle": "USSD transfer command",
+  "@transferUssdCommandTitle": {},
+  "sendToLabel": "Send to: {number}",
+  "@sendToLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "exampleLabelShort": "Example",
+  "@exampleLabelShort": {},
+  "bankLimitsContactBanner": "Transfer limits and fees depend on your plan. Contact {bankName} for up-to-date information.",
+  "@bankLimitsContactBanner": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationExamplesTitle": "SMS notification examples",
+  "@notificationExamplesTitle": {},
+  "noBankSelectedBanner": "No bank selected. Choose a country and bank in Settings.",
+  "@noBankSelectedBanner": {},
+  "helpContactNumber": "Help: contact {number}",
+  "@helpContactNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "bankDisclaimerGeneric": "This app is not affiliated with {bankName}. Transfers use standard SMS or USSD commands through your mobile carrier.",
+  "@bankDisclaimerGeneric": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "infoActualBannerGeneric": "Information is based on publicly available data. Limits and conditions may change — check with your bank.",
+  "@infoActualBannerGeneric": {},
+  "officialDataTitle": "Official data",
+  "@officialDataTitle": {},
+  "officialStatusLabel": "Source status",
+  "@officialStatusLabel": {},
+  "officialChannelLabel": "Panel channel",
+  "@officialChannelLabel": {},
+  "officialLastVerifiedLabel": "Verified on",
+  "@officialLastVerifiedLabel": {},
+  "officialStatusVerifiedPublic": "Verified by public source",
+  "@officialStatusVerifiedPublic": {},
+  "officialStatusLimitedPublic": "Public source is limited",
+  "@officialStatusLimitedPublic": {},
+  "officialStatusManualVerificationRequired": "Manual verification required",
+  "@officialStatusManualVerificationRequired": {},
+  "officialStatusUnknown": "Not specified",
+  "@officialStatusUnknown": {},
+  "officialWarningLimited": "Official public limits and rules for this exact channel are only partially confirmed. Treat the values as reference and verify with the bank.",
+  "@officialWarningLimited": {},
+  "officialWarningManual": "This bank or channel does not have enough current public official confirmation. The values are shown for reference only.",
+  "@officialWarningManual": {},
+  "commandChannelUnavailableBanner": "A direct SMS or USSD command channel is not currently verified for this bank. The info panel is shown as a reference to official public data.",
+  "@commandChannelUnavailableBanner": {},
+  "directTransferButton": "Transfer",
+  "createSmsAccount": "Account: {account}",
+  "@createSmsAccount": {
+    "placeholders": {
+      "account": {
+        "type": "String"
+      }
+    }
+  },
+  "recipientAccount": "Recipient account",
+  "enterAccountError": "Enter an account number",
+  "routeLabel": "Transfer channel",
+  "routeSmsPhone": "SMS by phone",
+  "routeSmsAccount": "SMS by account",
+  "routeUssdPhone": "USSD by phone",
+  "routeUssdAccount": "USSD by account",
+  "accountQrTitle": "Account QR",
+  "qrHintAccountOnly": "Show this QR to the sender — they will use your account in their bank flow before sending",
+  "yourAccountTitle": "Akun Anda",
+  "@yourAccountTitle": {},
+  "yourAccountDesc": "Digunakan untuk membuat QR dengan nomor akun Anda",
+  "@yourAccountDesc": {},
+  "accountNumberLabel": "Nomor rekening",
+  "@accountNumberLabel": {},
+  "snackAccountSaved": "Akun disimpan",
+  "@snackAccountSaved": {},
+  "selectBankFirstHint": "Pilih dan simpan bank di atas untuk mengonfigurasi",
+  "@selectBankFirstHint": {}
+}

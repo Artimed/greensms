@@ -1,0 +1,630 @@
+{
+  "@@locale": "uz",
+  "appName": "Green SMS",
+  "@appName": {
+    "description": "Application name"
+  },
+  "cancel": "Bekor qilish",
+  "@cancel": {},
+  "save": "Saqlash",
+  "@save": {},
+  "back": "Orqaga",
+  "@back": {},
+  "allow": "Ruxsat berish",
+  "@allow": {},
+  "confirm": "Tasdiqlash",
+  "@confirm": {},
+  "clear": "Tozalash",
+  "@clear": {},
+  "settingsTitle": "Sozlamalar",
+  "@settingsTitle": {},
+  "onboardingSubtitle": "SMS banking amallari uchun vizual yordamchi",
+  "@onboardingSubtitle": {},
+  "onboardingFeatureLocal": "Mahalliy ishlaydi, internet talab qilinmaydi",
+  "@onboardingFeatureLocal": {},
+  "onboardingFeatureSms": "Faqat oxirgi 10 ta SMSni o‘qiydi",
+  "@onboardingFeatureSms": {},
+  "onboardingFeaturePrivacy": "Ma’lumotlar tashqariga yuborilmaydi",
+  "@onboardingFeaturePrivacy": {},
+  "onboardingFeatureQr": "QR faqat telefon raqamini ulashish uchun ishlatiladi",
+  "@onboardingFeatureQr": {},
+  "onboardingButton": "Ruxsat so‘rab davom etish",
+  "@onboardingButton": {},
+  "accounts": "Hisoblar",
+  "@accounts": {},
+  "noAccountsYet": "Hali tanilgan hisoblar yo‘q.",
+  "@noAccountsYet": {},
+  "latestSms": "So‘nggi SMS",
+  "@latestSms": {},
+  "smsNotLoaded": "SMS hali yuklanmadi.",
+  "@smsNotLoaded": {},
+  "qrModeTitle": "QR rejimi",
+  "@qrModeTitle": {},
+  "qrModeSubtitle": "To‘liq ekran kamerani ochish",
+  "@qrModeSubtitle": {},
+  "smsDetailsTitle": "SMS tafsilotlari",
+  "@smsDetailsTitle": {},
+  "smsDetailsSender": "Yuboruvchi: {sender}",
+  "@smsDetailsSender": {
+    "placeholders": {
+      "sender": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsTime": "Vaqt: {time}",
+  "@smsDetailsTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4": "Karta: {last4}",
+  "@smsDetailsLast4": {
+    "placeholders": {
+      "last4": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4NotFound": "topilmadi",
+  "@smsDetailsLast4NotFound": {},
+  "smsDetailsAmount": "Miqdor: {amount}",
+  "@smsDetailsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsBalance": "Balans: {balance}",
+  "@smsDetailsBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsReference": "Ref: {reference}",
+  "@smsDetailsReference": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsType": "Turi: {type}",
+  "@smsDetailsType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "transferRulesTooltip": "O‘tkazma qoidalari",
+  "@transferRulesTooltip": {},
+  "accountsLabel": "Hisoblar",
+  "@accountsLabel": {},
+  "refreshSmsButton": "SMS yangilash",
+  "@refreshSmsButton": {},
+  "dailyLimitNotSet": "Kunlik limit o‘rnatilmagan",
+  "@dailyLimitNotSet": {},
+  "setLimitInSettings": "Limitni sozlamalarda o‘rnating",
+  "@setLimitInSettings": {},
+  "dailyTransferLimit": "Kunlik o‘tkazma limiti",
+  "@dailyTransferLimit": {},
+  "usedToday": "Bugun ishlatilgan",
+  "@usedToday": {},
+  "remaining": "Qolgan",
+  "@remaining": {},
+  "limitExceeded": "Limit oshib ketdi",
+  "@limitExceeded": {},
+  "limitWarning80": "Kunlik limitning 80% dan ko‘pi ishlatilgan",
+  "@limitWarning80": {},
+  "limitExceededBlocked": "Kunlik limit oshib ketdi. QR orqali o‘tkazmalar bloklangan.",
+  "@limitExceededBlocked": {},
+  "accountBalanceLabel": "Balans: {balance}",
+  "@accountBalanceLabel": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "parsedLabel": "tahlil qilingan",
+  "@parsedLabel": {},
+  "rawLabel": "xom",
+  "@rawLabel": {},
+  "devicePhoneTitle": "Qurilma telefoni",
+  "@devicePhoneTitle": {},
+  "devicePhoneDesc": "Sizning raqamingiz bilan QR yaratish uchun ishlatiladi",
+  "@devicePhoneDesc": {},
+  "phoneNumberLabel": "Telefon raqami",
+  "@phoneNumberLabel": {},
+  "dailyLimitDesc": "Ushbu ilova orqali kunlik maksimal o‘tkazma summasi. Yarim tunda yangilanadi. Limitni olib tashlash uchun bo‘sh qoldiring.",
+  "@dailyLimitDesc": {},
+  "limitLabel": "Cheklov",
+  "@limitLabel": {},
+  "limitHint": "masalan: 50000",
+  "@limitHint": {},
+  "removeLimitButton": "Limitni olib tashlash",
+  "@removeLimitButton": {},
+  "themeTitle": "Ko‘rinish",
+  "@themeTitle": {},
+  "languageTitle": "Til",
+  "@languageTitle": {},
+  "bankRoutingTitle": "Mamlakat va bank",
+  "@bankRoutingTitle": {},
+  "bankRoutingDesc": "Avval mamlakatni tanlang. Agar bir nechta bank bo‘lsa, to‘lov buyruqlari uchun bankni tanlang.",
+  "@bankRoutingDesc": {},
+  "countryLabel": "Mamlakat",
+  "@countryLabel": {},
+  "bankLabel": "Bank",
+  "@bankLabel": {},
+  "bankAutoSelectedHint": "Bu mamlakat uchun faqat bitta bank mavjud, u avtomatik tanlandi.",
+  "@bankAutoSelectedHint": {},
+  "referenceOnlyBadge": "reference only",
+  "@referenceOnlyBadge": {},
+  "bankReferenceOnlyHint": "For this country, the bank is available as a reference source for limits and rules only. Direct payment commands are not currently verified.",
+  "@bankReferenceOnlyHint": {},
+  "languageEnglish": "Ingliz",
+  "@languageEnglish": {},
+  "languageRussian": "Rus",
+  "@languageRussian": {},
+  "languageHindi": "Hind",
+  "@languageHindi": {},
+  "languageKazakh": "Qozoq",
+  "@languageKazakh": {},
+  "languageUzbek": "O‘zbek",
+  "@languageUzbek": {},
+  "languageTagalog": "Tagalog tili",
+  "@languageTagalog": {},
+  "languageIndonesian": "Indonez",
+  "@languageIndonesian": {},
+  "permissionsTitle": "Ruxsatlar",
+  "@permissionsTitle": {},
+  "readSmsTitle": "SMS o‘qish",
+  "@readSmsTitle": {},
+  "readSmsDesc": "Kirish SMSlarini o‘qish va ma’lumotlarni yangilash uchun kerak.",
+  "@readSmsDesc": {},
+  "directSmsTitle": "SMSni to‘g‘ridan-to‘g‘ri yuborish",
+  "@directSmsTitle": {},
+  "directSmsDesc": "Xabar ilovasini ochmasdan SMSni to‘g‘ridan-to‘g‘ri yuborish",
+  "@directSmsDesc": {},
+  "directSmsPermissionRequired": "SEND_SMS ruxsati kerak. Uni tizim ilova sozlamalarida bering.",
+  "@directSmsPermissionRequired": {},
+  "directSmsEnabledSnack": "SMSni to‘g‘ridan-to‘g‘ri yuborish yoqildi",
+  "@directSmsEnabledSnack": {},
+  "directSmsDisabledSnack": "SMSni to‘g‘ridan-to‘g‘ri yuborish o‘chirildi",
+  "@directSmsDisabledSnack": {},
+  "openSettingsButton": "Sozlamalar",
+  "@openSettingsButton": {},
+  "permissionsManageInSystem": "Ruxsatlarni o‘chirish ilovaning tizim sozlamalarida amalga oshiriladi.",
+  "@permissionsManageInSystem": {},
+  "cameraTitle": "Kamera",
+  "@cameraTitle": {},
+  "cameraDesc": "QR skanerlash uchun",
+  "@cameraDesc": {},
+  "clearLocalDataTitle": "Mahalliy ma’lumotlarni tozalash",
+  "@clearLocalDataTitle": {},
+  "clearLocalDataDesc": "SMS, hisoblar, QR profillar va tarix",
+  "@clearLocalDataDesc": {},
+  "aboutTitle": "Ilova haqida",
+  "@aboutTitle": {},
+  "aboutVersion": "Green SMS v1.0\nMahalliy ilova, internetsiz",
+  "@aboutVersion": {},
+  "snackLimitRemoved": "Limit olib tashlandi",
+  "@snackLimitRemoved": {},
+  "snackLimitSet": "Limit o‘rnatildi: {amount}",
+  "@snackLimitSet": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "snackPhoneSaved": "Telefon saqlandi",
+  "@snackPhoneSaved": {},
+  "snackDataCleared": "Mahalliy ma’lumotlar tozalandi",
+  "@snackDataCleared": {},
+  "clearDataDialogTitle": "Ma’lumotlarni tozalash?",
+  "@clearDataDialogTitle": {},
+  "clearDataDialogContent": "SMS, hisoblar, QR profillar va tarix o‘chiriladi.",
+  "@clearDataDialogContent": {},
+  "cameraPermissionNeeded": "Kameraga ruxsat kerak",
+  "@cameraPermissionNeeded": {},
+  "scanHint": "Kamerani QR kodga qarating",
+  "@scanHint": {},
+  "scanButton": "Skanerlash",
+  "@scanButton": {},
+  "phoneTransferButton": "Telefon orqali",
+  "@phoneTransferButton": {},
+  "limitWarningTitle": "Kunlik limit oshdi",
+  "@limitWarningTitle": {},
+  "limitWarningContent": "O‘tkazma summasi: {amount}\nQolgan limit: {remaining}\n\nO‘tkazma kunlik limitdan oshadi. Baribir davom etilsinmi?",
+  "@limitWarningContent": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "sendAnywayButton": "Baribir yuborish",
+  "@sendAnywayButton": {},
+  "createSmsDialogTitle": "SMS yaratilsinmi?",
+  "@createSmsDialogTitle": {},
+  "createSmsPhone": "Telefon: {phone}",
+  "@createSmsPhone": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "createSmsText": "Matn: {text}",
+  "@createSmsText": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognized": "QR ichki format sifatida tanilmadi.",
+  "@qrNotRecognized": {},
+  "transferCancelledLimit": "O‘tkazma bekor qilindi — limit oshdi.",
+  "@transferCancelledLimit": {},
+  "smsSentSuccess": "SMS yaratildi. Yuborishni xabarlar ilovasida tasdiqlang.",
+  "@smsSentSuccess": {},
+  "scanningContinues": "Skanerlash davom etmoqda.",
+  "@scanningContinues": {},
+  "noQrInImage": "Tanlangan rasmda QR kod topilmadi.",
+  "@noQrInImage": {},
+  "qrFoundNoData": "QR topildi, lekin ma’lumot yo‘q.",
+  "@qrFoundNoData": {},
+  "setPhoneFirst": "Avval sozlamalarda qurilma telefonini kiriting.",
+  "@setPhoneFirst": {},
+  "setAccountFirst": "Avval sozlamalarda hisob raqamini kiriting.",
+  "@setAccountFirst": {},
+  "chooseChannelTitle": "Pul o'tkazma kanalini tanlang",
+  "@chooseChannelTitle": {},
+  "scanningActive": "Skanerlash faol.",
+  "@scanningActive": {},
+  "phoneQrTitle": "Telefon QR",
+  "@phoneQrTitle": {},
+  "phoneLabel": "Telefon: {phone}",
+  "@phoneLabel": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "qrGenerationTitle": "QR yaratish",
+  "@qrGenerationTitle": {},
+  "noProfile": "Profil yo‘q",
+  "@noProfile": {},
+  "profileLabel": "Profil",
+  "@profileLabel": {},
+  "profileNameLabel": "Profil nomi",
+  "@profileNameLabel": {},
+  "recipientPhone": "Qabul qiluvchi telefoni",
+  "@recipientPhone": {},
+  "phoneTransferInputTitle": "QRsiz o'tkazma",
+  "@phoneTransferInputTitle": {},
+  "enterPhoneError": "Telefon raqamini kiriting",
+  "@enterPhoneError": {},
+  "amountOptional": "Miqdor (ixtiyoriy)",
+  "@amountOptional": {},
+  "amountRequiredLabel": "O'tkazma summasi (majburiy)",
+  "@amountRequiredLabel": {},
+  "enterAmountError": "O'tkazma summasini kiriting",
+  "@enterAmountError": {},
+  "sourceLast4Optional": "Manba karta/hisob last4 (ixtiyoriy)",
+  "@sourceLast4Optional": {},
+  "sourceLast4Hint": "Masalan: 1234",
+  "@sourceLast4Hint": {},
+  "invalidLast4Error": "Aniq 4 ta raqam kiriting",
+  "@invalidLast4Error": {},
+  "sourceAccountOptionalSection": "Manba hisobi (ixtiyoriy)",
+  "@sourceAccountOptionalSection": {},
+  "sberAmountRequired": "900 orqali o'tkazma uchun summa kerak.",
+  "@sberAmountRequired": {},
+  "smsTarget900": "Raqam: 900",
+  "@smsTarget900": {},
+  "noteOptional": "Izoh (ixtiyoriy)",
+  "@noteOptional": {},
+  "myQrButton": "Mening QR",
+  "@myQrButton": {},
+  "qrAmountButton": "Summali QR",
+  "@qrAmountButton": {},
+  "showQrButton": "QR ko‘rsatish",
+  "@showQrButton": {},
+  "saveProfileButton": "Profilni saqlash",
+  "@saveProfileButton": {},
+  "composeSmsButton": "SMS tuzish",
+  "@composeSmsButton": {},
+  "qrHintPhoneOnly": "Ushbu QRni qabul qiluvchiga ko‘rsating — yuborishdan oldin summa va manba hisobini u o‘zi kiritadi",
+  "@qrHintPhoneOnly": {},
+  "qrHint": "Ushbu QRni qabul qiluvchiga ko‘rsating — u skanerlab o‘tkazma qiladi",
+  "@qrHint": {},
+  "profileSaved": "Profil saqlandi",
+  "@profileSaved": {},
+  "qrError": "QR xatosi: {error}",
+  "@qrError": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "transferLimitsTitle": "O‘tkazma limitlari va qoidalari",
+  "@transferLimitsTitle": {},
+  "openSberSiteTooltip": "Sberbank saytini ochish",
+  "@openSberSiteTooltip": {},
+  "infoActualBanner": "Ma’lumot ushbu ilova versiyasi uchun dolzarb. Limit va shartlar o‘zgarishi mumkin — sberbank.ru sayti yoki 900 raqami orqali tekshiring.",
+  "@infoActualBanner": {},
+  "smsCommandsTitle": "SMS buyruqlari (900 raqamiga)",
+  "@smsCommandsTitle": {},
+  "limitsTitle": "O‘tkazma limitlari",
+  "@limitsTitle": {},
+  "notificationFormatsTitle": "Sberbank SMS xabarnoma formatlari",
+  "@notificationFormatsTitle": {},
+  "importantRulesTitle": "Muhim qoidalar",
+  "@importantRulesTitle": {},
+  "feesTitle": "Komissiyalar",
+  "@feesTitle": {},
+  "cannotOpenBrowser": "Brauzerni ochib bo‘lmadi",
+  "@cannotOpenBrowser": {},
+  "number900Copied": "900 raqami nusxalandi",
+  "@number900Copied": {},
+  "copiedCommand": "Nusxalandi: {command}",
+  "@copiedCommand": {
+    "placeholders": {
+      "command": {
+        "type": "String"
+      }
+    }
+  },
+  "officialSberSite": "Sberbank rasmiy sayti",
+  "@officialSberSite": {},
+  "officialSiteButton": "Rasmiy veb-sayt",
+  "@officialSiteButton": {},
+  "helpContact900": "Yordam: 900 ga murojaat qiling",
+  "@helpContact900": {},
+  "disclaimerText": "Ushbu ilova Sberbankning rasmiy mahsuloti emas. Ilova faqat SMS o‘qish va buyruq tuzishga yordam beradi — barcha o‘tkazmalar mobil operator orqali standart SMS buyruqlar bilan bajariladi.",
+  "@disclaimerText": {},
+  "personalLimitBanner": "Shaxsiy limitingizni tekshirish uchun — 900 raqamiga «ЛИМИТ» SMS yuboring. Limitlar tarif va tranzaksiya tarixiga qarab farq qilishi mumkin.",
+  "@personalLimitBanner": {},
+  "phoneCopied": "Telefon raqami nusxalandi",
+  "@phoneCopied": {},
+  "copyPhoneButton": "Telefonni nusxalash",
+  "@copyPhoneButton": {},
+  "noteLabel": "Izoh: {note}",
+  "@noteLabel": {
+    "placeholders": {
+      "note": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognizedWithRaw": "QR ichki format sifatida tanilmadi: {raw}",
+  "@qrNotRecognizedWithRaw": {
+    "placeholders": {
+      "raw": {
+        "type": "String"
+      }
+    }
+  },
+  "cmdTransferMain": "ПЕРЕВОД [phone] [amount]",
+  "@cmdTransferMain": {},
+  "cmdTransferMainDesc": "Asosiy kartadan telefon raqamiga o‘tkazma.\nMisol: ПЕРЕВОД 79161234567 1000",
+  "@cmdTransferMainDesc": {},
+  "cmdTransferWithCard": "ПЕРЕВОД [phone] [amount] [last4]",
+  "@cmdTransferWithCard": {},
+  "cmdTransferWithCardDesc": "Muayyan kartadan o‘tkazma.\nMisol: ПЕРЕВОД 79161234567 500 1234",
+  "@cmdTransferWithCardDesc": {},
+  "cmdBalance": "БАЛАНС",
+  "@cmdBalance": {},
+  "cmdBalanceDesc": "Asosiy karta balansi.",
+  "@cmdBalanceDesc": {},
+  "cmdBalanceCard": "БАЛАНС [last4]",
+  "@cmdBalanceCard": {},
+  "cmdBalanceCardDesc": "Muayyan karta balansi.",
+  "@cmdBalanceCardDesc": {},
+  "cmdHistory": "ИСТОРИЯ",
+  "@cmdHistory": {},
+  "cmdHistoryDesc": "Asosiy kartadagi so‘nggi 5 ta operatsiya.",
+  "@cmdHistoryDesc": {},
+  "cmdBlock": "БЛОКИРОВКА [last4]",
+  "@cmdBlock": {},
+  "cmdBlockDesc": "Kartani vaqtincha bloklash.",
+  "@cmdBlockDesc": {},
+  "cmdLimit": "ЛИМИТ",
+  "@cmdLimit": {},
+  "cmdLimitDesc": "SMS orqali joriy o‘tkazma limitlarini tekshirish.",
+  "@cmdLimitDesc": {},
+  "limitEconomyPerTxLabel": "\"Economy\" Mobile Bank — har bir operatsiya uchun",
+  "@limitEconomyPerTxLabel": {},
+  "limitEconomyPerTxValue": "8 000 ₽",
+  "@limitEconomyPerTxValue": {},
+  "limitEconomyPerDayLabel": "\"Economy\" Mobile Bank — kuniga",
+  "@limitEconomyPerDayLabel": {},
+  "limitEconomyPerDayValue": "8 000 ₽",
+  "@limitEconomyPerDayValue": {},
+  "limitFullPerTxLabel": "\"Full\" Mobile Bank — har bir operatsiya uchun",
+  "@limitFullPerTxLabel": {},
+  "limitFullPerTxValue": "50 000 ₽ gacha",
+  "@limitFullPerTxValue": {},
+  "limitFullPerDayLabel": "\"Full\" Mobile Bank — kuniga",
+  "@limitFullPerDayLabel": {},
+  "limitFullPerDayValue": "500 000 ₽ gacha",
+  "@limitFullPerDayValue": {},
+  "limitCardToCardLabel": "Kartadan kartaga (onlayn)",
+  "@limitCardToCardLabel": {},
+  "limitCardToCardValue": "150 000 ₽ gacha",
+  "@limitCardToCardValue": {},
+  "exampleIncomingLabel": "Kirim",
+  "@exampleIncomingLabel": {},
+  "exampleIncomingText": "SBERBANK Kirim 10000 RUB Karta *1234 Balans: 25000 RUB",
+  "@exampleIncomingText": {},
+  "examplePurchaseLabel": "Xarid",
+  "@examplePurchaseLabel": {},
+  "examplePurchaseText": "SBERBANK Xarid 1500 RUB Karta *1234 DO‘KON NOMI Balans: 23500 RUB",
+  "@examplePurchaseText": {},
+  "exampleTransferLabel": "O‘tkazma",
+  "@exampleTransferLabel": {},
+  "exampleTransferText": "Karta *1234 dan 5000 RUB o‘tkazildi. Balans: 18500 RUB.",
+  "@exampleTransferText": {},
+  "exampleCashWithdrawalLabel": "Naqd yechish",
+  "@exampleCashWithdrawalLabel": {},
+  "exampleCashWithdrawalText": "Naqd yechish 3000 RUB. Karta *1234. Balans: 15500 RUB.",
+  "@exampleCashWithdrawalText": {},
+  "ruleRecipientClient": "Qabul qiluvchi Sberbank mijozi bo‘lishi va Mobile Bank ulangan bo‘lishi kerak.",
+  "@ruleRecipientClient": {},
+  "rulePhoneLinked": "Telefon raqami qabul qiluvchi kartasiga bog‘langan bo‘lishi kerak.",
+  "@rulePhoneLinked": {},
+  "ruleSmsIrreversible": "SMS o‘tkazmasi qaytarilmaydi — tasdiqlashdan oldin raqamni tekshiring.",
+  "@ruleSmsIrreversible": {},
+  "ruleSpecifyLast4": "Agar sizda bir nechta karta bo‘lsa, xatolarning oldini olish uchun manba kartaning last4 qismini ko‘rsating.",
+  "@ruleSpecifyLast4": {},
+  "ruleEconomyVsFull": "\"Economy\" tarifi (bepul) — 8 000 ₽/kun limit. \"Full\" tarifi (pullik) — 100 000 ₽/kungacha.",
+  "@ruleEconomyVsFull": {},
+  "ruleResetAtMidnight": "Kunlik limit Moskva vaqti bilan 00:00 da yangilanadi.",
+  "@ruleResetAtMidnight": {},
+  "feeEconomyLabel": "\"Economy\" tarifi — o‘tkazma komissiyasi",
+  "@feeEconomyLabel": {},
+  "feeEconomyValue": "1% (kamida 30 ₽)",
+  "@feeEconomyValue": {},
+  "feeFullLabel": "\"Full\" tarifi — o‘tkazma komissiyasi",
+  "@feeFullLabel": {},
+  "feeFullValue": "Bepul",
+  "@feeFullValue": {},
+  "feeSubscriptionLabel": "\"Full\" tarifi obunasi",
+  "@feeSubscriptionLabel": {},
+  "feeSubscriptionValue": "60 ₽/oy",
+  "@feeSubscriptionValue": {},
+  "opIncoming": "kirim",
+  "@opIncoming": {},
+  "opOutgoing": "chiqim",
+  "@opOutgoing": {},
+  "opTransfer": "o‘tkazma",
+  "@opTransfer": {},
+  "opUnknown": "noma’lum",
+  "@opUnknown": {},
+  "smsTargetLabel": "To: {number}",
+  "@smsTargetLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "amountRequiredForTransfer": "Amount is required for this transfer.",
+  "@amountRequiredForTransfer": {},
+  "ussdDialogTitle": "Open USSD?",
+  "@ussdDialogTitle": {},
+  "openDialerButton": "Open Dialer",
+  "@openDialerButton": {},
+  "ussdSentHint": "USSD dialed. Confirm the transfer in the dialer.",
+  "@ussdSentHint": {},
+  "bankNotAvailable": "Bank commands not configured for your region.",
+  "@bankNotAvailable": {},
+  "transferSmsCommandTitle": "SMS transfer command",
+  "@transferSmsCommandTitle": {},
+  "transferUssdCommandTitle": "USSD transfer command",
+  "@transferUssdCommandTitle": {},
+  "sendToLabel": "Send to: {number}",
+  "@sendToLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "exampleLabelShort": "Example",
+  "@exampleLabelShort": {},
+  "bankLimitsContactBanner": "Transfer limits and fees depend on your plan. Contact {bankName} for up-to-date information.",
+  "@bankLimitsContactBanner": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationExamplesTitle": "SMS notification examples",
+  "@notificationExamplesTitle": {},
+  "noBankSelectedBanner": "No bank selected. Choose a country and bank in Settings.",
+  "@noBankSelectedBanner": {},
+  "helpContactNumber": "Help: contact {number}",
+  "@helpContactNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "bankDisclaimerGeneric": "This app is not affiliated with {bankName}. Transfers use standard SMS or USSD commands through your mobile carrier.",
+  "@bankDisclaimerGeneric": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "infoActualBannerGeneric": "Information is based on publicly available data. Limits and conditions may change — check with your bank.",
+  "@infoActualBannerGeneric": {},
+  "officialDataTitle": "Official data",
+  "@officialDataTitle": {},
+  "officialStatusLabel": "Source status",
+  "@officialStatusLabel": {},
+  "officialChannelLabel": "Panel channel",
+  "@officialChannelLabel": {},
+  "officialLastVerifiedLabel": "Verified on",
+  "@officialLastVerifiedLabel": {},
+  "officialStatusVerifiedPublic": "Verified by public source",
+  "@officialStatusVerifiedPublic": {},
+  "officialStatusLimitedPublic": "Public source is limited",
+  "@officialStatusLimitedPublic": {},
+  "officialStatusManualVerificationRequired": "Manual verification required",
+  "@officialStatusManualVerificationRequired": {},
+  "officialStatusUnknown": "Not specified",
+  "@officialStatusUnknown": {},
+  "officialWarningLimited": "Official public limits and rules for this exact channel are only partially confirmed. Treat the values as reference and verify with the bank.",
+  "@officialWarningLimited": {},
+  "officialWarningManual": "This bank or channel does not have enough current public official confirmation. The values are shown for reference only.",
+  "@officialWarningManual": {},
+  "commandChannelUnavailableBanner": "A direct SMS or USSD command channel is not currently verified for this bank. The info panel is shown as a reference to official public data.",
+  "@commandChannelUnavailableBanner": {},
+  "directTransferButton": "Transfer",
+  "createSmsAccount": "Account: {account}",
+  "@createSmsAccount": {
+    "placeholders": {
+      "account": {
+        "type": "String"
+      }
+    }
+  },
+  "recipientAccount": "Recipient account",
+  "enterAccountError": "Enter an account number",
+  "routeLabel": "Transfer channel",
+  "routeSmsPhone": "SMS by phone",
+  "routeSmsAccount": "SMS by account",
+  "routeUssdPhone": "USSD by phone",
+  "routeUssdAccount": "USSD by account",
+  "accountQrTitle": "Account QR",
+  "qrHintAccountOnly": "Show this QR to the sender — they will use your account in their bank flow before sending",
+  "yourAccountTitle": "Hisobingiz",
+  "@yourAccountTitle": {},
+  "yourAccountDesc": "Hisob raqamingiz bilan QR yaratish uchun ishlatiladi",
+  "@yourAccountDesc": {},
+  "accountNumberLabel": "Hisob raqami",
+  "@accountNumberLabel": {},
+  "snackAccountSaved": "Hisob saqlandi",
+  "@snackAccountSaved": {},
+  "selectBankFirstHint": "Sozlash uchun yuqorida bankni tanlang va saqlang",
+  "@selectBankFirstHint": {}
+}

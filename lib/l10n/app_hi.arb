@@ -1,0 +1,630 @@
+{
+  "@@locale": "hi",
+  "appName": "ग्रीन SMS",
+  "@appName": {
+    "description": "Application name"
+  },
+  "cancel": "रद्द करें",
+  "@cancel": {},
+  "save": "सहेजें",
+  "@save": {},
+  "back": "वापस",
+  "@back": {},
+  "allow": "अनुमति दें",
+  "@allow": {},
+  "confirm": "पुष्टि करें",
+  "@confirm": {},
+  "clear": "साफ़ करें",
+  "@clear": {},
+  "settingsTitle": "सेटिंग्स",
+  "@settingsTitle": {},
+  "onboardingSubtitle": "SMS बैंकिंग ऑपरेशनों के लिए विज़ुअल सहायक",
+  "@onboardingSubtitle": {},
+  "onboardingFeatureLocal": "स्थानीय रूप से काम करता है, इंटरनेट आवश्यक नहीं",
+  "@onboardingFeatureLocal": {},
+  "onboardingFeatureSms": "केवल अंतिम 10 SMS संदेश पढ़ता है",
+  "@onboardingFeatureSms": {},
+  "onboardingFeaturePrivacy": "डेटा बाहर कहीं भेजा नहीं जाता",
+  "@onboardingFeaturePrivacy": {},
+  "onboardingFeatureQr": "QR का उपयोग केवल फोन नंबर साझा करने के लिए होता है",
+  "@onboardingFeatureQr": {},
+  "onboardingButton": "अनुमतियाँ माँगें और जारी रखें",
+  "@onboardingButton": {},
+  "accounts": "खाते",
+  "@accounts": {},
+  "noAccountsYet": "अभी तक कोई पहचाना गया खाता नहीं है।",
+  "@noAccountsYet": {},
+  "latestSms": "नवीनतम SMS",
+  "@latestSms": {},
+  "smsNotLoaded": "SMS अभी लोड नहीं हुए।",
+  "@smsNotLoaded": {},
+  "qrModeTitle": "QR मोड",
+  "@qrModeTitle": {},
+  "qrModeSubtitle": "फुल-स्क्रीन कैमरा खोलें",
+  "@qrModeSubtitle": {},
+  "smsDetailsTitle": "SMS विवरण",
+  "@smsDetailsTitle": {},
+  "smsDetailsSender": "प्रेषक: {sender}",
+  "@smsDetailsSender": {
+    "placeholders": {
+      "sender": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsTime": "समय: {time}",
+  "@smsDetailsTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4": "कार्ड: {last4}",
+  "@smsDetailsLast4": {
+    "placeholders": {
+      "last4": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsLast4NotFound": "नहीं मिला",
+  "@smsDetailsLast4NotFound": {},
+  "smsDetailsAmount": "राशि: {amount}",
+  "@smsDetailsAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsBalance": "शेष: {balance}",
+  "@smsDetailsBalance": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsReference": "Ref: {reference}",
+  "@smsDetailsReference": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "smsDetailsType": "प्रकार: {type}",
+  "@smsDetailsType": {
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "transferRulesTooltip": "ट्रांसफर नियम",
+  "@transferRulesTooltip": {},
+  "accountsLabel": "खाते",
+  "@accountsLabel": {},
+  "refreshSmsButton": "SMS रीफ़्रेश करें",
+  "@refreshSmsButton": {},
+  "dailyLimitNotSet": "दैनिक सीमा सेट नहीं है",
+  "@dailyLimitNotSet": {},
+  "setLimitInSettings": "सेटिंग्स में सीमा सेट करें",
+  "@setLimitInSettings": {},
+  "dailyTransferLimit": "दैनिक ट्रांसफर सीमा",
+  "@dailyTransferLimit": {},
+  "usedToday": "आज उपयोग किया गया",
+  "@usedToday": {},
+  "remaining": "शेष",
+  "@remaining": {},
+  "limitExceeded": "सीमा पार हो गई",
+  "@limitExceeded": {},
+  "limitWarning80": "दैनिक सीमा का 80% से अधिक उपयोग हो चुका है",
+  "@limitWarning80": {},
+  "limitExceededBlocked": "दैनिक सीमा पार हो गई। QR ट्रांसफर अवरुद्ध हैं।",
+  "@limitExceededBlocked": {},
+  "accountBalanceLabel": "शेष: {balance}",
+  "@accountBalanceLabel": {
+    "placeholders": {
+      "balance": {
+        "type": "String"
+      }
+    }
+  },
+  "parsedLabel": "पार्स किया गया",
+  "@parsedLabel": {},
+  "rawLabel": "रॉ",
+  "@rawLabel": {},
+  "devicePhoneTitle": "डिवाइस फोन",
+  "@devicePhoneTitle": {},
+  "devicePhoneDesc": "आपके नंबर के साथ QR बनाने के लिए उपयोग किया जाता है",
+  "@devicePhoneDesc": {},
+  "phoneNumberLabel": "फोन नंबर",
+  "@phoneNumberLabel": {},
+  "dailyLimitDesc": "इस ऐप के माध्यम से अधिकतम दैनिक ट्रांसफर राशि। मध्यरात्रि में रीसेट होती है। सीमा हटाने के लिए खाली छोड़ें।",
+  "@dailyLimitDesc": {},
+  "limitLabel": "सीमा",
+  "@limitLabel": {},
+  "limitHint": "उदा.: 50000",
+  "@limitHint": {},
+  "removeLimitButton": "सीमा हटाएँ",
+  "@removeLimitButton": {},
+  "themeTitle": "दिखावट",
+  "@themeTitle": {},
+  "languageTitle": "भाषा",
+  "@languageTitle": {},
+  "bankRoutingTitle": "देश और बैंक",
+  "@bankRoutingTitle": {},
+  "bankRoutingDesc": "पहले देश चुनें। अगर एक से अधिक बैंक हों, तो भुगतान कमांड के लिए बैंक चुनें।",
+  "@bankRoutingDesc": {},
+  "countryLabel": "देश",
+  "@countryLabel": {},
+  "bankLabel": "बैंक",
+  "@bankLabel": {},
+  "bankAutoSelectedHint": "इस देश के लिए केवल एक बैंक उपलब्ध है, वह अपने-आप चुना गया है।",
+  "@bankAutoSelectedHint": {},
+  "referenceOnlyBadge": "reference only",
+  "@referenceOnlyBadge": {},
+  "bankReferenceOnlyHint": "For this country, the bank is available as a reference source for limits and rules only. Direct payment commands are not currently verified.",
+  "@bankReferenceOnlyHint": {},
+  "languageEnglish": "अंग्रेज़ी",
+  "@languageEnglish": {},
+  "languageRussian": "रूसी",
+  "@languageRussian": {},
+  "languageHindi": "हिंदी",
+  "@languageHindi": {},
+  "languageKazakh": "कज़ाख",
+  "@languageKazakh": {},
+  "languageUzbek": "उज़्बेक",
+  "@languageUzbek": {},
+  "languageTagalog": "टागालोग",
+  "@languageTagalog": {},
+  "languageIndonesian": "इंडोनेशियाई",
+  "@languageIndonesian": {},
+  "permissionsTitle": "अनुमतियाँ",
+  "@permissionsTitle": {},
+  "readSmsTitle": "SMS पढ़ें",
+  "@readSmsTitle": {},
+  "readSmsDesc": "आने वाले SMS पढ़ने और डेटा अपडेट करने के लिए",
+  "@readSmsDesc": {},
+  "directSmsTitle": "सीधा SMS भेजना",
+  "@directSmsTitle": {},
+  "directSmsDesc": "मैसेजिंग ऐप खोले बिना सीधे SMS भेजें",
+  "@directSmsDesc": {},
+  "directSmsPermissionRequired": "SEND_SMS अनुमति चाहिए। इसे सिस्टम ऐप सेटिंग्स में दें।",
+  "@directSmsPermissionRequired": {},
+  "directSmsEnabledSnack": "सीधा SMS भेजना चालू किया गया",
+  "@directSmsEnabledSnack": {},
+  "directSmsDisabledSnack": "सीधा SMS भेजना बंद किया गया",
+  "@directSmsDisabledSnack": {},
+  "openSettingsButton": "सेटिंग्स",
+  "@openSettingsButton": {},
+  "permissionsManageInSystem": "अनुमतियाँ बंद करना सिस्टम ऐप सेटिंग्स में किया जाता है।",
+  "@permissionsManageInSystem": {},
+  "cameraTitle": "कैमरा",
+  "@cameraTitle": {},
+  "cameraDesc": "QR स्कैन करने के लिए",
+  "@cameraDesc": {},
+  "clearLocalDataTitle": "स्थानीय डेटा साफ़ करें",
+  "@clearLocalDataTitle": {},
+  "clearLocalDataDesc": "SMS, खाते, QR प्रोफ़ाइल और इतिहास",
+  "@clearLocalDataDesc": {},
+  "aboutTitle": "ऐप के बारे में",
+  "@aboutTitle": {},
+  "aboutVersion": "ग्रीन SMS v1.0\nस्थानीय ऐप, इंटरनेट आवश्यक नहीं",
+  "@aboutVersion": {},
+  "snackLimitRemoved": "सीमा हटाई गई",
+  "@snackLimitRemoved": {},
+  "snackLimitSet": "सीमा सेट की गई: {amount}",
+  "@snackLimitSet": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "snackPhoneSaved": "फोन सहेजा गया",
+  "@snackPhoneSaved": {},
+  "snackDataCleared": "स्थानीय डेटा साफ़ किया गया",
+  "@snackDataCleared": {},
+  "clearDataDialogTitle": "डेटा साफ़ करें?",
+  "@clearDataDialogTitle": {},
+  "clearDataDialogContent": "SMS, खाते, QR प्रोफ़ाइल और इतिहास हटाए जाएँगे।",
+  "@clearDataDialogContent": {},
+  "cameraPermissionNeeded": "कैमरा एक्सेस आवश्यक है",
+  "@cameraPermissionNeeded": {},
+  "scanHint": "कैमरे को QR कोड की ओर रखें",
+  "@scanHint": {},
+  "scanButton": "स्कैन करें",
+  "@scanButton": {},
+  "phoneTransferButton": "फोन से",
+  "@phoneTransferButton": {},
+  "limitWarningTitle": "दैनिक सीमा पार",
+  "@limitWarningTitle": {},
+  "limitWarningContent": "ट्रांसफर राशि: {amount}\nशेष सीमा: {remaining}\n\nट्रांसफर दैनिक सीमा से अधिक है। फिर भी जारी रखें?",
+  "@limitWarningContent": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "sendAnywayButton": "फिर भी भेजें",
+  "@sendAnywayButton": {},
+  "createSmsDialogTitle": "SMS बनाएँ?",
+  "@createSmsDialogTitle": {},
+  "createSmsPhone": "फोन: {phone}",
+  "@createSmsPhone": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "createSmsText": "पाठ: {text}",
+  "@createSmsText": {
+    "placeholders": {
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognized": "QR को आंतरिक प्रारूप के रूप में पहचाना नहीं गया।",
+  "@qrNotRecognized": {},
+  "transferCancelledLimit": "ट्रांसफर रद्द — सीमा पार।",
+  "@transferCancelledLimit": {},
+  "smsSentSuccess": "SMS तैयार हो गया। मैसेजिंग ऐप में भेजना पुष्टि करें।",
+  "@smsSentSuccess": {},
+  "scanningContinues": "स्कैनिंग जारी है।",
+  "@scanningContinues": {},
+  "noQrInImage": "चयनित छवि में QR कोड नहीं मिला।",
+  "@noQrInImage": {},
+  "qrFoundNoData": "QR मिला, लेकिन डेटा नहीं है।",
+  "@qrFoundNoData": {},
+  "setPhoneFirst": "पहले सेटिंग्स में डिवाइस फोन सेट करें।",
+  "@setPhoneFirst": {},
+  "setAccountFirst": "पहले सेटिंग्स में खाता नंबर सेट करें।",
+  "@setAccountFirst": {},
+  "chooseChannelTitle": "ट्रांसफर चैनल चुनें",
+  "@chooseChannelTitle": {},
+  "scanningActive": "स्कैनिंग सक्रिय है।",
+  "@scanningActive": {},
+  "phoneQrTitle": "फोन QR",
+  "@phoneQrTitle": {},
+  "phoneLabel": "फोन: {phone}",
+  "@phoneLabel": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "qrGenerationTitle": "QR जनरेशन",
+  "@qrGenerationTitle": {},
+  "noProfile": "कोई प्रोफ़ाइल नहीं",
+  "@noProfile": {},
+  "profileLabel": "प्रोफ़ाइल",
+  "@profileLabel": {},
+  "profileNameLabel": "प्रोफ़ाइल नाम",
+  "@profileNameLabel": {},
+  "recipientPhone": "प्राप्तकर्ता का फोन",
+  "@recipientPhone": {},
+  "phoneTransferInputTitle": "QR के बिना ट्रांसफर",
+  "@phoneTransferInputTitle": {},
+  "enterPhoneError": "फोन नंबर दर्ज करें",
+  "@enterPhoneError": {},
+  "amountOptional": "राशि (वैकल्पिक)",
+  "@amountOptional": {},
+  "amountRequiredLabel": "ट्रांसफर राशि (अनिवार्य)",
+  "@amountRequiredLabel": {},
+  "enterAmountError": "ट्रांसफर राशि दर्ज करें",
+  "@enterAmountError": {},
+  "sourceLast4Optional": "स्रोत कार्ड/खाता last4 (वैकल्पिक)",
+  "@sourceLast4Optional": {},
+  "sourceLast4Hint": "उदाहरण: 1234",
+  "@sourceLast4Hint": {},
+  "invalidLast4Error": "ठीक 4 अंक दर्ज करें",
+  "@invalidLast4Error": {},
+  "sourceAccountOptionalSection": "स्रोत खाता (वैकल्पिक)",
+  "@sourceAccountOptionalSection": {},
+  "sberAmountRequired": "900 पर ट्रांसफर के लिए राशि आवश्यक है।",
+  "@sberAmountRequired": {},
+  "smsTarget900": "नंबर: 900",
+  "@smsTarget900": {},
+  "noteOptional": "नोट (वैकल्पिक)",
+  "@noteOptional": {},
+  "myQrButton": "मेरा QR",
+  "@myQrButton": {},
+  "qrAmountButton": "राशि वाला QR",
+  "@qrAmountButton": {},
+  "showQrButton": "QR दिखाएँ",
+  "@showQrButton": {},
+  "saveProfileButton": "प्रोफ़ाइल सहेजें",
+  "@saveProfileButton": {},
+  "composeSmsButton": "SMS लिखें",
+  "@composeSmsButton": {},
+  "qrHintPhoneOnly": "यह QR प्राप्तकर्ता को दिखाएँ — भेजने से पहले राशि और स्रोत खाता वह अपने तरफ से भरेगा",
+  "@qrHintPhoneOnly": {},
+  "qrHint": "यह QR प्राप्तकर्ता को दिखाएँ — वह स्कैन करके ट्रांसफर करेगा",
+  "@qrHint": {},
+  "profileSaved": "प्रोफ़ाइल सहेजी गई",
+  "@profileSaved": {},
+  "qrError": "QR त्रुटि: {error}",
+  "@qrError": {
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "transferLimitsTitle": "ट्रांसफर सीमा और नियम",
+  "@transferLimitsTitle": {},
+  "openSberSiteTooltip": "स्बेरबैंक वेबसाइट खोलें",
+  "@openSberSiteTooltip": {},
+  "infoActualBanner": "जानकारी इस ऐप संस्करण के अनुसार वर्तमान है। सीमाएँ और शर्तें बदल सकती हैं — sberbank.ru या 900 पर जाँचें।",
+  "@infoActualBanner": {},
+  "smsCommandsTitle": "SMS कमांड (नंबर 900 पर)",
+  "@smsCommandsTitle": {},
+  "limitsTitle": "ट्रांसफर सीमाएँ",
+  "@limitsTitle": {},
+  "notificationFormatsTitle": "स्बेरबैंक SMS नोटिफिकेशन प्रारूप",
+  "@notificationFormatsTitle": {},
+  "importantRulesTitle": "महत्वपूर्ण नियम",
+  "@importantRulesTitle": {},
+  "feesTitle": "शुल्क",
+  "@feesTitle": {},
+  "cannotOpenBrowser": "ब्राउज़र नहीं खुल सका",
+  "@cannotOpenBrowser": {},
+  "number900Copied": "नंबर 900 कॉपी किया गया",
+  "@number900Copied": {},
+  "copiedCommand": "कॉपी किया गया: {command}",
+  "@copiedCommand": {
+    "placeholders": {
+      "command": {
+        "type": "String"
+      }
+    }
+  },
+  "officialSberSite": "आधिकारिक स्बेरबैंक वेबसाइट",
+  "@officialSberSite": {},
+  "officialSiteButton": "आधिकारिक वेबसाइट",
+  "@officialSiteButton": {},
+  "helpContact900": "सहायता: 900 से संपर्क करें",
+  "@helpContact900": {},
+  "disclaimerText": "यह ऐप स्बेरबैंक का आधिकारिक उत्पाद नहीं है। यह केवल SMS पढ़ने और कमांड बनाने में मदद करता है — सभी ट्रांसफर आपके मोबाइल ऑपरेटर के माध्यम से मानक SMS कमांड से किए जाते हैं।",
+  "@disclaimerText": {},
+  "personalLimitBanner": "अपनी व्यक्तिगत सीमा जानने के लिए — 900 पर SMS «ЛИМИТ» भेजें। आपकी टैरिफ योजना और लेनदेन इतिहास के अनुसार सीमाएँ अलग हो सकती हैं।",
+  "@personalLimitBanner": {},
+  "phoneCopied": "फोन नंबर कॉपी किया गया",
+  "@phoneCopied": {},
+  "copyPhoneButton": "फोन कॉपी करें",
+  "@copyPhoneButton": {},
+  "noteLabel": "नोट: {note}",
+  "@noteLabel": {
+    "placeholders": {
+      "note": {
+        "type": "String"
+      }
+    }
+  },
+  "qrNotRecognizedWithRaw": "QR को आंतरिक प्रारूप के रूप में नहीं पहचाना गया: {raw}",
+  "@qrNotRecognizedWithRaw": {
+    "placeholders": {
+      "raw": {
+        "type": "String"
+      }
+    }
+  },
+  "cmdTransferMain": "ПЕРЕВОД [phone] [amount]",
+  "@cmdTransferMain": {},
+  "cmdTransferMainDesc": "मुख्य कार्ड से फोन नंबर पर ट्रांसफर।\nउदाहरण: ПЕРЕВОД 79161234567 1000",
+  "@cmdTransferMainDesc": {},
+  "cmdTransferWithCard": "ПЕРЕВОД [phone] [amount] [last4]",
+  "@cmdTransferWithCard": {},
+  "cmdTransferWithCardDesc": "विशिष्ट कार्ड से ट्रांसफर।\nउदाहरण: ПЕРЕВОД 79161234567 500 1234",
+  "@cmdTransferWithCardDesc": {},
+  "cmdBalance": "БАЛАНС",
+  "@cmdBalance": {},
+  "cmdBalanceDesc": "मुख्य कार्ड का बैलेंस।",
+  "@cmdBalanceDesc": {},
+  "cmdBalanceCard": "БАЛАНС [last4]",
+  "@cmdBalanceCard": {},
+  "cmdBalanceCardDesc": "विशिष्ट कार्ड का बैलेंस।",
+  "@cmdBalanceCardDesc": {},
+  "cmdHistory": "ИСТОРИЯ",
+  "@cmdHistory": {},
+  "cmdHistoryDesc": "मुख्य कार्ड के पिछले 5 लेनदेन।",
+  "@cmdHistoryDesc": {},
+  "cmdBlock": "БЛОКИРОВКА [last4]",
+  "@cmdBlock": {},
+  "cmdBlockDesc": "अस्थायी कार्ड ब्लॉक।",
+  "@cmdBlockDesc": {},
+  "cmdLimit": "ЛИМИТ",
+  "@cmdLimit": {},
+  "cmdLimitDesc": "SMS के माध्यम से अपनी वर्तमान ट्रांसफर सीमाएँ देखें।",
+  "@cmdLimitDesc": {},
+  "limitEconomyPerTxLabel": "मोबाइल बैंक \"इकोनॉमी\" — प्रति लेनदेन",
+  "@limitEconomyPerTxLabel": {},
+  "limitEconomyPerTxValue": "8,000 ₽",
+  "@limitEconomyPerTxValue": {},
+  "limitEconomyPerDayLabel": "मोबाइल बैंक \"इकोनॉमी\" — प्रति दिन",
+  "@limitEconomyPerDayLabel": {},
+  "limitEconomyPerDayValue": "8,000 ₽",
+  "@limitEconomyPerDayValue": {},
+  "limitFullPerTxLabel": "मोबाइल बैंक \"फुल\" — प्रति लेनदेन",
+  "@limitFullPerTxLabel": {},
+  "limitFullPerTxValue": "50,000 ₽ तक",
+  "@limitFullPerTxValue": {},
+  "limitFullPerDayLabel": "मोबाइल बैंक \"फुल\" — प्रति दिन",
+  "@limitFullPerDayLabel": {},
+  "limitFullPerDayValue": "500,000 ₽ तक",
+  "@limitFullPerDayValue": {},
+  "limitCardToCardLabel": "कार्ड से कार्ड (ऑनलाइन)",
+  "@limitCardToCardLabel": {},
+  "limitCardToCardValue": "150,000 ₽ तक",
+  "@limitCardToCardValue": {},
+  "exampleIncomingLabel": "प्राप्ति",
+  "@exampleIncomingLabel": {},
+  "exampleIncomingText": "SBERBANK प्राप्ति 10000 RUB कार्ड *1234 शेष: 25000 RUB",
+  "@exampleIncomingText": {},
+  "examplePurchaseLabel": "खरीद",
+  "@examplePurchaseLabel": {},
+  "examplePurchaseText": "SBERBANK खरीद 1500 RUB कार्ड *1234 STORE NAME शेष: 23500 RUB",
+  "@examplePurchaseText": {},
+  "exampleTransferLabel": "ट्रांसफर",
+  "@exampleTransferLabel": {},
+  "exampleTransferText": "कार्ड *1234 से 5000 RUB ट्रांसफर पूरा। शेष: 18500 RUB.",
+  "@exampleTransferText": {},
+  "exampleCashWithdrawalLabel": "नकद निकासी",
+  "@exampleCashWithdrawalLabel": {},
+  "exampleCashWithdrawalText": "नकद निकासी 3000 RUB. कार्ड *1234. शेष: 15500 RUB.",
+  "@exampleCashWithdrawalText": {},
+  "ruleRecipientClient": "प्राप्तकर्ता स्बेरबैंक का ग्राहक होना चाहिए और मोबाइल बैंक सक्षम होना चाहिए।",
+  "@ruleRecipientClient": {},
+  "rulePhoneLinked": "फोन नंबर प्राप्तकर्ता के कार्ड से लिंक होना चाहिए।",
+  "@rulePhoneLinked": {},
+  "ruleSmsIrreversible": "SMS ट्रांसफर वापस नहीं किया जा सकता — पुष्टि से पहले नंबर जाँचें।",
+  "@ruleSmsIrreversible": {},
+  "ruleSpecifyLast4": "यदि आपके पास कई कार्ड हैं, त्रुटियों से बचने के लिए स्रोत कार्ड का last4 बताएं।",
+  "@ruleSpecifyLast4": {},
+  "ruleEconomyVsFull": "\"इकोनॉमी\" टैरिफ (मुफ़्त) — 8,000 ₽/दिन सीमा। \"फुल\" टैरिफ (सशुल्क) — 100,000 ₽/दिन तक।",
+  "@ruleEconomyVsFull": {},
+  "ruleResetAtMidnight": "दैनिक सीमा मॉस्को समय 00:00 पर रीसेट होती है।",
+  "@ruleResetAtMidnight": {},
+  "feeEconomyLabel": "\"इकोनॉमी\" टैरिफ — ट्रांसफर शुल्क",
+  "@feeEconomyLabel": {},
+  "feeEconomyValue": "1% (न्यूनतम 30 ₽)",
+  "@feeEconomyValue": {},
+  "feeFullLabel": "\"फुल\" टैरिफ — ट्रांसफर शुल्क",
+  "@feeFullLabel": {},
+  "feeFullValue": "निःशुल्क",
+  "@feeFullValue": {},
+  "feeSubscriptionLabel": "\"फुल\" टैरिफ सदस्यता",
+  "@feeSubscriptionLabel": {},
+  "feeSubscriptionValue": "60 ₽/माह",
+  "@feeSubscriptionValue": {},
+  "opIncoming": "प्राप्ति",
+  "@opIncoming": {},
+  "opOutgoing": "व्यय",
+  "@opOutgoing": {},
+  "opTransfer": "ट्रांसफर",
+  "@opTransfer": {},
+  "opUnknown": "अज्ञात",
+  "@opUnknown": {},
+  "smsTargetLabel": "To: {number}",
+  "@smsTargetLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "amountRequiredForTransfer": "Amount is required for this transfer.",
+  "@amountRequiredForTransfer": {},
+  "ussdDialogTitle": "Open USSD?",
+  "@ussdDialogTitle": {},
+  "openDialerButton": "Open Dialer",
+  "@openDialerButton": {},
+  "ussdSentHint": "USSD dialed. Confirm the transfer in the dialer.",
+  "@ussdSentHint": {},
+  "bankNotAvailable": "Bank commands not configured for your region.",
+  "@bankNotAvailable": {},
+  "transferSmsCommandTitle": "SMS transfer command",
+  "@transferSmsCommandTitle": {},
+  "transferUssdCommandTitle": "USSD transfer command",
+  "@transferUssdCommandTitle": {},
+  "sendToLabel": "Send to: {number}",
+  "@sendToLabel": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "exampleLabelShort": "Example",
+  "@exampleLabelShort": {},
+  "bankLimitsContactBanner": "Transfer limits and fees depend on your plan. Contact {bankName} for up-to-date information.",
+  "@bankLimitsContactBanner": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationExamplesTitle": "SMS notification examples",
+  "@notificationExamplesTitle": {},
+  "noBankSelectedBanner": "No bank selected. Choose a country and bank in Settings.",
+  "@noBankSelectedBanner": {},
+  "helpContactNumber": "Help: contact {number}",
+  "@helpContactNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "bankDisclaimerGeneric": "This app is not affiliated with {bankName}. Transfers use standard SMS or USSD commands through your mobile carrier.",
+  "@bankDisclaimerGeneric": {
+    "placeholders": {
+      "bankName": {
+        "type": "String"
+      }
+    }
+  },
+  "infoActualBannerGeneric": "Information is based on publicly available data. Limits and conditions may change — check with your bank.",
+  "@infoActualBannerGeneric": {},
+  "officialDataTitle": "Official data",
+  "@officialDataTitle": {},
+  "officialStatusLabel": "Source status",
+  "@officialStatusLabel": {},
+  "officialChannelLabel": "Panel channel",
+  "@officialChannelLabel": {},
+  "officialLastVerifiedLabel": "Verified on",
+  "@officialLastVerifiedLabel": {},
+  "officialStatusVerifiedPublic": "Verified by public source",
+  "@officialStatusVerifiedPublic": {},
+  "officialStatusLimitedPublic": "Public source is limited",
+  "@officialStatusLimitedPublic": {},
+  "officialStatusManualVerificationRequired": "Manual verification required",
+  "@officialStatusManualVerificationRequired": {},
+  "officialStatusUnknown": "Not specified",
+  "@officialStatusUnknown": {},
+  "officialWarningLimited": "Official public limits and rules for this exact channel are only partially confirmed. Treat the values as reference and verify with the bank.",
+  "@officialWarningLimited": {},
+  "officialWarningManual": "This bank or channel does not have enough current public official confirmation. The values are shown for reference only.",
+  "@officialWarningManual": {},
+  "commandChannelUnavailableBanner": "A direct SMS or USSD command channel is not currently verified for this bank. The info panel is shown as a reference to official public data.",
+  "@commandChannelUnavailableBanner": {},
+  "directTransferButton": "Transfer",
+  "createSmsAccount": "Account: {account}",
+  "@createSmsAccount": {
+    "placeholders": {
+      "account": {
+        "type": "String"
+      }
+    }
+  },
+  "recipientAccount": "Recipient account",
+  "enterAccountError": "Enter an account number",
+  "routeLabel": "Transfer channel",
+  "routeSmsPhone": "SMS by phone",
+  "routeSmsAccount": "SMS by account",
+  "routeUssdPhone": "USSD by phone",
+  "routeUssdAccount": "USSD by account",
+  "accountQrTitle": "Account QR",
+  "qrHintAccountOnly": "Show this QR to the sender — they will use your account in their bank flow before sending",
+  "yourAccountTitle": "आपका खाता",
+  "@yourAccountTitle": {},
+  "yourAccountDesc": "आपके खाता नंबर के साथ QR बनाने के लिए उपयोग किया जाता है",
+  "@yourAccountDesc": {},
+  "accountNumberLabel": "खाता संख्या",
+  "@accountNumberLabel": {},
+  "snackAccountSaved": "खाता सहेजा गया",
+  "@snackAccountSaved": {},
+  "selectBankFirstHint": "कॉन्फ़िगर करने के लिए ऊपर बैंक चुनें और सहेजें",
+  "@selectBankFirstHint": {}
+}

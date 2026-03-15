@@ -1,0 +1,1800 @@
+{
+  "version": 3,
+  "updated": "2026-03-14",
+  "project": "Green SMS",
+  "description": "Bank and system template registry for offline SMS/USSD payment automation. Only full SMS commands and full one-line USSD templates. No interactive USSD menus.",
+  "selection_policy": {
+    "include_only": [
+      "full_sms_command_supported",
+      "full_ussd_template_supported"
+    ],
+    "exclude": [
+      "interactive_ussd_menu_only",
+      "manual_step_by_step_ussd_only"
+    ]
+  },
+  "tiers": {
+    "1": "SMS command only (primary method)",
+    "2": "SMS command + USSD full one-line (both supported)",
+    "3": "USSD full one-line only (no SMS send command)"
+  },
+  "countries": [
+    {
+      "country_code": "RU",
+      "country_name": "Russia",
+      "locale": "ru-RU",
+      "currency": "RUB",
+      "languages": [
+        "ru"
+      ],
+      "banks": [
+        {
+          "bank_id": "sberbank_ru",
+          "bank_name": "Sberbank",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 1,
+          "status": "verified",
+          "official_website": "https://www.sberbank.ru",
+          "help_number": "900",
+          "sms": {
+            "enabled": true,
+            "number": "900",
+            "template": "ПЕРЕВОД {phone} {amount}",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "ПЕРЕВОД 9123456789 1000"
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "transfer_limits": [
+            {
+              "label": "Мобильный банк «Эконом» — за операцию",
+              "value": "8 000 ₽",
+              "is_warning": true
+            },
+            {
+              "label": "Мобильный банк «Эконом» — в день",
+              "value": "8 000 ₽",
+              "is_warning": true
+            },
+            {
+              "label": "Мобильный банк «Полный» — за операцию",
+              "value": "до 50 000 ₽",
+              "is_warning": false
+            },
+            {
+              "label": "Мобильный банк «Полный» — в день",
+              "value": "до 500 000 ₽",
+              "is_warning": false
+            },
+            {
+              "label": "Карта → карта (онлайн)",
+              "value": "до 150 000 ₽",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Тариф «Эконом» — за переводы",
+              "value": "1% (мин. 30 ₽)",
+              "is_warning": true
+            },
+            {
+              "label": "Тариф «Полный» — за переводы",
+              "value": "Бесплатно",
+              "is_warning": false
+            },
+            {
+              "label": "Абонентская плата «Полный»",
+              "value": "60 ₽/мес",
+              "is_warning": false
+            }
+          ],
+          "bank_rules": [
+            "Получатель должен быть клиентом Сбербанка, а его номер телефона должен быть привязан к карте.",
+            "Тариф «Эконом» дает меньший суточный лимит, тариф «Полный» — больший лимит и бесплатные переводы.",
+            "Перед подтверждением внимательно проверяйте номер получателя: перевод по SMS обычно необратим.",
+            "Если у вас несколько карт, указывайте последние 4 цифры карты-источника, чтобы избежать ошибки.",
+            "Суточный лимит сбрасывается в 00:00 по московскому времени.",
+            "Персональный лимит лучше сверять отдельно в текущем официальном канале банка."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_credit",
+              "language": "ru",
+              "text": "ECMC4874 10:19 Перевод из Т-Банк +5 000р от ИВАНОВ И. Баланс: 18 470.48р"
+            },
+            {
+              "type": "transfer_debit",
+              "language": "ru",
+              "text": "MIR-8715 13:33 перевод 3 000р Комиссия 0р Баланс: 14 175.95р"
+            },
+            {
+              "type": "purchase_debit",
+              "language": "ru",
+              "text": "ECMC4874 15:23 Покупка по СБП 239.98р Пятёрочка Баланс: 9 373.01р"
+            },
+            {
+              "type": "purchase_debit_qr",
+              "language": "ru",
+              "text": "MIR-8715 19:17 Покупка 360р TABAK_P_QR Баланс: 63 375.95р"
+            },
+            {
+              "type": "incoming_credit",
+              "language": "ru",
+              "text": "СЧЁТ5085 14:22 зачисление 10 000р Баланс: 55 675.95р"
+            },
+            {
+              "type": "savings_withdrawal",
+              "language": "ru",
+              "text": "Накопит. счет Премьер *5554 12:43 Выдача 1 000 000р Баланс: 3 637 054.61р"
+            }
+          ],
+          "notes": "Project keeps historical 900 SMS flow for compatibility, but current public Sber source for 900 transfer limits was not re-confirmed during the 2026-03-14 official audit.",
+          "official_status": "limited_public",
+          "panel_channel": "sms_historical",
+          "last_verified_at": "2026-03-14",
+          "official_sources": []
+        },
+        {
+          "bank_id": "tbank_ru",
+          "bank_name": "T-Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "official_website": "https://www.tbank.ru",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "generic_credit",
+              "language": "ru",
+              "text": "Счет *8036. Пополнение 2 500 ₽. Доступно 12 000 ₽."
+            },
+            {
+              "type": "generic_debit",
+              "language": "ru",
+              "text": "Счет *8036. Списание 499 ₽. Доступно 11 501 ₽."
+            }
+          ],
+          "notes": "No SMS transfer command found. Info panel reflects app/web and SBP-style phone transfer conditions only.",
+          "official_status": "verified_public",
+          "panel_channel": "app_web_phone_transfer",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.tbank.ru/bank/help/payments/transfers/russia/phone/",
+            "https://www.tbank.ru/bank/help/payments/transfers/russia/c2c/",
+            "https://www.tbank.ru/bank/help/debit-cards/tinkoff-black/protect-card/notifications/"
+          ],
+          "transfer_limits": [
+            {
+              "label": "Phone transfer per transaction",
+              "value": "up to 1,000,000 RUB",
+              "is_warning": false
+            },
+            {
+              "label": "Phone transfers per day",
+              "value": "up to 30 transfers",
+              "is_warning": false
+            },
+            {
+              "label": "Free outgoing transfers without subscription",
+              "value": "up to 20,000 RUB/month",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Beyond free monthly amount",
+              "value": "depends on tariff / subscription",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "В проекте показываются справочные лимиты переводов по номеру телефона.",
+            "Публично подтвержденного прямого SMS-шаблона перевода нет: используйте официальный app/web-канал.",
+            "Перед отправкой проверьте актуальные лимиты и комиссию в текущем официальном канале."
+          ]
+        },
+        {
+          "bank_id": "vtb_ru",
+          "bank_name": "VTB",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "official_website": "https://www.vtb.ru",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "generic_credit",
+              "language": "ru",
+              "text": "Счет 8036: зачисление 2 500 ₽. Баланс 12 000 ₽."
+            },
+            {
+              "type": "generic_debit",
+              "language": "ru",
+              "text": "Счет 8036: списание 499 ₽. Баланс 11 501 ₽."
+            }
+          ],
+          "notes": "VTB public materials confirm app/web transfers and notifications, but not a direct SMS transfer command.",
+          "official_status": "verified_public",
+          "panel_channel": "app_web_phone_transfer",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.vtb.ru/personal/platezhi-i-perevody/money-transfer/",
+            "https://www.vtb.ru/about/contacts/"
+          ],
+          "bank_rules": [
+            "В проекте показываются справочные условия переводов по номеру телефона.",
+            "Публично подтвержденного прямого SMS-шаблона перевода нет: рабочим считается app/web-сценарий.",
+            "Точные лимиты и комиссия могут зависеть от направления перевода, поэтому их нужно сверять перед отправкой."
+          ]
+        },
+        {
+          "bank_id": "alfabank_ru",
+          "bank_name": "Alfa-Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "official_website": "https://www.alfabank.ru",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "generic_credit",
+              "language": "ru",
+              "text": "Счет 8036 пополнение 2 500 ₽. Баланс 12 000 ₽."
+            },
+            {
+              "type": "generic_debit",
+              "language": "ru",
+              "text": "Счет 8036 списание 499 ₽. Баланс 11 501 ₽."
+            }
+          ],
+          "notes": "Public Alfa sources confirm phone-number transfer limits in app/web, but not a current direct SMS command.",
+          "official_status": "verified_public",
+          "panel_channel": "app_web_phone_transfer",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://alfabank.ru/help/articles/debit-cards/platezhnye-sistemy-bankovskih-kart/",
+            "https://click.alfabank.ru/cs/groups/public/documents/document/alfa_help02_05.html"
+          ],
+          "transfer_limits": [
+            {
+              "label": "Transfers to your own account by phone number",
+              "value": "up to 30,000,000 RUB/month",
+              "is_warning": false
+            },
+            {
+              "label": "Transfers to another person by phone number",
+              "value": "up to 100,000 RUB/month without fee",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Above free monthly amount",
+              "value": "0.5% (max 1,500 RUB)",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "В проекте показываются справочные условия переводов по номеру телефона.",
+            "Публично подтвержденного прямого SMS-шаблона перевода нет: используйте официальный мобильный или web-канал.",
+            "Перед отправкой сверяйте текущий лимит и комиссию в официальном канале, так как условия могут меняться."
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "NG",
+      "country_name": "Nigeria",
+      "locale": "en-NG",
+      "currency": "NGN",
+      "languages": [
+        "en"
+      ],
+      "banks": [
+        {
+          "bank_id": "gtbank_ng",
+          "bank_name": "GTBank (Guaranty Trust Bank)",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 3,
+          "status": "verified",
+          "official_website": "https://www.gtbank.com",
+          "help_number": "0800 4826 66328",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*737*1*{amount}*{account}#",
+            "variables": [
+              "amount",
+              "account"
+            ],
+            "example": "*737*1*1000*0123456789#",
+            "android_uri": "tel:*737*1*1000*0123456789%23",
+            "routing_enabled": true
+          },
+          "transfer_limits": [
+            {
+              "label": "Daily transfer limit (*737#)",
+              "value": "up to ₦1,000,000",
+              "is_warning": false
+            },
+            {
+              "label": "Authentication range",
+              "value": "₦100 - ₦500,000 via 737 PIN / Hardware Token",
+              "is_warning": false
+            },
+            {
+              "label": "Higher range",
+              "value": "₦500,001 - ₦1,000,000 via Hardware Token",
+              "is_warning": false
+            },
+            {
+              "label": "Older GTBank FAQ reference",
+              "value": "₦200,000/day still appears on some official FAQ pages",
+              "is_warning": true
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Transfer up to ₦5,000",
+              "value": "₦10 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "Transfer ₦5,001 – ₦50,000",
+              "value": "₦25 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "Transfer above ₦50,000",
+              "value": "₦50 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "USSD session fee (from airtime)",
+              "value": "₦6.98",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Для текущего сценария используется официальный USSD-формат перевода по счету: *737*1*Amount*NUBAN Account Number#.",
+            "Для перевода нужен счет получателя, а не номер телефона, поэтому в форме сначала выбирается банк, затем вводится счет.",
+            "Существуют и другие варианты *737#, но интерактивно поддерживается только этот подтвержденный маршрут."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "en",
+              "text": "Acct: XX8036 Amt: NGN1,000.00 DR Desc: Transfer to 0123456789 GTB Avail Bal: NGN14,200.00 Date: 14/Mar/2026 09:41"
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct: XX8036 Amt: NGN3,500.00 DR Desc: POS SHOPRITE IKEJA Avail Bal: NGN10,700.00 Date: 14/Mar/2026 13:05"
+            },
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "Acct: XX8036 Amt: NGN5,000.00 CR Desc: NIP/0803xxxxxx/JOHN DOE Avail Bal: NGN19,700.00 Date: 14/Mar/2026 15:22"
+            },
+            {
+              "type": "airtime_debit",
+              "language": "en",
+              "text": "Acct: XX8036 Amt: NGN500.00 DR Desc: Airtime Purchase Avail Bal: NGN19,200.00 Date: 14/Mar/2026 17:30"
+            }
+          ],
+          "notes": "Official GTBank sources conflict on the daily cap (₦200,000 vs up to ₦1,000,000). Panel kept with warning instead of a single unquestioned figure.",
+          "official_status": "limited_public",
+          "panel_channel": "ussd",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://737.gtbank.com/features",
+            "https://737.gtbank.com/faqs",
+            "https://www.gtbank.com/personal-banking/services/e-banking/bank-737"
+          ]
+        },
+        {
+          "bank_id": "firstbank_ng",
+          "bank_name": "FirstBank Nigeria",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "verified",
+          "official_website": "https://www.firstbanknigeria.com",
+          "help_number": "0708-062-5000",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*894*{amount}*{account}#",
+            "variables": [
+              "amount",
+              "account"
+            ],
+            "example": "*894*1000*0123456789#",
+            "android_uri": "tel:*894*1000*0123456789%23",
+            "routing_enabled": true
+          },
+          "transfer_limits": [
+            {
+              "label": "Daily limit (*894#)",
+              "value": "₦100,000",
+              "is_warning": false
+            },
+            {
+              "label": "Airtime top-up daily",
+              "value": "₦10,000",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "USSD session fee",
+              "value": "operator / NCC charge may apply",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Для текущего сценария используется официальный стартовый USSD-формат перевода по счету: *894*Amount*Account Number#.",
+            "Для перевода нужен счет получателя, а не номер телефона, поэтому в форме используется поле счета.",
+            "В официальном процессе после запуска команды может потребоваться дополнительный выбор банка получателя или подтверждение PIN."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "en",
+              "text": "Txn: Debit. Acct: XX8036. Amt: NGN2,000.00. Desc: Transfer to 2012345678/Zenith. Avail Bal: NGN8,450.00. Date: 14-Mar-2026 10:15."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Txn: Debit. Acct: XX8036. Amt: NGN1,200.00. Desc: POS/ACCESS MERCHANT/LAGOS. Avail Bal: NGN7,250.00. Date: 14-Mar-2026 12:40."
+            },
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "Txn: Credit. Acct: XX8036. Amt: NGN10,000.00. Desc: NIP/FirstBank/MARY OKAFOR. Avail Bal: NGN17,250.00. Date: 14-Mar-2026 14:07."
+            },
+            {
+              "type": "atm_withdrawal",
+              "language": "en",
+              "text": "Txn: Debit. Acct: XX8036. Amt: NGN5,000.00. Desc: ATM/FIRST BANK ATM IKEJA. Avail Bal: NGN12,250.00. Date: 14-Mar-2026 16:53."
+            }
+          ],
+          "notes": "Official *894# channel confirmed, but higher token-based transfer limits still need a fresh dedicated official source.",
+          "official_status": "limited_public",
+          "panel_channel": "ussd",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.firstbanknigeria.com/doing-more-beyond-lockdown-with-first-banks-magic-service-code/",
+            "https://www.firstbanknigeria.com/personal/our-products/"
+          ]
+        },
+        {
+          "bank_id": "zenith_ng",
+          "bank_name": "Zenith Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "verified",
+          "official_website": "https://www.zenithbank.com",
+          "help_number": "0700-ZENITHBANK",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*966*{amount}*{account}#",
+            "variables": [
+              "amount",
+              "account"
+            ],
+            "example": "*966*1000*0123456789#",
+            "android_uri": "tel:*966*1000*0123456789%23",
+            "routing_enabled": true
+          },
+          "transfer_limits": [
+            {
+              "label": "Daily limit (basic, no card linked)",
+              "value": "₦20,000",
+              "is_warning": true
+            },
+            {
+              "label": "Daily limit (with card linked)",
+              "value": "₦100,000",
+              "is_warning": false
+            },
+            {
+              "label": "Airtime top-up daily",
+              "value": "₦3,000",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Transfer up to ₦5,000",
+              "value": "₦10 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "Transfer ₦5,001 – ₦50,000",
+              "value": "₦25 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "Transfer above ₦50,000",
+              "value": "₦50 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "USSD session fee (from airtime)",
+              "value": "₦6.98",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Для текущего сценария используется официальный USSD-формат перевода по счету: *966*Amount*Account Number#.",
+            "Для перевода нужен счет получателя, а не номер телефона, поэтому в форме используется поле счета.",
+            "После запуска команды может потребоваться дальнейший выбор банка получателя или подтверждение PIN."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "en",
+              "text": "Acct:225**8036 DT:14/03/2026:09:30:11AM Amt:NGN1,000.00 DR Desc:Transfer to 0123456789/GTB Bal:13,700.00 Ref:2603140045"
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct:225**8036 DT:14/03/2026:11:45:03AM Amt:NGN4,250.00 DR Desc:POS/SHOPRITE/LAGOS Bal:9,450.00 Ref:2603140092"
+            },
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "Acct:225**8036 DT:14/03/2026:14:22:57PM Amt:NGN7,500.00 CR Desc:NIP/UBA/CHUKWUEMEKA OBI Bal:16,950.00 Ref:2603140187"
+            },
+            {
+              "type": "atm_withdrawal",
+              "language": "en",
+              "text": "Acct:225**8036 DT:14/03/2026:17:05:44PM Amt:NGN10,000.00 DR Desc:ATM/ZENITH ATM VI Bal:6,950.00 Ref:2603140234"
+            }
+          ],
+          "notes": "Updated from official *966# FAQ. Previous ₦2,000,000 token figure was removed because it was not re-confirmed on the current public page.",
+          "official_status": "verified_public",
+          "panel_channel": "ussd",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.zenithbank.com/personal-banking/ways-to-bank/ussd-banking-star966/"
+          ]
+        },
+        {
+          "bank_id": "uba_ng",
+          "bank_name": "UBA (United Bank for Africa)",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "verified",
+          "official_website": "https://www.ubagroup.com",
+          "help_number": "07002255822",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*919*4*{account}*{amount}#",
+            "variables": [
+              "account",
+              "amount"
+            ],
+            "example": "*919*4*0123456789*1000#",
+            "android_uri": "tel:*919*4*0123456789*1000%23",
+            "routing_enabled": true
+          },
+          "transfer_limits": [
+            {
+              "label": "Per transaction (PIN / Secure Pass)",
+              "value": "₦20,000",
+              "is_warning": true
+            },
+            {
+              "label": "Daily limit (PIN / Secure Pass)",
+              "value": "₦100,000",
+              "is_warning": false
+            },
+            {
+              "label": "Per transaction (Secure Pass + indemnity)",
+              "value": "₦500,000",
+              "is_warning": false
+            },
+            {
+              "label": "Daily limit (Secure Pass + indemnity)",
+              "value": "₦1,000,000",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Interbank transfer (NIP)",
+              "value": "₦10 – ₦50 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "USSD session fee (from airtime)",
+              "value": "₦6.98",
+              "is_warning": true
+            },
+            {
+              "label": "Electronic Money Transfer Levy (recipient, on ≥₦10,000)",
+              "value": "₦50",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Для текущего сценария используется официальный межбанковский USSD-формат перевода по счету: *919*4*AccountNumber*Amount#.",
+            "Для перевода нужен счет получателя, а не номер телефона, поэтому в форме используется поле счета.",
+            "Другие варианты *919# могут существовать для перевода внутри сети, но интерактивно поддерживается именно этот подтвержденный маршрут."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "en",
+              "text": "UBA Alert: Debit NGN1,000.00 on Acct XX8036. Desc: FT to 0123456789/GTB. Bal: NGN12,300.00. 14/03/2026 09:45."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "UBA Alert: Debit NGN2,750.00 on Acct XX8036. Desc: POS NNPC FILLING STATION. Bal: NGN9,550.00. 14/03/2026 12:10."
+            },
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "UBA Alert: Credit NGN5,000.00 on Acct XX8036. Desc: NIP/FirstBank/EMEKA OKAFOR. Bal: NGN14,550.00. 14/03/2026 15:30."
+            },
+            {
+              "type": "atm_withdrawal",
+              "language": "en",
+              "text": "UBA Alert: Debit NGN5,000.00 on Acct XX8036. Desc: ATM/UBA ATM LEKKI. Bal: NGN9,550.00. 14/03/2026 18:55."
+            }
+          ],
+          "notes": "Updated from current official UBA *919# page.",
+          "official_status": "verified_public",
+          "panel_channel": "ussd",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.ubagroup.com/nigeria/personal-banking/digital-banking/919-ussd-banking/"
+          ]
+        },
+        {
+          "bank_id": "access_ng",
+          "bank_name": "Access Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": 3,
+          "status": "needs_verification",
+          "official_website": "https://www.accessbankplc.com",
+          "help_number": "0700-300-000-00",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*901*{amount}*{account}#",
+            "variables": [
+              "amount",
+              "account"
+            ],
+            "example": "*901*1000*0123456789#",
+            "android_uri": "tel:*901*1000*0123456789%23",
+            "routing_enabled": true
+          },
+          "transfer_limits": [
+            {
+              "label": "Access Money per transaction",
+              "value": "₦20,000",
+              "is_warning": false
+            },
+            {
+              "label": "Access Money daily limit (Tier 1)",
+              "value": "₦50,000",
+              "is_warning": false
+            },
+            {
+              "label": "Access Money daily limit (Tier 2)",
+              "value": "₦200,000",
+              "is_warning": false
+            },
+            {
+              "label": "Access Money daily limit (Tier 3)",
+              "value": "₦500,000",
+              "is_warning": false
+            },
+            {
+              "label": "EFT via mobile banking",
+              "value": "up to ₦2,000,000/day in 4 x ₦500,000 transfers",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Transfer within Access Bank",
+              "value": "₦20 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "Interbank transfer (NIP)",
+              "value": "₦50 + VAT",
+              "is_warning": false
+            },
+            {
+              "label": "USSD session fee (from airtime)",
+              "value": "₦6.98",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Для текущего сценария используется опубликованный USSD-формат перевода по счету: *901*Amount*NUBAN Account Number#.",
+            "Для перевода нужен счет получателя, а не номер телефона, поэтому в форме используется поле счета.",
+            "Если сценарий внутри *901# изменится, его нужно перепроверить по текущему официальному каналу перед отправкой."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "en",
+              "text": "AccessAlert: Debit NGN1,000.00 from Acct XX8036. Desc: TRF to 0232****11/GTB. Avail Bal: NGN11,450.00. Date: 14/03/2026 09:55."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "AccessAlert: Debit NGN6,500.00 from Acct XX8036. Desc: POS/DOMINOS PIZZA/IKEJA. Avail Bal: NGN4,950.00. Date: 14/03/2026 13:20."
+            },
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "AccessAlert: Credit NGN20,000.00 to Acct XX8036. Desc: NIP/Zenith Bank/ADEBOLA JAMES. Avail Bal: NGN24,950.00. Date: 14/03/2026 16:44."
+            },
+            {
+              "type": "web_purchase_debit",
+              "language": "en",
+              "text": "AccessAlert: Debit NGN3,200.00 from Acct XX8036. Desc: WEB/JUMIA NIGERIA/ONLINE. Avail Bal: NGN21,750.00. Date: 14/03/2026 19:10."
+            }
+          ],
+          "notes": "Official limits updated from Access Money and EFT sources. Panel now distinguishes wallet tiers from mobile banking EFT.",
+          "official_status": "verified_public",
+          "panel_channel": "wallet_ussd_app",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.accessbankplc.com/personal/savings-investing/access-money-account",
+            "https://www.accessbankplc.com/Rates-Guide/",
+            "https://www.accessbankplc.com/help/frequently-asked-questions/electronic-funds-transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "IN",
+      "country_name": "India",
+      "locale": "en-IN",
+      "currency": "INR",
+      "languages": [
+        "en",
+        "hi"
+      ],
+      "banks": [
+        {
+          "bank_id": "sbi_in",
+          "bank_name": "State Bank of India",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 2,
+          "status": "needs_verification",
+          "official_website": "https://sbi.co.in",
+          "help_number": "9223040000",
+          "sms": {
+            "enabled": true,
+            "number": "9223440000",
+            "template": "IMPS {phone} {amount}",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "IMPS 9123456789 1000",
+            "routing_enabled": true
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*99*1*{phone}*{amount}#",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "*99*1*9123456789*1000#",
+            "android_uri": "tel:*99*1*9123456789*1000%23",
+            "routing_enabled": true
+          },
+          "transfer_limits": [
+            {
+              "label": "IMPS via YONO / Internet Banking",
+              "value": "up to ₹5,00,000 per transaction",
+              "is_warning": false
+            },
+            {
+              "label": "Legacy SMS / USSD limit",
+              "value": "requires manual verification with current SBI channel",
+              "is_warning": true
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "IMPS via YONO / Internet Banking",
+              "value": "Free (as publicly advertised by SBI)",
+              "is_warning": false
+            },
+            {
+              "label": "SMS / USSD carrier charge",
+              "value": "depends on telecom operator",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Публично подтвержден IMPS для приложения и интернет-банка, но нет достаточно точного текущего описания SMS- или USSD-команды для проекта.",
+            "Legacy-сценарии мобильного банка могут требовать MMID, регистрацию получателя, user ID и MPIN, поэтому простой шаблон phone + amount нельзя считать подтвержденным.",
+            "Пока точный публичный формат команды не подтвержден, экран нужно использовать только как справку по лимитам, без интерактивной отправки."
+          ],
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "INR 1,000 credited to A/C XX8036 via IMPS. Avl Bal INR 15,200."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            },
+            {
+              "type": "mixed_language_credit",
+              "language": "hi-en",
+              "text": "A/c XX8036 me INR 2500 credit hua. Available balance INR 12000."
+            }
+          ],
+          "notes": "The previous exact SMS IMPS figures were downgraded because fresh official SBI public pages for the exact SMS / USSD channel were not found during the audit.",
+          "official_status": "limited_public",
+          "panel_channel": "sms_ussd_app",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://sbi.co.in/web/customer-care/contact-centre",
+            "https://sbi.co.in/web/personal-banking/faq-on-e-mandate-on-debit-cards"
+          ]
+        },
+        {
+          "bank_id": "axisbank_in",
+          "bank_name": "Axis Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "official_website": "https://www.axisbank.com",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "A/C XX8036 credited with INR 2,500. Avl Bal INR 12,000."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            }
+          ],
+          "notes": "Info panel now shows official IMPS app/web limits only. No direct SMS transfer command is claimed.",
+          "official_status": "verified_public",
+          "panel_channel": "app_web_imps",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.axisbank.com/bank-smart/internet-banking/transfer-funds/immediate-payment"
+          ],
+          "transfer_limits": [
+            {
+              "label": "IMPS per transaction",
+              "value": "up to INR 5 lakh",
+              "is_warning": false
+            }
+          ],
+          "bank_rules": [
+            "Публично подтвержден IMPS как 24x7-канал для app/web.",
+            "Публично подтвержденного прямого SMS-шаблона перевода для проекта не найдено.",
+            "Используйте этот экран как справку по условиям перевода, а реальную отправку подтверждайте в официальном канале."
+          ]
+        },
+        {
+          "bank_id": "hdfcbank_in",
+          "bank_name": "HDFC Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "official_website": "https://www.hdfcbank.com",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "A/C XX8036 credited with INR 2,500. Avl Bal INR 12,000."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            }
+          ],
+          "notes": "Info panel updated to official IMPS limits and fee bands. SMS transfer command still unverified.",
+          "official_status": "verified_public",
+          "panel_channel": "app_web_imps",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.hdfcbank.com/personal/pay/money-transfer/immediate-payment-service-imps/limits",
+            "https://www.hdfcbank.com/personal/pay/money-transfer/immediate-payment-service-imps/fees-and-charges",
+            "https://www.hdfcbank.com/personal/pay/money-transfer/immediate-payment-service-imps/faqs"
+          ],
+          "transfer_limits": [
+            {
+              "label": "IMPS using account + IFSC",
+              "value": "up to INR 5 lakh per transaction",
+              "is_warning": false
+            },
+            {
+              "label": "IMPS using mobile + MMID",
+              "value": "INR 5,000/day",
+              "is_warning": true
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Up to INR 1,000",
+              "value": "INR 2.50 + GST",
+              "is_warning": false
+            },
+            {
+              "label": "INR 1,001 to 1 lakh",
+              "value": "INR 5 + GST",
+              "is_warning": false
+            },
+            {
+              "label": "Above INR 1 lakh",
+              "value": "INR 15 + GST",
+              "is_warning": false
+            }
+          ],
+          "bank_rules": [
+            "Публично подтверждены IMPS-лимиты для приложения и netbanking.",
+            "Публично подтвержденного прямого SMS-шаблона перевода для проекта не найдено.",
+            "Более низкий лимит относится к маршруту mobile number + MMID, а не к полному сценарию account + IFSC."
+          ]
+        },
+        {
+          "bank_id": "icicibank_in",
+          "bank_name": "ICICI Bank",
+          "type": "bank",
+          "priority": "secondary",
+          "tier": null,
+          "status": "needs_manual_verification",
+          "official_website": "https://www.icicibank.com",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "A/C XX8036 credited with INR 2,500. Avl Bal INR 12,000."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "Acct XX8036 debited by INR 499. Avl Bal INR 11,501."
+            }
+          ],
+          "notes": "Info panel updated to official IMPS limits. SMS command support remains unverified.",
+          "official_status": "verified_public",
+          "panel_channel": "app_web_imps",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.icicibank.com/personal-banking/online-services/funds-transfer/neft-rtgs"
+          ],
+          "transfer_limits": [
+            {
+              "label": "IMPS account + IFSC",
+              "value": "up to INR 5 lakh per transaction",
+              "is_warning": false
+            },
+            {
+              "label": "IMPS via mobile + MMID",
+              "value": "up to INR 10,000",
+              "is_warning": true
+            },
+            {
+              "label": "iMobile daily cap",
+              "value": "up to INR 20 lakh/day",
+              "is_warning": false
+            }
+          ],
+          "bank_rules": [
+            "Публично подтвержден IMPS через iMobile и Internet Banking.",
+            "Публично подтвержденного прямого SMS-шаблона перевода для проекта не найдено.",
+            "Маршрут mobile number + MMID обычно имеет меньший лимит, чем перевод по полным банковским реквизитам."
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "PK",
+      "country_name": "Pakistan",
+      "locale": "en-PK",
+      "currency": "PKR",
+      "languages": [
+        "en",
+        "ur"
+      ],
+      "banks": [
+        {
+          "bank_id": "ubl_pk",
+          "bank_name": "UBL (United Bank Limited)",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 1,
+          "status": "excluded",
+          "official_website": "https://www.ubldigital.com",
+          "help_number": "111-825-888",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": "SEND {phone} {amount}",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "SEND 03001234567 1000",
+            "routing_enabled": false
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "transfer_limits": [
+            {
+              "label": "Asaan Mobile Account daily limit",
+              "value": "PKR 25,000/day",
+              "is_warning": false
+            },
+            {
+              "label": "Asaan Mobile Account monthly limit",
+              "value": "PKR 50,000/month",
+              "is_warning": false
+            },
+            {
+              "label": "Asaan Mobile Account maximum balance",
+              "value": "PKR 200,000",
+              "is_warning": false
+            },
+            {
+              "label": "Biometrically verified Asaan account",
+              "value": "PKR 50,000/day, PKR 200,000/month",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Charges",
+              "value": "as per UBL schedule of charges / product type",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Сценарий Omni Send через 8257 требует последние 4 цифры CNIC отправителя и подтверждение PIN по звонку, поэтому не совместим со стандартным сценарием проекта.",
+            "Подтверждены wallet-сценарии без интернета через *2262# и цифровые переводы по счету.",
+            "Публично подтвержденного однострочного SMS-шаблона перевода для проекта нет.",
+            "Используйте этот экран как справку по лимитам и условиям, а не как подтверждение готовой SMS-команды."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "en",
+              "text": "UBL: PKR 5,000.00 debited from Acct XX8036 on 14-Mar-26. Desc: Transfer to 03001234567. Avail Bal: PKR 22,150.00."
+            },
+            {
+              "type": "purchase_debit",
+              "language": "en",
+              "text": "UBL: PKR 1,850.00 debited from Acct XX8036 on 14-Mar-26. Desc: POS IMTIAZ SUPER MARKET. Avail Bal: PKR 20,300.00."
+            },
+            {
+              "type": "incoming_credit",
+              "language": "en",
+              "text": "UBL: PKR 10,000.00 credited to Acct XX8036 on 14-Mar-26. Desc: IBFT from HBL/AHMED ALI. Avail Bal: PKR 30,300.00."
+            },
+            {
+              "type": "atm_withdrawal",
+              "language": "en",
+              "text": "UBL: PKR 5,000.00 debited from Acct XX8036 on 14-Mar-26. Desc: ATM Withdrawal. Avail Bal: PKR 25,300.00."
+            }
+          ],
+          "notes": "Previous speculative SEND-by-SMS limits were replaced with official UBL Asaan / digital account limits.",
+          "official_status": "limited_public",
+          "panel_channel": "wallet_ussd_app",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.ubldigital.com/UBL-Asaan-Mobile-Account",
+            "https://www.ubldigital.com/UBLPay/Asaan-Account",
+            "https://www.ubldigital.com/NRP-Services/Remittances/Omni-HRA-Account"
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "BD",
+      "country_name": "Bangladesh",
+      "locale": "en-BD",
+      "currency": "BDT",
+      "languages": [
+        "en",
+        "bn"
+      ],
+      "banks": [
+        {
+          "bank_id": "bkash_bd",
+          "bank_name": "bKash",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": 1,
+          "status": "excluded",
+          "official_website": "https://www.bkash.com",
+          "help_number": "16247",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": "SEND {phone} {amount}",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "SEND 01712345678 500",
+            "routing_enabled": false
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": [],
+            "note": "bKash *247# is an interactive menu — excluded per project policy"
+          },
+          "transfer_limits": [
+            {
+              "label": "Send Money per transaction",
+              "value": "up to ৳50,000",
+              "is_warning": false
+            },
+            {
+              "label": "Send Money daily total",
+              "value": "৳50,000",
+              "is_warning": false
+            },
+            {
+              "label": "Send Money monthly total",
+              "value": "৳300,000",
+              "is_warning": false
+            },
+            {
+              "label": "Wallet balance limit",
+              "value": "৳500,000",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Send Money up to ৳50",
+              "value": "Free",
+              "is_warning": false
+            },
+            {
+              "label": "Priyo Number up to ৳25,000/month",
+              "value": "Free",
+              "is_warning": false
+            },
+            {
+              "label": "Regular Send Money after free threshold",
+              "value": "৳5 / ৳10 depending on band",
+              "is_warning": false
+            }
+          ],
+          "bank_rules": [
+            "Прямой однострочный SMS- или USSD-перевод не подтвержден: рабочими считаются приложение и интерактивное меню *247#.",
+            "Официально отправка денег подтверждена через приложение и меню *247#.",
+            "Публично подтвержденного однострочного SMS-шаблона перевода нет: *247# нужно считать интерактивным USSD-сценарием.",
+            "Для Priyo Numbers действуют отдельные бесплатные лимиты, а для PRA-аккаунтов — свои условия и уведомления."
+          ],
+          "parser_examples": [
+            {
+              "type": "send_money_debit",
+              "language": "en",
+              "text": "bKash: You have sent Tk 500.00 to 01712345678. Fee Tk 5.00. Balance Tk 1,495.00. TrxID AA12345678 Date 14/03/2026 09:41"
+            },
+            {
+              "type": "cash_in_credit",
+              "language": "en",
+              "text": "bKash: Cash In Tk 1,000.00 successful at Agent 01898765432. Balance Tk 2,495.00. TrxID AA87654321 Date 14/03/2026 11:20"
+            },
+            {
+              "type": "receive_money_credit",
+              "language": "en",
+              "text": "bKash: You have received Tk 500.00 from 01811223344. Balance Tk 2,995.00. TrxID AA11223344 Date 14/03/2026 14:05"
+            },
+            {
+              "type": "payment_debit",
+              "language": "en",
+              "text": "bKash: Payment Tk 250.00 to Merchant 01700112233 successful. Balance Tk 2,745.00. TrxID AA55667788 Date 14/03/2026 16:30"
+            }
+          ],
+          "notes": "Panel updated from official bKash limits and send-money pages. Direct SMS command remains unverified; official offline path is interactive *247#.",
+          "official_status": "verified_public",
+          "panel_channel": "wallet_ussd_interactive",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.bkash.com/index.php/en/help/limits",
+            "https://www.bkash.com/en/products-services/send-money",
+            "https://www.bkash.com/en/products-services/send-money-to-priyo-number",
+            "https://www.bkash.com/en/page/personal-retail-account"
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "ID",
+      "country_name": "Indonesia",
+      "locale": "id-ID",
+      "currency": "IDR",
+      "languages": [
+        "id"
+      ],
+      "banks": [
+        {
+          "bank_id": "mandiri_id",
+          "bank_name": "Bank Mandiri",
+          "type": "bank",
+          "priority": "primary",
+          "tier": 1,
+          "status": "excluded",
+          "official_website": "https://www.bankmandiri.co.id",
+          "help_number": "83355",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": "TRF {phone} {amount}",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "TRF 08123456789 100000",
+            "routing_enabled": false
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "transfer_limits": [
+            {
+              "label": "Mandiri SMS",
+              "value": "service available via 83355 after registration",
+              "is_warning": false
+            },
+            {
+              "label": "Livin' by Mandiri: inter-account transfer",
+              "value": "Rp 300,000,000/day/transaction",
+              "is_warning": false
+            },
+            {
+              "label": "Livin' by Mandiri: online interbank transfer",
+              "value": "Rp 250,000,000/day, Rp 50,000,000/transaction",
+              "is_warning": false
+            },
+            {
+              "label": "Livin' by Mandiri: BI Fast",
+              "value": "Rp 150,000,000/day, Rp 100,000,000/transaction",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Mandiri SMS",
+              "value": "premium SMS, charged by mobile operator",
+              "is_warning": true
+            },
+            {
+              "label": "Livin' BI Fast",
+              "value": "Rp 2,500",
+              "is_warning": false
+            },
+            {
+              "label": "Livin' online transfer",
+              "value": "Rp 6,500",
+              "is_warning": false
+            },
+            {
+              "label": "Livin' RTGS",
+              "value": "Rp 30,000",
+              "is_warning": false
+            }
+          ],
+          "bank_rules": [
+            "SMS- и USSD-переводы закрыты с 14.04.2023, поэтому основным каналом нужно считать приложение Livin by Mandiri.",
+            "Номер 83355 используется для клиентских SMS-сценариев после миграции с 3355.",
+            "Публичные материалы хорошо описывают SMS-сервис и лимиты в приложении, но не подтверждают чистый перевод по номеру телефона для проекта.",
+            "Пока официальный шаблон не подтвержден, экран нужно использовать как справочный, а не как прямую инструкцию на отправку."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "id",
+              "text": "BANKMANDIRI: Rek.XX8036 tgl 14/03/26 09:30 Debet Rp1.000.000 Ket:Transfer ke 1230012345678 Saldo Rp5.250.000"
+            },
+            {
+              "type": "purchase_debit",
+              "language": "id",
+              "text": "BANKMANDIRI: Rek.XX8036 tgl 14/03/26 12:15 Debet Rp350.000 Ket:POS ALFAMART JAKARTA Saldo Rp4.900.000"
+            },
+            {
+              "type": "incoming_credit",
+              "language": "id",
+              "text": "BANKMANDIRI: Rek.XX8036 tgl 14/03/26 14:45 Kredit Rp2.000.000 Ket:Transfer dari BRI/BUDI SANTOSO Saldo Rp6.900.000"
+            },
+            {
+              "type": "atm_withdrawal",
+              "language": "id",
+              "text": "BANKMANDIRI: Rek.XX8036 tgl 14/03/26 17:00 Debet Rp500.000 Ket:Tarik Tunai ATM Mandiri Saldo Rp6.400.000"
+            }
+          ],
+          "notes": "The project number was corrected to 83355. App-channel limits were added separately; direct typed SMS transfer syntax remains provisional.",
+          "official_status": "limited_public",
+          "panel_channel": "sms_notifications_plus_app",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.bankmandiri.co.id/en/web/guest/mandiri-sms",
+            "https://www.bankmandiri.co.id/penyesuaian-nomor-sms-bank-mandiri",
+            "https://www.bankmandiri.co.id/en/web/guest/livin/edukasi/limit-transfer-livin",
+            "https://www.bankmandiri.co.id/en/web/guest/livin/edukasi/cara-transfer"
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "PH",
+      "country_name": "Philippines",
+      "locale": "en-PH",
+      "currency": "PHP",
+      "languages": [
+        "en",
+        "fil"
+      ],
+      "banks": [
+        {
+          "bank_id": "gcash_ph",
+          "bank_name": "GCash",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": 1,
+          "status": "excluded",
+          "official_website": "https://www.gcash.com",
+          "help_number": "2882",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": "SEND {phone} {amount}",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "SEND 09171234567 500",
+            "routing_enabled": false
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "transfer_limits": [
+            {
+              "label": "Fully Verified wallet limit",
+              "value": "PHP 100,000",
+              "is_warning": false
+            },
+            {
+              "label": "GCash Plus wallet limit",
+              "value": "PHP 500,000",
+              "is_warning": false
+            },
+            {
+              "label": "GCash Platinum wallet limit",
+              "value": "PHP 1,000,000",
+              "is_warning": false
+            },
+            {
+              "label": "Outgoing daily limit",
+              "value": "up to PHP 500,000 depending on profile",
+              "is_warning": false
+            },
+            {
+              "label": "Express Send transaction count",
+              "value": "550 send + 500 receive per month",
+              "is_warning": false
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "GCash to GCash",
+              "value": "depends on current service rules; commonly free for wallet-to-wallet",
+              "is_warning": false
+            },
+            {
+              "label": "Profile upgrade",
+              "value": "higher limits require verification / linked services",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "SMS-канал переводов де-факто устарел; прямой однострочный SMS- или USSD-перевод не подтвержден, основным каналом остается приложение.",
+            "Публично публикуются лимиты кошелька и операций в зависимости от уровня верификации профиля.",
+            "Основной подтвержденный канал операций — приложение; публичного прямого SMS-шаблона перевода нет.",
+            "Для увеличения лимита обычно требуется полная верификация и иногда подключение дополнительных продуктов."
+          ],
+          "parser_examples": [
+            {
+              "type": "send_money_debit",
+              "language": "en",
+              "text": "You have sent PHP 500.00 GCASH to Juan dela Cruz 09171234567. Your new balance is PHP 1,250.00. Ref. no. 294087757."
+            },
+            {
+              "type": "receive_money_credit",
+              "language": "en",
+              "text": "You have received PHP 1,000.00 GCASH from Maria Santos 09185556789. Your new balance is PHP 2,250.00. Ref. no. 294091823."
+            },
+            {
+              "type": "cash_in_credit",
+              "language": "en",
+              "text": "GCash Cash In of PHP 500.00 via 7-Eleven was successful. Your new GCash balance is PHP 2,750.00. Ref. no. 294098456."
+            },
+            {
+              "type": "payment_debit",
+              "language": "en",
+              "text": "You paid PHP 200.00 to Jollibee GCash merchant. Your new balance is PHP 2,550.00. Ref. no. 294103211."
+            }
+          ],
+          "notes": "Panel updated to current official wallet/profile limits. Previous simplified fixed limits were replaced with the current profile-based model.",
+          "official_status": "verified_public",
+          "panel_channel": "wallet_app",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://help.gcash.com/hc/en-us/articles/360021112894-What-are-my-GCash-wallet-and-transaction-limits",
+            "https://help.gcash.com/hc/en-us/articles/44143833564185-What-is-the-GCash-Express-Send-Transaction-Limit",
+            "https://help.gcash.com/hc/en-us/articles/900001210723-How-to-increase-GCash-wallet-and-transaction-limits"
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "VN",
+      "country_name": "Vietnam",
+      "locale": "vi-VN",
+      "currency": "VND",
+      "languages": [
+        "vi"
+      ],
+      "banks": [
+        {
+          "bank_id": "vietcombank_vn",
+          "bank_name": "Vietcombank",
+          "type": "bank",
+          "priority": "primary",
+          "tier": null,
+          "status": "excluded",
+          "official_website": "https://www.vietcombank.com.vn",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "vi",
+              "text": "Giao dich thanh cong."
+            },
+            {
+              "type": "balance",
+              "language": "vi",
+              "text": "So du hien tai VND 1200000."
+            }
+          ],
+          "notes": "Excluded from transfer routing. Panel now explicitly reflects parser-only / inquiry-only status.",
+          "official_status": "verified_public",
+          "panel_channel": "parser_only_sms_notifications",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://www.vietcombank.com.vn/en/Personal/SPDV/Ngan-hang-so/SMS-Banking",
+            "https://portal.vietcombank.com.vn/en-Us/Corporate/SMEs/E-Banking/Pages/vcb-smsb%40nking.aspx"
+          ],
+          "transfer_limits": [
+            {
+              "label": "SMS Banking channel",
+              "value": "inquiry and notification only",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "SMS Banking официально поддерживает уведомления и запросы, но не перевод денег по SMS-команде.",
+            "Для проекта этот банк нужно считать источником уведомлений и парсинга, а не каналом отправки.",
+            "Для реальных переводов используйте VCB Digibank или другой официальный канал."
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "GH",
+      "country_name": "Ghana",
+      "locale": "en-GH",
+      "currency": "GHS",
+      "languages": [
+        "en"
+      ],
+      "banks": [
+        {
+          "bank_id": "vodafone_gh",
+          "bank_name": "Telecel Cash (Vodafone Ghana)",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": null,
+          "status": "excluded",
+          "official_website": "https://telecel.com.gh",
+          "help_number": null,
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": false,
+            "template": null,
+            "variables": []
+          },
+          "parser_examples": [
+            {
+              "type": "transfer_success",
+              "language": "en",
+              "text": "GHS50.00 sent to 0241234567 successfully."
+            }
+          ],
+          "notes": "Excluded from routing, but panel now reflects official Telecel Cash tier caps.",
+          "official_status": "limited_public",
+          "panel_channel": "wallet_interactive",
+          "last_verified_at": "2026-03-14",
+          "official_sources": [
+            "https://support.telecel.com.gh/h/updated-customer-wallet-caps/",
+            "https://support.telecel.com.gh/h/bank-services-faqs/"
+          ],
+          "transfer_limits": [
+            {
+              "label": "Minimum KYC daily transaction limit",
+              "value": "GH¢ 3,000",
+              "is_warning": false
+            },
+            {
+              "label": "Medium KYC daily transaction limit",
+              "value": "GH¢ 15,000",
+              "is_warning": false
+            },
+            {
+              "label": "Enhanced KYC daily transaction limit",
+              "value": "GH¢ 25,000",
+              "is_warning": false
+            },
+            {
+              "label": "Maximum balance",
+              "value": "GH¢ 5,000 / 40,000 / 75,000 by KYC tier",
+              "is_warning": false
+            }
+          ],
+          "bank_rules": [
+            "Публично подтверждены лимиты по уровням кошелька и интеграции с банковскими сервисами.",
+            "Для проекта канал остается справочным: подтвержденный сценарий является меню-ориентированным, а не однострочной командой.",
+            "Если входящий перевод превышает лимит вашего уровня, операция не пройдет."
+          ]
+        }
+      ]
+    },
+    {
+      "country_code": "AM",
+      "country_name": "Armenia",
+      "locale": "hy-AM",
+      "currency": "AMD",
+      "languages": [
+        "hy",
+        "ru"
+      ],
+      "banks": [
+        {
+          "bank_id": "vivacell_am",
+          "bank_name": "VivaCell-MTS (MobiDram)",
+          "type": "wallet",
+          "priority": "primary",
+          "tier": 3,
+          "status": "needs_verification",
+          "official_website": "https://www.viva.am",
+          "help_number": "111",
+          "sms": {
+            "enabled": false,
+            "number": null,
+            "template": null,
+            "variables": []
+          },
+          "ussd": {
+            "enabled": true,
+            "template": "*444*{phone}*{amount}#",
+            "variables": [
+              "phone",
+              "amount"
+            ],
+            "example": "*444*093123456*5000#",
+            "android_uri": "tel:*444*093123456*5000%23",
+            "routing_enabled": true
+          },
+          "transfer_limits": [
+            {
+              "label": "Exact daily/monthly limit",
+              "value": "manual verification required with MobiDram",
+              "is_warning": true
+            }
+          ],
+          "transfer_fees": [
+            {
+              "label": "Fees",
+              "value": "manual verification required with MobiDram",
+              "is_warning": true
+            }
+          ],
+          "bank_rules": [
+            "Актуальный официальный публичный USSD-формат для перевода не подтвержден.",
+            "Текущий phone-only сценарий не должен строить команду без прямого подтверждения канала.",
+            "Используйте этот экран только как справочный, пока не появится официальный и проверяемый сценарий перевода."
+          ],
+          "parser_examples": [
+            {
+              "type": "transfer_debit",
+              "language": "hy",
+              "text": "MobiDram: Կատարվել է փոխանցում 5,000 AMD գումարով՝ 093123456 բաժանորդին։ Ձեր մնացորդը՝ 42,800 AMD։ 14.03.2026 09:41"
+            },
+            {
+              "type": "incoming_credit",
+              "language": "hy",
+              "text": "MobiDram: Դուք ստացել եք 10,000 AMD 077456789 բաժանորդից։ Ձեր մնացորդը՝ 52,800 AMD։ 14.03.2026 11:15"
+            },
+            {
+              "type": "transfer_debit",
+              "language": "ru",
+              "text": "MobiDram: Перевод 5,000 AMD на номер 093123456 выполнен. Ваш баланс: 47,800 AMD. 14.03.2026 14:30"
+            },
+            {
+              "type": "balance_inquiry",
+              "language": "hy",
+              "text": "MobiDram: Ձեր հաշվի մնացորդը՝ 47,800 AMD։ 14.03.2026 16:00"
+            }
+          ],
+          "notes": "Public official limit source not found on viva.am / mobidram.viva.am during the 2026-03-14 audit.",
+          "official_status": "manual_verification_required",
+          "panel_channel": "parser_only_or_unverified_ussd",
+          "last_verified_at": "2026-03-14",
+          "official_sources": []
+        }
+      ]
+    }
+  ]
+}
