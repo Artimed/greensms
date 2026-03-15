@@ -262,6 +262,12 @@
     .donate-card { background: var(--bg); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 18px; }
     .donate-name { font-size: .72rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
     .donate-val { font-size: .85rem; color: var(--text-dim); font-family: monospace; word-break: break-all; }
+    .donate-eth { display: flex; align-items: flex-start; gap: 8px; }
+    .donate-eth span { flex: 1; }
+    .copy-btn { background: none; border: 1px solid var(--bg3); border-radius: 6px; color: var(--text-dim); cursor: pointer; padding: 2px 6px; font-size: .8rem; flex-shrink: 0; transition: all .15s; }
+    .copy-btn:hover { border-color: var(--green); color: var(--green); }
+    .copy-confirm { font-size: .72rem; color: var(--green); margin-top: 4px; opacity: 0; transition: opacity .2s; }
+    .copy-confirm.show { opacity: 1; }
 
     footer { text-align: center; padding: 36px 24px; font-size: .8rem; color: var(--text-dim); border-top: 1px solid var(--bg3); }
     footer a { color: var(--text-dim); }
@@ -573,7 +579,11 @@
       </div>
       <div class="donate-card">
         <div class="donate-name">ETH · MetaMask</div>
-        <div class="donate-val">0x2008FD9D984caf5d19F0536bBD6C8aFf3aE6F91c</div>
+        <div class="donate-val donate-eth">
+          <span id="eth-addr">0x2008FD9D984caf5d19F0536bBD6C8aFf3aE6F91c</span>
+          <button class="copy-btn" onclick="copyEth()" title="Copy address">⧉</button>
+        </div>
+        <div id="eth-copied" class="copy-confirm">Copied!</div>
       </div>
     </div>
   </div>
@@ -751,6 +761,15 @@ function setLang(lang) {
     btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang || (lang === 'hy' && btn.textContent.trim() === 'ՀՅ'));
   });
   document.documentElement.lang = lang;
+}
+
+function copyEth() {
+  const addr = document.getElementById('eth-addr').textContent;
+  navigator.clipboard.writeText(addr).then(() => {
+    const c = document.getElementById('eth-copied');
+    c.classList.add('show');
+    setTimeout(() => c.classList.remove('show'), 2000);
+  });
 }
 
 // Auto-detect browser language

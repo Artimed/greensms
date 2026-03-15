@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app/app_controller.dart';
 import '../../pro_license/presentation/license_controller.dart';
@@ -1031,7 +1032,7 @@ class _SettingsPageState extends State<SettingsPage>
                   ],
                 ),
                 const SizedBox(height: 12),
-                const _DonateRow(label: 'Ko-fi', value: 'ko-fi.com/greensms'),
+                const _DonateRow(label: 'Ko-fi', value: 'ko-fi.com/greensms', url: 'https://ko-fi.com/greensms'),
                 const _DonateRow(label: 'ETH', value: '0x2008FD9D984caf5d19F0536bBD6C8aFf3aE6F91c'),
               ],
             ),
@@ -1043,39 +1044,42 @@ class _SettingsPageState extends State<SettingsPage>
 }
 
 class _DonateRow extends StatelessWidget {
-  const _DonateRow({required this.label, required this.value});
+  const _DonateRow({required this.label, required this.value, this.url});
 
   final String label;
   final String value;
+  final String? url;
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 6),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 52,
-            child: Text(
-              label,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: colorScheme.primary,
-                  ),
+    return ListTile(
+      dense: true,
+      contentPadding: EdgeInsets.zero,
+      title: Text(label,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                fontWeight: FontWeight.w600,
+                color: colorScheme.primary,
+              )),
+      subtitle: Text(value,
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                fontFamily: 'monospace',
+                color: colorScheme.onSurface.withValues(alpha: 0.8),
+              )),
+      trailing: url != null
+          ? Icon(Icons.open_in_new, size: 16, color: colorScheme.primary)
+          : IconButton(
+              icon: Icon(Icons.copy, size: 16, color: colorScheme.primary),
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: value));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('$label copied'), duration: const Duration(seconds: 2)),
+                );
+              },
             ),
-          ),
-          Expanded(
-            child: Text(
-              value,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontFamily: 'monospace',
-                    color: colorScheme.onSurface.withValues(alpha: 0.8),
-                  ),
-            ),
-          ),
-        ],
-      ),
+      onTap: url != null
+          ? () => launchUrl(Uri.parse(url!), mode: LaunchMode.externalApplication)
+          : null,
     );
   }
 }
