@@ -13,227 +13,102 @@
   <meta property="og:type" content="website" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --green: #22c55e;
-      --green-dark: #16a34a;
-      --green-dim: rgba(34,197,94,.12);
-      --bg: #0f172a;
-      --bg2: #1e293b;
-      --bg3: #334155;
-      --text: #f1f5f9;
-      --text-dim: #94a3b8;
-      --radius: 14px;
+      --green: #22c55e; --green-dark: #16a34a; --green-dim: rgba(34,197,94,.12);
+      --bg: #0f172a; --bg2: #1e293b; --bg3: #334155;
+      --text: #f1f5f9; --text-dim: #94a3b8; --radius: 14px;
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
     a { color: var(--green); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 32px;
-      border-bottom: 1px solid var(--bg3);
-      position: sticky; top: 0;
-      background: rgba(15,23,42,.92);
-      backdrop-filter: blur(10px);
-      z-index: 10;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; }
-    .logo-dot { width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0; overflow: hidden; }
-    .logo-dot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .nav-links { display: flex; gap: 24px; font-size: .9rem; color: var(--text-dim); }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; border-bottom: 1px solid var(--bg3); position: sticky; top: 0; background: rgba(15,23,42,.94); backdrop-filter: blur(10px); z-index: 10; gap: 16px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; flex-shrink: 0; }
+    .nav-icon { width: 34px; height: 34px; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+    .nav-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-links { display: flex; gap: 20px; font-size: .875rem; }
     .nav-links a { color: var(--text-dim); }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
 
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 96px 24px 72px;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .badge {
-      display: inline-block;
-      background: var(--green-dim);
-      color: var(--green);
-      border: 1px solid rgba(34,197,94,.3);
-      border-radius: 999px;
-      padding: 4px 14px;
-      font-size: .8rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      letter-spacing: .04em;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      letter-spacing: -.02em;
-    }
-    .hero h1 span { color: var(--green); }
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--text-dim);
-      margin-bottom: 40px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--green);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      transition: background .15s;
-    }
-    .btn-primary:hover { background: var(--green-dark); text-decoration: none; }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--bg2);
-      color: var(--text);
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--bg3);
-      transition: background .15s;
-    }
-    .btn-secondary:hover { background: var(--bg3); text-decoration: none; }
+    /* LANG SWITCHER */
+    .lang-switch { display: flex; gap: 4px; }
+    .lang-btn { background: none; border: 1px solid var(--bg3); border-radius: 6px; color: var(--text-dim); font-size: .75rem; font-weight: 600; padding: 4px 8px; cursor: pointer; transition: all .15s; letter-spacing: .04em; }
+    .lang-btn:hover { border-color: var(--green); color: var(--green); }
+    .lang-btn.active { background: var(--green-dim); border-color: var(--green); color: var(--green); }
 
-    /* NOTICE */
-    .notice {
-      background: var(--green-dim);
-      border: 1px solid rgba(34,197,94,.25);
-      border-radius: var(--radius);
-      padding: 14px 20px;
-      font-size: .85rem;
-      color: var(--text-dim);
-      max-width: 480px;
-      margin: 28px auto 0;
-      text-align: left;
-    }
+    /* HERO */
+    .hero { text-align: center; padding: 80px 24px 64px; max-width: 680px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,197,94,.3); border-radius: 999px; padding: 4px 14px; font-size: .78rem; font-weight: 600; margin-bottom: 20px; letter-spacing: .04em; }
+    .hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 18px; letter-spacing: -.02em; }
+    .hero h1 span { color: var(--green); }
+    .hero p { font-size: 1.05rem; color: var(--text-dim); margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; font-weight: 700; font-size: .95rem; padding: 13px 26px; border-radius: var(--radius); transition: background .15s; }
+    .btn-primary:hover { background: var(--green-dark); text-decoration: none; }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: var(--bg2); color: var(--text); font-weight: 600; font-size: .95rem; padding: 13px 26px; border-radius: var(--radius); border: 1px solid var(--bg3); transition: background .15s; }
+    .btn-secondary:hover { background: var(--bg3); text-decoration: none; }
+    .notice { background: var(--green-dim); border: 1px solid rgba(34,197,94,.25); border-radius: var(--radius); padding: 12px 18px; font-size: .82rem; color: var(--text-dim); max-width: 440px; margin: 24px auto 0; text-align: left; }
     .notice strong { color: var(--green); }
 
-    /* FEATURES */
-    .section { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
-    .section-label {
-      text-align: center;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      color: var(--green);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .section h2 {
-      text-align: center;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 800;
-      margin-bottom: 48px;
-      letter-spacing: -.01em;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .feature-card {
-      background: var(--bg2);
-      border: 1px solid var(--bg3);
-      border-radius: var(--radius);
-      padding: 28px;
-    }
-    .feature-icon {
-      width: 44px; height: 44px;
-      background: var(--green-dim);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-    }
-    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-    .feature-card p { font-size: .88rem; color: var(--text-dim); line-height: 1.55; }
+    /* SECTIONS */
+    .section { padding: 72px 24px; max-width: 1000px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: .75rem; font-weight: 700; letter-spacing: .1em; color: var(--green); text-transform: uppercase; margin-bottom: 10px; }
+    .section h2 { text-align: center; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 44px; letter-spacing: -.01em; }
 
-    /* BANKS */
-    .banks-grid {
-      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
-      margin-top: 20px;
-    }
-    .bank-tag {
-      background: var(--bg2);
-      border: 1px solid var(--bg3);
-      border-radius: 999px;
-      padding: 6px 16px;
-      font-size: .82rem;
-      color: var(--text-dim);
-    }
+    /* HOW IT WORKS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .step { background: var(--bg2); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 28px; position: relative; }
+    .step-num { width: 36px; height: 36px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .9rem; color: #fff; margin-bottom: 16px; }
+    .step h3 { font-size: .95rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: .85rem; color: var(--text-dim); line-height: 1.55; }
+
+    /* FEATURES */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+    .feature-card { background: var(--bg2); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 24px; }
+    .feature-icon { width: 42px; height: 42px; background: var(--green-dim); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px; }
+    .feature-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: 7px; }
+    .feature-card p { font-size: .84rem; color: var(--text-dim); line-height: 1.55; }
+
+    /* COUNTRIES */
+    .countries { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .country-card { background: var(--bg2); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 22px; }
+    .country-flag { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .country-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .country-card p { font-size: .82rem; color: var(--text-dim); margin-bottom: 12px; line-height: 1.5; }
+    .bank-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .bank-tag { background: var(--bg3); border-radius: 999px; padding: 3px 10px; font-size: .75rem; color: var(--text-dim); }
+
+    /* PRIVACY */
+    .privacy-strip { background: var(--bg2); border-top: 1px solid var(--bg3); border-bottom: 1px solid var(--bg3); }
+    .privacy-inner { max-width: 900px; margin: 0 auto; padding: 48px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; text-align: center; }
+    .privacy-item .privacy-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .privacy-item h4 { font-size: .9rem; font-weight: 700; margin-bottom: 5px; }
+    .privacy-item p { font-size: .8rem; color: var(--text-dim); }
+
+    /* INSTALL */
+    .install-steps { display: flex; flex-direction: column; gap: 12px; max-width: 600px; margin: 0 auto; }
+    .install-step { background: var(--bg2); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .install-num { background: var(--green); color: #fff; border-radius: 50%; width: 26px; height: 26px; min-width: 26px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .8rem; }
+    .install-step div { font-size: .9rem; line-height: 1.5; }
+    .install-step strong { font-weight: 700; }
 
     /* SUPPORT */
-    .support-section {
-      background: var(--bg2);
-      border-top: 1px solid var(--bg3);
-      border-bottom: 1px solid var(--bg3);
-    }
-    .support-inner {
-      max-width: 700px; margin: 0 auto; padding: 72px 24px;
-      text-align: center;
-    }
-    .support-inner h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
-    .support-inner p { color: var(--text-dim); margin-bottom: 36px; }
-    .donate-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 14px;
-      text-align: left;
-    }
-    .donate-card {
-      background: var(--bg);
-      border: 1px solid var(--bg3);
-      border-radius: var(--radius);
-      padding: 20px;
-    }
-    .donate-card .donate-name {
-      font-size: .75rem;
-      font-weight: 700;
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: 6px;
-    }
-    .donate-card .donate-val {
-      font-size: .88rem;
-      color: var(--text-dim);
-      font-family: monospace;
-      word-break: break-all;
-    }
+    .support-section { background: var(--bg2); border-top: 1px solid var(--bg3); border-bottom: 1px solid var(--bg3); }
+    .support-inner { max-width: 700px; margin: 0 auto; padding: 64px 24px; text-align: center; }
+    .support-inner h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 10px; }
+    .support-inner > p { color: var(--text-dim); margin-bottom: 32px; }
+    .donate-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 12px; text-align: left; }
+    .donate-card { background: var(--bg); border: 1px solid var(--bg3); border-radius: var(--radius); padding: 18px; }
+    .donate-name { font-size: .72rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
+    .donate-val { font-size: .85rem; color: var(--text-dim); font-family: monospace; word-break: break-all; }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 40px 24px;
-      font-size: .82rem;
-      color: var(--text-dim);
-      border-top: 1px solid var(--bg3);
-    }
+    footer { text-align: center; padding: 36px 24px; font-size: .8rem; color: var(--text-dim); border-top: 1px solid var(--bg3); }
     footer a { color: var(--text-dim); }
 
     @media (max-width: 600px) {
-      nav { padding: 14px 18px; }
+      nav { padding: 12px 16px; }
       .nav-links { display: none; }
     }
   </style>
@@ -243,109 +118,192 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="logo-dot"><img src="icon.png" alt="GreenSMS" /></div>
+    <div class="nav-icon"><img src="icon.png" alt="GreenSMS" /></div>
     GreenSMS
   </div>
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#banks">Banks</a>
-    <a href="#support">Support</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#how"><span data-key="nav_how">How it works</span></a>
+      <a href="#countries"><span data-key="nav_countries">Countries</span></a>
+      <a href="#install"><span data-key="nav_install">Install</span></a>
+      <a href="#support"><span data-key="nav_support">Support</span></a>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('hi')">HI</button>
+      <button class="lang-btn" onclick="setLang('hy')">ՀՅ</button>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="icon.png" alt="GreenSMS"
-    style="width:96px;height:96px;border-radius:24px;margin-bottom:24px;box-shadow:0 8px 32px rgba(34,197,94,.25);" />
-  <div class="badge">Free &amp; Open · No Registration</div>
-  <h1>Your bank SMS,<br /><span>understood instantly</span></h1>
-  <p>GreenSMS reads your bank notifications, parses amounts and balances, and lets you send transfers via QR or USSD — all offline, on your device.</p>
+  <img src="icon.png" alt="GreenSMS" style="width:90px;height:90px;border-radius:22px;margin-bottom:22px;box-shadow:0 8px 32px rgba(34,197,94,.28);" />
+  <div class="badge" data-key="badge">Free · Offline · No Registration</div>
+  <h1><span data-key="hero_h1a">Your bank SMS,</span><br /><span style="color:var(--green)" data-key="hero_h1b">understood instantly</span></h1>
+  <p data-key="hero_p">Receive a bank notification? GreenSMS reads it, parses the amount and balance, and helps you send a transfer in seconds — no internet, no account needed.</p>
   <div class="btn-row">
-    <a class="btn-primary" href="https://github.com/YOUR_GITHUB/greensms/releases/latest/download/app-free-release.apk" download>
-      ↓ Download APK
+    <a class="btn-primary" href="https://github.com/Artimed/greensms/releases/latest/download/app-free-release.apk" download>
+      ↓ <span data-key="btn_download">Download APK</span>
     </a>
-    <a class="btn-secondary" href="#features">See features</a>
+    <a class="btn-secondary" href="#how"><span data-key="btn_how">How it works</span></a>
   </div>
   <div class="notice">
-    <strong>Android only.</strong> Sideload required — no Google Play.
-    <a href="#install">Installation guide ↓</a>
+    <strong>Android</strong> · <span data-key="notice">Sideload required — no Google Play. <a href="#install">Installation guide ↓</a></span>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="section-label" data-key="how_label">How it works</div>
+  <h2 data-key="how_h2">Three steps to a transfer</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3 data-key="step1_h">Receive SMS</h3>
+      <p data-key="step1_p">Your bank sends a notification. GreenSMS reads your last messages and instantly parses the bank name, amount, balance and card number.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3 data-key="step2_h">Scan or enter recipient</h3>
+      <p data-key="step2_p">Scan a recipient's QR code or enter a phone number / account number manually. The app builds the correct transfer command for your bank automatically.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3 data-key="step3_h">Send via SMS or USSD</h3>
+      <p data-key="step3_p">Confirm and send — either directly via SMS (e.g. Sberbank 900) or via USSD dial (GTBank, FirstBank, SBI and others). No app, no internet required.</p>
+    </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="section" id="features">
-  <div class="section-label">What it does</div>
-  <h2>Everything local, nothing leaves your phone</h2>
+<section class="section" id="features" style="padding-top:0;">
+  <div class="section-label" data-key="feat_label">Features</div>
+  <h2 data-key="feat_h2">Everything you need, nothing you don't</h2>
   <div class="features">
     <div class="feature-card">
       <div class="feature-icon">📲</div>
-      <h3>SMS Parsing</h3>
-      <p>Automatically reads your last bank SMS messages and extracts amount, balance, card last-4 and operation type.</p>
+      <h3 data-key="f1_h">Smart SMS Parser</h3>
+      <p data-key="f1_p">Reads last 10 bank SMS, extracts amount, balance, card last-4, operation type (incoming / outgoing / transfer) and reference number.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">📷</div>
-      <h3>QR Transfers</h3>
-      <p>Generate your personal QR code. Scan a recipient's QR and instantly form the correct SMS or USSD transfer command.</p>
+      <h3 data-key="f2_h">QR Transfer</h3>
+      <p data-key="f2_p">Generate your personal QR code to receive. Scan a recipient's QR and the transfer command is formed instantly — just confirm and send.</p>
     </div>
     <div class="feature-card">
-      <div class="feature-icon">🔌</div>
-      <h3>USSD &amp; SMS</h3>
-      <p>Supports both SMS-based (Sberbank 900) and USSD-based transfers (GTBank, FirstBank, SBI and more).</p>
+      <div class="feature-icon">⌨️</div>
+      <h3 data-key="f3_h">Transfer Without QR</h3>
+      <p data-key="f3_p">No QR? Enter a phone or account number directly. The app looks up the correct bank command format and opens the SMS or dialer for you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3 data-key="f4_h">Daily Limit Tracker</h3>
+      <p data-key="f4_p">Set your daily transfer limit. The app tracks every sent transfer and shows remaining balance at a glance on the home screen.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🌍</div>
-      <h3>Multi-country</h3>
-      <p>Works with banks in Russia, Nigeria, India, Armenia and more. 12 interface languages included.</p>
+      <h3 data-key="f5_h">12 Languages</h3>
+      <p data-key="f5_p">Interface available in English, Russian, Hindi, Armenian, Kazakh, Uzbek, Filipino, Indonesian, Vietnamese, Urdu, Bengali and more.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🔒</div>
-      <h3>Fully Offline</h3>
-      <p>No internet permission. No accounts. No data leaves your device — ever. SQLite storage only.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💸</div>
-      <h3>Daily Limit</h3>
-      <p>Built-in daily transfer limit tracker. Set your own limit and see remaining balance at a glance.</p>
+      <h3 data-key="f6_h">100% Offline & Private</h3>
+      <p data-key="f6_p">No internet permission. No accounts. No analytics. All data stays on your device in a local SQLite database. Always.</p>
     </div>
   </div>
 </section>
 
-<!-- BANKS -->
-<section class="section" id="banks" style="padding-top: 0;">
-  <div class="section-label">Supported banks</div>
-  <h2>Works with your bank</h2>
-  <div class="banks-grid">
-    <span class="bank-tag">Sberbank 🇷🇺</span>
-    <span class="bank-tag">GTBank 🇳🇬</span>
-    <span class="bank-tag">FirstBank 🇳🇬</span>
-    <span class="bank-tag">Zenith 🇳🇬</span>
-    <span class="bank-tag">UBA 🇳🇬</span>
-    <span class="bank-tag">Access Bank 🇳🇬</span>
-    <span class="bank-tag">SBI 🇮🇳</span>
-    <span class="bank-tag">Axis Bank 🇮🇳</span>
-    <span class="bank-tag">HDFC 🇮🇳</span>
-    <span class="bank-tag">ICICI 🇮🇳</span>
-    <span class="bank-tag">VivaCell 🇦🇲</span>
-    <span class="bank-tag">+ more via Pro</span>
+<!-- COUNTRIES -->
+<section class="section" id="countries" style="padding-top:0;">
+  <div class="section-label" data-key="countries_label">Coverage</div>
+  <h2 data-key="countries_h2">Supported countries & banks</h2>
+  <div class="countries">
+    <div class="country-card">
+      <span class="country-flag">🇷🇺</span>
+      <h3 data-key="c1_h">Russia</h3>
+      <p data-key="c1_p">Send transfers via SMS to Sberbank number 900. Supports the standard ПЕРЕВОД command with optional card last-4.</p>
+      <div class="bank-tags"><span class="bank-tag">Sberbank</span></div>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇳🇬</span>
+      <h3 data-key="c2_h">Nigeria</h3>
+      <p data-key="c2_p">Send instant bank transfers via USSD from any phone — no data needed. Supports account number (NUBAN) routing.</p>
+      <div class="bank-tags">
+        <span class="bank-tag">GTBank</span>
+        <span class="bank-tag">FirstBank</span>
+        <span class="bank-tag">Zenith</span>
+        <span class="bank-tag">UBA</span>
+        <span class="bank-tag">Access</span>
+      </div>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇮🇳</span>
+      <h3 data-key="c3_h">India</h3>
+      <p data-key="c3_p">Parses notifications from major Indian banks. SBI supports IMPS transfers via SMS and USSD *99# routing.</p>
+      <div class="bank-tags">
+        <span class="bank-tag">SBI</span>
+        <span class="bank-tag">Axis Bank</span>
+        <span class="bank-tag">HDFC</span>
+        <span class="bank-tag">ICICI</span>
+      </div>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇦🇲</span>
+      <h3 data-key="c4_h">Armenia</h3>
+      <p data-key="c4_p">Send mobile transfers via USSD with VivaCell. Recipient identified by phone number.</p>
+      <div class="bank-tags"><span class="bank-tag">VivaCell</span></div>
+    </div>
   </div>
 </section>
+
+<!-- PRIVACY -->
+<div class="privacy-strip">
+  <div class="privacy-inner">
+    <div class="privacy-item">
+      <div class="privacy-icon">🚫</div>
+      <h4 data-key="priv1_h">No Internet</h4>
+      <p data-key="priv1_p">The app has no INTERNET permission. It cannot connect to any server.</p>
+    </div>
+    <div class="privacy-item">
+      <div class="privacy-icon">👤</div>
+      <h4 data-key="priv2_h">No Account</h4>
+      <p data-key="priv2_p">No registration, no login, no email required. Install and use.</p>
+    </div>
+    <div class="privacy-item">
+      <div class="privacy-icon">📦</div>
+      <h4 data-key="priv3_h">Local Only</h4>
+      <p data-key="priv3_p">All your data is stored in SQLite on your device. Nothing leaves your phone.</p>
+    </div>
+    <div class="privacy-item">
+      <div class="privacy-icon">🆓</div>
+      <h4 data-key="priv4_h">Always Free</h4>
+      <p data-key="priv4_p">The core app is free and will remain free. No hidden paywalls or time limits.</p>
+    </div>
+  </div>
+</div>
 
 <!-- INSTALL -->
-<section class="section" id="install" style="padding-top: 0; max-width: 680px;">
-  <div class="section-label">Installation</div>
-  <h2>How to install</h2>
-  <div style="display:flex; flex-direction:column; gap:14px;">
-    <div class="feature-card" style="display:flex; gap:16px; align-items:flex-start;">
-      <div style="background:var(--green);color:#fff;border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;">1</div>
-      <div><strong>Download the APK</strong> using the button above.</div>
+<section class="section" id="install">
+  <div class="section-label" data-key="install_label">Installation</div>
+  <h2 data-key="install_h2">How to install</h2>
+  <div class="install-steps">
+    <div class="install-step">
+      <div class="install-num">1</div>
+      <div><strong data-key="inst1_h">Download the APK</strong><br /><span data-key="inst1_p">Use the Download button above. The file is about 73 MB.</span></div>
     </div>
-    <div class="feature-card" style="display:flex; gap:16px; align-items:flex-start;">
-      <div style="background:var(--green);color:#fff;border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;">2</div>
-      <div><strong>Allow installs from unknown sources</strong> in Android Settings → Security.</div>
+    <div class="install-step">
+      <div class="install-num">2</div>
+      <div><strong data-key="inst2_h">Allow unknown sources</strong><br /><span data-key="inst2_p">Go to Android Settings → Security → allow installs from your browser or file manager.</span></div>
     </div>
-    <div class="feature-card" style="display:flex; gap:16px; align-items:flex-start;">
-      <div style="background:var(--green);color:#fff;border-radius:999px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;">3</div>
-      <div><strong>Open the downloaded APK</strong> and tap Install. Grant SMS and Camera permissions when asked.</div>
+    <div class="install-step">
+      <div class="install-num">3</div>
+      <div><strong data-key="inst3_h">Open and install</strong><br /><span data-key="inst3_p">Tap the downloaded file and follow the prompts. Tap Install.</span></div>
+    </div>
+    <div class="install-step">
+      <div class="install-num">4</div>
+      <div><strong data-key="inst4_h">Grant permissions</strong><br /><span data-key="inst4_p">Allow SMS and Camera permissions when the app asks. These are required for reading SMS and scanning QR codes.</span></div>
     </div>
   </div>
 </section>
@@ -353,8 +311,8 @@
 <!-- SUPPORT -->
 <div class="support-section" id="support">
   <div class="support-inner">
-    <h2>Support the project</h2>
-    <p>GreenSMS is free and will stay free. If it saves you time, consider buying a coffee.</p>
+    <h2 data-key="support_h">Support GreenSMS</h2>
+    <p data-key="support_p">GreenSMS is free and will stay free. If it saves you time, consider a small donation.</p>
     <div class="donate-cards">
       <div class="donate-card">
         <div class="donate-name">Ko-fi</div>
@@ -374,9 +332,173 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>GreenSMS Free · Android · <a href="https://github.com/YOUR_GITHUB/greensms">GitHub</a> · <a href="#support">Support</a></p>
-  <p style="margin-top:8px;">Not affiliated with any bank. Use at your own risk.</p>
+  <p>GreenSMS Free · Android · <a href="https://github.com/Artimed/greensms">GitHub</a> · <a href="#support" data-key="footer_support">Support</a></p>
+  <p style="margin-top:6px;" data-key="footer_disclaimer">Not affiliated with any bank. Use at your own risk.</p>
 </footer>
 
+<script>
+const T = {
+  en: {
+    nav_how:"How it works", nav_countries:"Countries", nav_install:"Install", nav_support:"Support",
+    badge:"Free · Offline · No Registration",
+    hero_h1a:"Your bank SMS,", hero_h1b:"understood instantly",
+    hero_p:"Receive a bank notification? GreenSMS reads it, parses the amount and balance, and helps you send a transfer in seconds — no internet, no account needed.",
+    btn_download:"Download APK", btn_how:"How it works",
+    notice:"Sideload required — no Google Play. <a href='#install'>Installation guide ↓</a>",
+    how_label:"How it works", how_h2:"Three steps to a transfer",
+    step1_h:"Receive SMS", step1_p:"Your bank sends a notification. GreenSMS reads your last messages and instantly parses the bank name, amount, balance and card number.",
+    step2_h:"Scan or enter recipient", step2_p:"Scan a recipient's QR code or enter a phone number / account number manually. The app builds the correct transfer command for your bank automatically.",
+    step3_h:"Send via SMS or USSD", step3_p:"Confirm and send — either directly via SMS (e.g. Sberbank 900) or via USSD dial (GTBank, FirstBank, SBI and others). No app, no internet required.",
+    feat_label:"Features", feat_h2:"Everything you need, nothing you don't",
+    f1_h:"Smart SMS Parser", f1_p:"Reads last 10 bank SMS, extracts amount, balance, card last-4, operation type and reference number.",
+    f2_h:"QR Transfer", f2_p:"Generate your personal QR code to receive. Scan a recipient's QR and the transfer command is formed instantly.",
+    f3_h:"Transfer Without QR", f3_p:"No QR? Enter a phone or account number directly. The app opens the SMS or dialer for you.",
+    f4_h:"Daily Limit Tracker", f4_p:"Set your daily transfer limit. The app tracks every sent transfer and shows remaining balance.",
+    f5_h:"12 Languages", f5_p:"Interface available in English, Russian, Hindi, Armenian, Kazakh, Uzbek, Filipino, Indonesian, Vietnamese, Urdu and Bengali.",
+    f6_h:"100% Offline & Private", f6_p:"No internet permission. No accounts. No analytics. All data stays on your device.",
+    countries_label:"Coverage", countries_h2:"Supported countries & banks",
+    c1_h:"Russia", c1_p:"Send transfers via SMS to Sberbank 900. Supports the standard ПЕРЕВОД command with optional card last-4.",
+    c2_h:"Nigeria", c2_p:"Send instant bank transfers via USSD from any phone — no data needed. Supports account number (NUBAN) routing.",
+    c3_h:"India", c3_p:"Parses notifications from major Indian banks. SBI supports IMPS transfers via SMS and USSD *99# routing.",
+    c4_h:"Armenia", c4_p:"Send mobile transfers via USSD with VivaCell. Recipient identified by phone number.",
+    priv1_h:"No Internet", priv1_p:"The app has no INTERNET permission. It cannot connect to any server.",
+    priv2_h:"No Account", priv2_p:"No registration, no login, no email required. Install and use.",
+    priv3_h:"Local Only", priv3_p:"All your data is stored in SQLite on your device. Nothing leaves your phone.",
+    priv4_h:"Always Free", priv4_p:"The core app is free and will remain free. No hidden paywalls or time limits.",
+    install_label:"Installation", install_h2:"How to install",
+    inst1_h:"Download the APK", inst1_p:"Use the Download button above. The file is about 73 MB.",
+    inst2_h:"Allow unknown sources", inst2_p:"Go to Android Settings → Security → allow installs from your browser or file manager.",
+    inst3_h:"Open and install", inst3_p:"Tap the downloaded file and follow the prompts. Tap Install.",
+    inst4_h:"Grant permissions", inst4_p:"Allow SMS and Camera permissions when asked. Required for reading SMS and scanning QR codes.",
+    support_h:"Support GreenSMS", support_p:"GreenSMS is free and will stay free. If it saves you time, consider a small donation.",
+    footer_support:"Support", footer_disclaimer:"Not affiliated with any bank. Use at your own risk."
+  },
+  ru: {
+    nav_how:"Как работает", nav_countries:"Страны", nav_install:"Установка", nav_support:"Поддержка",
+    badge:"Бесплатно · Офлайн · Без регистрации",
+    hero_h1a:"Ваши банковские SMS,", hero_h1b:"понятны с первого взгляда",
+    hero_p:"Пришло уведомление от банка? GreenSMS читает его, разбирает сумму и баланс, и помогает отправить перевод за секунды — без интернета и без аккаунта.",
+    btn_download:"Скачать APK", btn_how:"Как работает",
+    notice:"Требуется установка вручную — без Google Play. <a href='#install'>Инструкция ↓</a>",
+    how_label:"Как работает", how_h2:"Три шага до перевода",
+    step1_h:"Получили SMS", step1_p:"Банк отправил уведомление. GreenSMS читает последние сообщения и сразу разбирает название банка, сумму, баланс и номер карты.",
+    step2_h:"Отсканируйте или введите получателя", step2_p:"Отсканируйте QR-код получателя или введите номер телефона / счёта вручную. Приложение само формирует правильную команду перевода.",
+    step3_h:"Отправьте через SMS или USSD", step3_p:"Подтвердите и отправьте — напрямую через SMS (например, Сбербанк 900) или через набор USSD. Без интернета и банковского приложения.",
+    feat_label:"Возможности", feat_h2:"Всё необходимое, ничего лишнего",
+    f1_h:"Умный парсер SMS", f1_p:"Читает последние 10 банковских SMS, извлекает сумму, баланс, последние 4 цифры карты, тип операции и референс.",
+    f2_h:"QR-перевод", f2_p:"Создайте свой QR-код для получения денег. Отсканируйте QR получателя — команда перевода формируется мгновенно.",
+    f3_h:"Перевод без QR", f3_p:"Нет QR? Введите номер телефона или счёта напрямую. Приложение откроет SMS или набор USSD.",
+    f4_h:"Дневной лимит", f4_p:"Установите дневной лимит переводов. Приложение отслеживает каждый отправленный перевод и показывает остаток.",
+    f5_h:"12 языков", f5_p:"Интерфейс доступен на русском, английском, хинди, армянском, казахском, узбекском, филиппинском, индонезийском, вьетнамском, урду и бенгальском.",
+    f6_h:"Полностью офлайн и приватно", f6_p:"Нет разрешения на интернет. Нет аккаунтов. Нет аналитики. Все данные хранятся только на устройстве.",
+    countries_label:"Охват", countries_h2:"Поддерживаемые страны и банки",
+    c1_h:"Россия", c1_p:"Переводы через SMS на номер Сбербанка 900. Поддерживается стандартная команда ПЕРЕВОД с опциональными последними 4 цифрами карты.",
+    c2_h:"Нигерия", c2_p:"Мгновенные переводы через USSD с любого телефона — без интернета. Поддерживается маршрутизация по номеру счёта NUBAN.",
+    c3_h:"Индия", c3_p:"Разбирает уведомления крупных индийских банков. SBI поддерживает переводы IMPS через SMS и USSD *99#.",
+    c4_h:"Армения", c4_p:"Переводы через USSD с VivaCell. Получатель определяется по номеру телефона.",
+    priv1_h:"Без интернета", priv1_p:"У приложения нет разрешения на интернет. Оно не может подключиться ни к одному серверу.",
+    priv2_h:"Без аккаунта", priv2_p:"Никакой регистрации, входа или email. Установите и используйте.",
+    priv3_h:"Только локально", priv3_p:"Все данные хранятся в SQLite на вашем устройстве. Ничего не покидает телефон.",
+    priv4_h:"Всегда бесплатно", priv4_p:"Основное приложение бесплатно и останется бесплатным. Никаких скрытых платежей.",
+    install_label:"Установка", install_h2:"Как установить",
+    inst1_h:"Скачайте APK", inst1_p:"Нажмите кнопку «Скачать APK». Файл весит около 73 МБ.",
+    inst2_h:"Разрешите установку из неизвестных источников", inst2_p:"Настройки Android → Безопасность → разрешить установку из браузера или файлового менеджера.",
+    inst3_h:"Откройте и установите", inst3_p:"Нажмите на скачанный файл и следуйте инструкциям. Нажмите «Установить».",
+    inst4_h:"Выдайте разрешения", inst4_p:"Разрешите доступ к SMS и камере когда приложение попросит. Это необходимо для чтения SMS и сканирования QR-кодов.",
+    support_h:"Поддержите GreenSMS", support_p:"GreenSMS бесплатен и останется бесплатным. Если приложение экономит вам время — угостите нас кофе.",
+    footer_support:"Поддержка", footer_disclaimer:"Не аффилировано ни с одним банком. Используйте на свой страх и риск."
+  },
+  hi: {
+    nav_how:"यह कैसे काम करता है", nav_countries:"देश", nav_install:"इंस्टॉल", nav_support:"सहायता",
+    badge:"मुफ़्त · ऑफलाइन · बिना रजिस्ट्रेशन",
+    hero_h1a:"आपका बैंक SMS,", hero_h1b:"तुरंत समझें",
+    hero_p:"बैंक नोटिफिकेशन आई? GreenSMS उसे पढ़ता है, राशि और बैलेंस निकालता है, और सेकंडों में ट्रांसफर भेजने में मदद करता है — बिना इंटरनेट, बिना अकाउंट के।",
+    btn_download:"APK डाउनलोड करें", btn_how:"यह कैसे काम करता है",
+    notice:"मैन्युअल इंस्टॉलेशन आवश्यक — Google Play नहीं। <a href='#install'>इंस्टॉलेशन गाइड ↓</a>",
+    how_label:"यह कैसे काम करता है", how_h2:"ट्रांसफर के तीन आसान चरण",
+    step1_h:"SMS प्राप्त करें", step1_p:"आपका बैंक नोटिफिकेशन भेजता है। GreenSMS आपके अंतिम संदेशों को पढ़ता है और तुरंत बैंक नाम, राशि, बैलेंस और कार्ड नंबर निकालता है।",
+    step2_h:"प्राप्तकर्ता स्कैन करें या दर्ज करें", step2_p:"QR कोड स्कैन करें या फ़ोन नंबर / खाता नंबर दर्ज करें। ऐप स्वचालित रूप से सही ट्रांसफर कमांड बनाता है।",
+    step3_h:"SMS या USSD से भेजें", step3_p:"पुष्टि करें और भेजें — SMS (SBI IMPS) या USSD डायल के माध्यम से। कोई इंटरनेट आवश्यक नहीं।",
+    feat_label:"विशेषताएं", feat_h2:"जो चाहिए वो सब, जो नहीं चाहिए वो नहीं",
+    f1_h:"स्मार्ट SMS पार्सर", f1_p:"अंतिम 10 बैंक SMS पढ़ता है, राशि, बैलेंस, कार्ड के अंतिम 4 अंक और ऑपरेशन प्रकार निकालता है।",
+    f2_h:"QR ट्रांसफर", f2_p:"पैसे प्राप्त करने के लिए QR कोड बनाएं। प्राप्तकर्ता का QR स्कैन करें — ट्रांसफर कमांड तुरंत बनती है।",
+    f3_h:"QR के बिना ट्रांसफर", f3_p:"QR नहीं है? फ़ोन या खाता नंबर सीधे दर्ज करें। ऐप SMS या USSD खोलता है।",
+    f4_h:"दैनिक सीमा ट्रैकर", f4_p:"दैनिक ट्रांसफर सीमा निर्धारित करें। ऐप हर भेजे गए ट्रांसफर को ट्रैक करता है।",
+    f5_h:"12 भाषाएं", f5_p:"अंग्रेजी, हिंदी, रूसी, अर्मेनियाई, कज़ाख, उज़्बेक सहित 12 भाषाओं में इंटरफ़ेस।",
+    f6_h:"100% ऑफलाइन और निजी", f6_p:"कोई इंटरनेट परमिशन नहीं। कोई अकाउंट नहीं। सारा डेटा आपके डिवाइस पर रहता है।",
+    countries_label:"कवरेज", countries_h2:"समर्थित देश और बैंक",
+    c1_h:"रूस", c1_p:"SMS के माध्यम से Sberbank 900 को ट्रांसफर भेजें।",
+    c2_h:"नाइजीरिया", c2_p:"किसी भी फ़ोन से USSD के माध्यम से तत्काल बैंक ट्रांसफर — बिना इंटरनेट।",
+    c3_h:"भारत", c3_p:"प्रमुख भारतीय बैंकों की नोटिफिकेशन पार्स करता है। SBI IMPS SMS और USSD *99# सपोर्ट करता है।",
+    c4_h:"आर्मेनिया", c4_p:"VivaCell के साथ USSD के माध्यम से मोबाइल ट्रांसफर।",
+    priv1_h:"कोई इंटरनेट नहीं", priv1_p:"ऐप के पास इंटरनेट परमिशन नहीं है। यह किसी सर्वर से कनेक्ट नहीं हो सकता।",
+    priv2_h:"कोई अकाउंट नहीं", priv2_p:"कोई रजिस्ट्रेशन, लॉगिन या ईमेल नहीं। इंस्टॉल करें और उपयोग करें।",
+    priv3_h:"केवल लोकल", priv3_p:"सारा डेटा आपके डिवाइस पर SQLite में। कुछ भी फ़ोन से बाहर नहीं जाता।",
+    priv4_h:"हमेशा मुफ़्त", priv4_p:"मुख्य ऐप मुफ़्त है और मुफ़्त रहेगा।",
+    install_label:"इंस्टॉलेशन", install_h2:"कैसे इंस्टॉल करें",
+    inst1_h:"APK डाउनलोड करें", inst1_p:"ऊपर दिए बटन का उपयोग करें। फ़ाइल लगभग 73 MB है।",
+    inst2_h:"अज्ञात स्रोत की अनुमति दें", inst2_p:"Android Settings → Security → ब्राउज़र या फ़ाइल मैनेजर से इंस्टॉल की अनुमति दें।",
+    inst3_h:"खोलें और इंस्टॉल करें", inst3_p:"डाउनलोड की गई फ़ाइल पर टैप करें और निर्देशों का पालन करें।",
+    inst4_h:"परमिशन दें", inst4_p:"SMS और कैमरा परमिशन दें। SMS पढ़ने और QR स्कैन करने के लिए आवश्यक है।",
+    support_h:"GreenSMS को सपोर्ट करें", support_p:"GreenSMS मुफ़्त है और मुफ़्त रहेगा। अगर ऐप आपका समय बचाता है — एक छोटा सा दान करें।",
+    footer_support:"सहायता", footer_disclaimer:"किसी भी बैंक से संबद्ध नहीं। अपने जोखिम पर उपयोग करें।"
+  },
+  hy: {
+    nav_how:"Ինչպես է աշխատում", nav_countries:"Երկրներ", nav_install:"Տեղադրում", nav_support:"Աջակցություն",
+    badge:"Անվճար · Օֆֆլայն · Առանց գրանցման",
+    hero_h1a:"Ձեր բանկային SMS-ը,", hero_h1b:"վայրկյանների ընթացքում",
+    hero_p:"Ստացե՞լ եք բանկային ծանուցում։ GreenSMS-ը կարդում է այն, հանում է գումարն ու մնացորդը, և օգնում է փոխանցում կատարել վայրկյանների ընթացքում — առանց ինտերնետի, առանց հաշվի։",
+    btn_download:"Ներբեռնել APK", btn_how:"Ինչպես է աշխատում",
+    notice:"Ձեռքով տեղադրում է պահանջվում — Google Play-ի միջոցով հասանելի չէ։ <a href='#install'>Տեղադրման ուղեցույց ↓</a>",
+    how_label:"Ինչպես է աշխատում", how_h2:"Երեք քայլ մինչև փոխանցում",
+    step1_h:"Ստացեք SMS", step1_p:"Բանկն ուղարկում է ծանուցում։ GreenSMS-ը կարդում է վերջին հաղորդագրությունները և անմիջապես հանում բանկի անունը, գումարը, մնացորդն ու քարտի համարը։",
+    step2_h:"Սկանավորեք կամ մուտքագրեք ստացողին", step2_p:"Սկանավորեք ստացողի QR կոդը կամ ձեռքով մուտքագրեք հեռախոսի համարը։ Հավելվածն ինքնաբերաբար կազմում է ճիշտ փոխանցման հրամանը։",
+    step3_h:"Ուղարկեք SMS-ի կամ USSD-ի միջոցով", step3_p:"Հաստատեք և ուղարկեք — VivaCell USSD-ի միջոցով։ Ինտերնետ պետք չէ։",
+    feat_label:"Հնարավորություններ", feat_h2:"Ամեն ինչ, ինչ պետք է, ոչ մի ավելորդ բան",
+    f1_h:"Խելացի SMS պարսեր", f1_p:"Կարդում է 10 վերջին բանկային SMS-ը, հանում գումարը, մնացորդը, քարտի վերջին 4 թվանշանն ու գործողության տեսակը։",
+    f2_h:"QR փոխանցում", f2_p:"Ստեղծեք ձեր QR կոդը ստանալու համար։ Սկանավորեք ստացողի QR-ը — փոխանցման հրամանը կազմվում է անմիջապես։",
+    f3_h:"Փոխանցում առանց QR", f3_p:"QR չկա՞։ Ձեռքով մուտքագրեք հեռախոսի կամ հաշվի համարը։ Հավելվածն ինքը կբացի SMS-ը կամ USSD-ը։",
+    f4_h:"Օրական սահմանի հետևիչ", f4_p:"Սահմանեք օրական փոխանցման սահմանը։ Հավելվածն հետևում է յուրաքանչյուր ուղարկված փոխանցման։",
+    f5_h:"12 լեզու", f5_p:"Ինտերֆեյսն հասանելի է հայերենով, ռուսերենով, անգլերենով, հինդիով, ղազախերենով, ուզբեկերենով և ավելի շատ լեզուներով։",
+    f6_h:"100% օֆֆլայն և անձնական", f6_p:"Ինտերնետի թույլտվություն չկա։ Հաշիվ չկա։ Բոլոր տվյալները պահվում են միայն ձեր սարքում։",
+    countries_label:"Ծածկույթ", countries_h2:"Աջակցվող երկրներ և բանկեր",
+    c1_h:"Ռուսաստան", c1_p:"Փոխանցումներ SMS-ի միջոցով դեպի Sberbank 900 համար։",
+    c2_h:"Նիգերիա", c2_p:"Ակնթարթային բանկային փոխանցումներ USSD-ի միջոցով ցանկացած հեռախոսից — առանց ինտերնետի։",
+    c3_h:"Հնդկաստան", c3_p:"Հայտնի հնդկական բանկերի ծանուցումների մշակում։ SBI-ն աջակցում է IMPS փոխանցումներ SMS-ի և USSD *99#-ի միջոցով։",
+    c4_h:"Հայաստան", c4_p:"Բջջային փոխանցումներ VivaCell USSD-ի միջոցով։ Ստացողը որոշվում է հեռախոսի համարով։",
+    priv1_h:"Ինտերնետ չկա", priv1_p:"Հավելվածն ինտերնետի թույլտվություն չունի։ Այն չի կարող կապվել որևէ սերվերի հետ։",
+    priv2_h:"Հաշիվ չկա", priv2_p:"Գրանցում, մուտք կամ էլ. փոստ պետք չէ։ Տեղադրեք և օգտագործեք։",
+    priv3_h:"Միայն տեղական", priv3_p:"Բոլոր տվյալները պահվում են SQLite-ում ձեր սարքում։ Ոչինչ հեռախոսից դուրս չի գնում։",
+    priv4_h:"Միշտ անվճար", priv4_p:"Հիմնական հավելվածն անվճար է և կմնա անվճար։",
+    install_label:"Տեղադրում", install_h2:"Ինչպես տեղադրել",
+    inst1_h:"Ներբեռնեք APK-ը", inst1_p:"Օգտագործեք վերևի կոճակը։ Ֆայլի չափը մոտ 73 ՄԲ է։",
+    inst2_h:"Թույլ տվեք անհայտ աղբյուրներից", inst2_p:"Android Կարգավորումներ → Անվտանգություն → թույլ տվեք տեղադրումն ձեր բրաուզերից կամ ֆայլ-մենեջերից։",
+    inst3_h:"Բացեք և տեղադրեք", inst3_p:"Հպեք ներբեռնված ֆայլին և հետևեք հրահանգներին։",
+    inst4_h:"Տվեք թույլտվություններ", inst4_p:"Տվեք SMS-ի և Տեսախցիկի թույլտվություններ։ Անհրաժեշտ է SMS-ներ կարդալու և QR կոդեր սկանավորելու համար։",
+    support_h:"Աջակցեք GreenSMS-ին", support_p:"GreenSMS-ն անվճար է և կմնա անվճար։ Եթե հավելվածը ձեզ ժամանակ է խնայում — փոքր նվիրաբերություն կատարեք։",
+    footer_support:"Աջակցություն", footer_disclaimer:"Ոչ մի բանկի հետ կապ չունի։ Օգտագործեք ձեր պատասխանատվությամբ։"
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (T[lang] && T[lang][key]) {
+      el.innerHTML = T[lang][key];
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang || (lang === 'hy' && btn.textContent.trim() === 'ՀՅ'));
+  });
+  document.documentElement.lang = lang;
+}
+
+// Auto-detect browser language
+const bl = navigator.language.slice(0,2).toLowerCase();
+if (['ru','hi','hy'].includes(bl)) setLang(bl);
+</script>
 </body>
 </html>
