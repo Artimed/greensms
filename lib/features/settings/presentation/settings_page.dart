@@ -1010,7 +1010,73 @@ class _SettingsPageState extends State<SettingsPage>
             subtitle: Text(l10n.aboutVersion),
           ),
         ),
+        const SizedBox(height: 12),
+
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.favorite_outline, color: colorScheme.primary, size: 20),
+                    const SizedBox(width: 8),
+                    Text(
+                      'Support GreenSMS',
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                const _DonateRow(label: 'Ko-fi', value: 'ko-fi.com/greensms'),
+                const _DonateRow(label: 'Boosty', value: 'boosty.to/greensms'),
+                const _DonateRow(label: 'TON', value: 'UQ...wallet...'),
+              ],
+            ),
+          ),
+        ),
       ],
+    );
+  }
+}
+
+class _DonateRow extends StatelessWidget {
+  const _DonateRow({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 52,
+            child: Text(
+              label,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: colorScheme.primary,
+                  ),
+            ),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    fontFamily: 'monospace',
+                    color: colorScheme.onSurface.withValues(alpha: 0.8),
+                  ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
