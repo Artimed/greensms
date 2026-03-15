@@ -129,56 +129,49 @@
     .notice { background: var(--green-dim); border: 1px solid rgba(34,197,94,.25); border-radius: var(--radius); padding: 10px 16px; font-size: .8rem; color: var(--text-dim); margin-top: 18px; }
     .notice strong { color: var(--green); }
 
-    /* SMS DEMO CARD */
-    .sms-demo { display: flex; flex-direction: column; gap: 12px; }
+    /* SMS DEMO CAROUSEL */
+    .sms-demo { display: flex; flex-direction: column; gap: 0; }
+    .sms-carousel { position: relative; overflow: hidden; border-radius: var(--radius); border: 1px solid var(--bg3); background: var(--bg2); }
+    .sms-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); will-change: transform; }
+    .sms-slide { min-width: 100%; display: flex; flex-direction: column; gap: 0; padding: 0; }
     .sms-bubble {
-      background: var(--bg2);
-      border: 1px solid var(--bg3);
-      border-radius: var(--radius);
-      padding: 16px 18px;
+      padding: 16px 18px 14px;
+      border-bottom: 1px solid var(--bg3);
     }
-    .sms-bubble-sender { font-size: .7rem; font-weight: 700; letter-spacing: .08em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 6px; }
-    .sms-bubble-text { font-size: .88rem; color: var(--text); font-family: monospace; line-height: 1.55; }
+    .sms-bubble-header { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+    .sms-bubble-flag { font-size: 1.1rem; line-height: 1; }
+    .sms-bubble-sender { font-size: .7rem; font-weight: 700; letter-spacing: .08em; color: var(--text-dim); text-transform: uppercase; }
+    .sms-bubble-text { font-size: .82rem; color: var(--text); font-family: monospace; line-height: 1.6; }
     .sms-arrow {
-      text-align: center;
-      font-size: .8rem;
-      color: var(--green);
-      font-weight: 700;
-      letter-spacing: .05em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      font-size: .72rem; color: var(--green); font-weight: 700; letter-spacing: .06em;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 8px 18px; border-bottom: 1px solid var(--bg3);
     }
     .sms-arrow::before, .sms-arrow::after { content: ''; flex: 1; height: 1px; background: var(--bg3); }
-    .sms-parsed {
-      background: var(--bg2);
-      border: 1px solid rgba(34,197,94,.25);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
+    .sms-parsed { }
     .parsed-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 11px 18px;
-      border-bottom: 1px solid var(--bg3);
-      opacity: 0;
-      animation: fade-in-up .4s ease forwards;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 18px; border-bottom: 1px solid var(--bg3);
     }
     .parsed-row:last-child { border-bottom: none; }
-    .parsed-row:nth-child(1) { animation-delay: .4s; }
-    .parsed-row:nth-child(2) { animation-delay: .7s; }
-    .parsed-row:nth-child(3) { animation-delay: 1.0s; }
-    .parsed-row:nth-child(4) { animation-delay: 1.3s; }
-    .parsed-row:nth-child(5) { animation-delay: 1.6s; }
-    .parsed-label { font-size: .78rem; color: var(--text-dim); }
-    .parsed-val { font-size: .88rem; font-weight: 600; color: var(--text); font-family: monospace; }
+    .parsed-row.animating { opacity: 0; animation: fade-in-up .35s ease forwards; }
+    .parsed-row.animating:nth-child(1) { animation-delay: .05s; }
+    .parsed-row.animating:nth-child(2) { animation-delay: .18s; }
+    .parsed-row.animating:nth-child(3) { animation-delay: .31s; }
+    .parsed-row.animating:nth-child(4) { animation-delay: .44s; }
+    .parsed-row.animating:nth-child(5) { animation-delay: .57s; }
+    .parsed-label { font-size: .75rem; color: var(--text-dim); }
+    .parsed-val { font-size: .85rem; font-weight: 600; color: var(--text); font-family: monospace; }
     .parsed-val.accent { color: var(--green); }
     @keyframes fade-in-up {
-      from { opacity: 0; transform: translateY(6px); }
+      from { opacity: 0; transform: translateY(5px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    .sms-nav { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 0 4px; }
+    .sms-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--bg3); border: none; cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
+    .sms-dot.active { background: var(--green); transform: scale(1.25); }
+    .sms-privacy { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; font-size: .76rem; color: var(--text-dim); }
+    .sms-privacy-icon { color: var(--green); font-size: .85rem; }
 
     @media (max-width: 720px) {
       .hero { grid-template-columns: 1fr; gap: 40px; padding: 72px 24px 60px; }
@@ -303,32 +296,83 @@
   </div>
 
   <div class="sms-demo" aria-hidden="true">
-    <div class="sms-bubble">
-      <div class="sms-bubble-sender">SBERBANK</div>
-      <div class="sms-bubble-text">Перевод 5000р от Иван И.<br>Баланс: 15230р. Карта *4521</div>
+    <div class="sms-carousel" id="smsCarousel">
+      <div class="sms-track" id="smsTrack">
+
+        <!-- Sberbank / Russia -->
+        <div class="sms-slide">
+          <div class="sms-bubble">
+            <div class="sms-bubble-header"><span class="sms-bubble-flag">🇷🇺</span><span class="sms-bubble-sender">SBERBANK</span></div>
+            <div class="sms-bubble-text">Перевод 5000р от Иван И.<br>Баланс: 15230р. Карта *4521</div>
+          </div>
+          <div class="sms-arrow">GreenSMS</div>
+          <div class="sms-parsed">
+            <div class="parsed-row animating"><span class="parsed-label">Bank</span><span class="parsed-val">Sberbank</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Amount</span><span class="parsed-val accent">5 000 ₽</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Balance</span><span class="parsed-val">15 230 ₽</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Card</span><span class="parsed-val">*4521</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">From</span><span class="parsed-val">Иван И.</span></div>
+          </div>
+        </div>
+
+        <!-- GTBank / Nigeria -->
+        <div class="sms-slide">
+          <div class="sms-bubble">
+            <div class="sms-bubble-header"><span class="sms-bubble-flag">🇳🇬</span><span class="sms-bubble-sender">GTBANK</span></div>
+            <div class="sms-bubble-text">Acct:2031****21|Trxn:Credit<br>Amt:NGN 25,000.00|Bal:NGN 103,450<br>Desc:Transfer from AISHA</div>
+          </div>
+          <div class="sms-arrow">GreenSMS</div>
+          <div class="sms-parsed">
+            <div class="parsed-row animating"><span class="parsed-label">Bank</span><span class="parsed-val">GTBank</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Amount</span><span class="parsed-val accent">₦25,000</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Balance</span><span class="parsed-val">₦103,450</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Type</span><span class="parsed-val">Credit</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">From</span><span class="parsed-val">AISHA</span></div>
+          </div>
+        </div>
+
+        <!-- SBI / India -->
+        <div class="sms-slide">
+          <div class="sms-bubble">
+            <div class="sms-bubble-header"><span class="sms-bubble-flag">🇮🇳</span><span class="sms-bubble-sender">SBI</span></div>
+            <div class="sms-bubble-text">Rs.3500.00 credited to A/c **4892<br>on 15-03. Avl Bal:Rs.28,340.50</div>
+          </div>
+          <div class="sms-arrow">GreenSMS</div>
+          <div class="sms-parsed">
+            <div class="parsed-row animating"><span class="parsed-label">Bank</span><span class="parsed-val">SBI</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Amount</span><span class="parsed-val accent">₹3,500</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Balance</span><span class="parsed-val">₹28,340</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Account</span><span class="parsed-val">**4892</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Type</span><span class="parsed-val">Credit</span></div>
+          </div>
+        </div>
+
+        <!-- Ameriabank / Armenia -->
+        <div class="sms-slide">
+          <div class="sms-bubble">
+            <div class="sms-bubble-header"><span class="sms-bubble-flag">🇦🇲</span><span class="sms-bubble-sender">AMERIABANK</span></div>
+            <div class="sms-bubble-text">Գործողություն` 45,000 AMD<br>Հաշիվ` *7823. Մնացորդ` 112,500 AMD</div>
+          </div>
+          <div class="sms-arrow">GreenSMS</div>
+          <div class="sms-parsed">
+            <div class="parsed-row animating"><span class="parsed-label">Bank</span><span class="parsed-val">Ameriabank</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Amount</span><span class="parsed-val accent">45,000 ֏</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Balance</span><span class="parsed-val">112,500 ֏</span></div>
+            <div class="parsed-row animating"><span class="parsed-label">Card</span><span class="parsed-val">*7823</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="sms-arrow">GreenSMS</div>
-    <div class="sms-parsed">
-      <div class="parsed-row">
-        <span class="parsed-label">Bank</span>
-        <span class="parsed-val">Sberbank</span>
-      </div>
-      <div class="parsed-row">
-        <span class="parsed-label">Amount</span>
-        <span class="parsed-val accent">5 000 ₽</span>
-      </div>
-      <div class="parsed-row">
-        <span class="parsed-label">Balance</span>
-        <span class="parsed-val">15 230 ₽</span>
-      </div>
-      <div class="parsed-row">
-        <span class="parsed-label">Card</span>
-        <span class="parsed-val">*4521</span>
-      </div>
-      <div class="parsed-row">
-        <span class="parsed-label">From</span>
-        <span class="parsed-val">Иван И.</span>
-      </div>
+    <div class="sms-nav">
+      <button class="sms-dot active" onclick="smGo(0)"></button>
+      <button class="sms-dot" onclick="smGo(1)"></button>
+      <button class="sms-dot" onclick="smGo(2)"></button>
+      <button class="sms-dot" onclick="smGo(3)"></button>
+    </div>
+    <div class="sms-privacy">
+      <span class="sms-privacy-icon">🔒</span>
+      <span data-key="sms_privacy">All data stays on your device — never sent anywhere</span>
     </div>
   </div>
 </section>
@@ -551,6 +595,7 @@ const T = {
     inst3_h:"Open and install", inst3_p:"Tap the downloaded file and follow the prompts. Tap Install.",
     inst4_h:"Grant permissions", inst4_p:"Allow SMS and Camera permissions when asked. Required for reading SMS and scanning QR codes.",
     support_h:"Support GreenSMS", support_p:"GreenSMS is free and will stay free. If it saves you time, consider a small donation.",
+    sms_privacy:"All data stays on your device — never sent anywhere",
     footer_support:"Support", footer_disclaimer:"Not affiliated with any bank. Use at your own risk."
   },
   ru: {
@@ -586,6 +631,7 @@ const T = {
     inst3_h:"Откройте и установите", inst3_p:"Нажмите на скачанный файл и следуйте инструкциям. Нажмите «Установить».",
     inst4_h:"Выдайте разрешения", inst4_p:"Разрешите доступ к SMS и камере когда приложение попросит. Это необходимо для чтения SMS и сканирования QR-кодов.",
     support_h:"Поддержите GreenSMS", support_p:"GreenSMS бесплатен и останется бесплатным. Если приложение экономит вам время — угостите нас кофе.",
+    sms_privacy:"Все данные остаются на устройстве — никуда не отправляются",
     footer_support:"Поддержка", footer_disclaimer:"Не аффилировано ни с одним банком. Используйте на свой страх и риск."
   },
   hi: {
@@ -621,6 +667,7 @@ const T = {
     inst3_h:"खोलें और इंस्टॉल करें", inst3_p:"डाउनलोड की गई फ़ाइल पर टैप करें और निर्देशों का पालन करें।",
     inst4_h:"परमिशन दें", inst4_p:"SMS और कैमरा परमिशन दें। SMS पढ़ने और QR स्कैन करने के लिए आवश्यक है।",
     support_h:"GreenSMS को सपोर्ट करें", support_p:"GreenSMS मुफ़्त है और मुफ़्त रहेगा। अगर ऐप आपका समय बचाता है — एक छोटा सा दान करें।",
+    sms_privacy:"सभी डेटा आपके डिवाइस पर रहता है — कहीं नहीं भेजा जाता",
     footer_support:"सहायता", footer_disclaimer:"किसी भी बैंक से संबद्ध नहीं। अपने जोखिम पर उपयोग करें।"
   },
   hy: {
@@ -656,6 +703,7 @@ const T = {
     inst3_h:"Բացեք և տեղադրեք", inst3_p:"Հպեք ներբեռնված ֆայլին և հետևեք հրահանգներին։",
     inst4_h:"Տվեք թույլտվություններ", inst4_p:"Տվեք SMS-ի և Տեսախցիկի թույլտվություններ։ Անհրաժեշտ է SMS-ներ կարդալու և QR կոդեր սկանավորելու համար։",
     support_h:"Աջակցեք GreenSMS-ին", support_p:"GreenSMS-ն անվճար է և կմնա անվճար։ Եթե հավելվածը ձեզ ժամանակ է խնայում — փոքր նվիրաբերություն կատարեք։",
+    sms_privacy:"Բոլոր տվյալները մնում են ձեր սարքում — ոչ մի տեղ չեն ուղարկվում",
     footer_support:"Աջակցություն", footer_disclaimer:"Ոչ մի բանկի հետ կապ չունի։ Օգտագործեք ձեր պատասխանատվությամբ։"
   }
 };
@@ -679,6 +727,35 @@ function setLang(lang) {
 // Auto-detect browser language
 const bl = navigator.language.slice(0,2).toLowerCase();
 if (['ru','hi','hy'].includes(bl)) setLang(bl);
+
+// SMS Carousel
+let smIdx = 0;
+const smSlides = document.querySelectorAll('.sms-slide');
+const smDots = document.querySelectorAll('.sms-dot');
+const smTrack = document.getElementById('smsTrack');
+let smTimer;
+
+function smGo(idx) {
+  smIdx = (idx + smSlides.length) % smSlides.length;
+  smTrack.style.transform = `translateX(-${smIdx * 100}%)`;
+  smDots.forEach((d, i) => d.classList.toggle('active', i === smIdx));
+  // re-trigger row animations
+  const rows = smSlides[smIdx].querySelectorAll('.parsed-row');
+  rows.forEach(r => { r.classList.remove('animating'); void r.offsetWidth; r.classList.add('animating'); });
+  clearInterval(smTimer);
+  smTimer = setInterval(() => smGo(smIdx + 1), 4000);
+}
+
+// touch swipe
+let smTX = 0;
+const smC = document.getElementById('smsCarousel');
+smC.addEventListener('touchstart', e => { smTX = e.touches[0].clientX; }, {passive:true});
+smC.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - smTX;
+  if (Math.abs(dx) > 40) smGo(smIdx + (dx < 0 ? 1 : -1));
+}, {passive:true});
+
+smTimer = setInterval(() => smGo(smIdx + 1), 4000);
 </script>
 </body>
 </html>
