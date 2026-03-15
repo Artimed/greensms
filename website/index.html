@@ -67,11 +67,22 @@
 
     /* HERO */
     .hero-wrap { position: relative; }
-    .hero { text-align: center; padding: 120px 24px 96px; max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+    .hero {
+      padding: 100px 24px 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-text { display: flex; flex-direction: column; align-items: flex-start; }
     .hero-icon-wrap {
       display: inline-block;
       position: relative;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
       flex-shrink: 0;
     }
     .hero-icon-wrap::before {
@@ -91,8 +102,8 @@
     }
     .hero-icon-wrap img {
       display: block;
-      width: 96px; height: 96px;
-      border-radius: 22px;
+      width: 80px; height: 80px;
+      border-radius: 20px;
       box-shadow: 0 12px 40px rgba(34,197,94,.32), 0 2px 8px rgba(0,0,0,.5);
       position: relative;
       z-index: 1;
@@ -101,17 +112,79 @@
       0%, 100% { opacity: .7; transform: scale(1); }
       50% { opacity: 1; transform: scale(1.08); }
     }
-    .badge { display: inline-block; background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,197,94,.3); border-radius: 999px; padding: 4px 14px; font-size: .78rem; font-weight: 600; margin-bottom: 20px; letter-spacing: .04em; align-self: center; }
-    .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.5rem); font-weight: 800; line-height: 1.13; margin-bottom: 24px; letter-spacing: -.025em; }
-    .hero h1 span { color: var(--green); }
-    .hero p { font-size: 1.12rem; color: var(--text-dim); margin-bottom: 44px; max-width: 680px; line-height: 1.7; }
-    .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .badge { display: inline-block; background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,197,94,.3); border-radius: 999px; padding: 4px 14px; font-size: .78rem; font-weight: 600; margin-bottom: 18px; letter-spacing: .04em; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; line-height: 1.13; margin-bottom: 20px; letter-spacing: -.025em; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, #fff 20%, #22c55e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p { font-size: 1.08rem; color: var(--text-dim); margin-bottom: 36px; line-height: 1.7; }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; font-weight: 700; font-size: .95rem; padding: 13px 26px; border-radius: var(--radius); transition: background .15s; }
     .btn-primary:hover { background: var(--green-dark); text-decoration: none; }
     .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: var(--bg2); color: var(--text); font-weight: 600; font-size: .95rem; padding: 13px 26px; border-radius: var(--radius); border: 1px solid var(--bg3); transition: background .15s; }
     .btn-secondary:hover { background: var(--bg3); text-decoration: none; }
-    .notice { background: var(--green-dim); border: 1px solid rgba(34,197,94,.25); border-radius: var(--radius); padding: 12px 18px; font-size: .82rem; color: var(--text-dim); max-width: 440px; margin: 24px auto 0; text-align: left; }
+    .notice { background: var(--green-dim); border: 1px solid rgba(34,197,94,.25); border-radius: var(--radius); padding: 10px 16px; font-size: .8rem; color: var(--text-dim); margin-top: 18px; }
     .notice strong { color: var(--green); }
+
+    /* SMS DEMO CARD */
+    .sms-demo { display: flex; flex-direction: column; gap: 12px; }
+    .sms-bubble {
+      background: var(--bg2);
+      border: 1px solid var(--bg3);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .sms-bubble-sender { font-size: .7rem; font-weight: 700; letter-spacing: .08em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 6px; }
+    .sms-bubble-text { font-size: .88rem; color: var(--text); font-family: monospace; line-height: 1.55; }
+    .sms-arrow {
+      text-align: center;
+      font-size: .8rem;
+      color: var(--green);
+      font-weight: 700;
+      letter-spacing: .05em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .sms-arrow::before, .sms-arrow::after { content: ''; flex: 1; height: 1px; background: var(--bg3); }
+    .sms-parsed {
+      background: var(--bg2);
+      border: 1px solid rgba(34,197,94,.25);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .parsed-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 18px;
+      border-bottom: 1px solid var(--bg3);
+      opacity: 0;
+      animation: fade-in-up .4s ease forwards;
+    }
+    .parsed-row:last-child { border-bottom: none; }
+    .parsed-row:nth-child(1) { animation-delay: .4s; }
+    .parsed-row:nth-child(2) { animation-delay: .7s; }
+    .parsed-row:nth-child(3) { animation-delay: 1.0s; }
+    .parsed-row:nth-child(4) { animation-delay: 1.3s; }
+    .parsed-row:nth-child(5) { animation-delay: 1.6s; }
+    .parsed-label { font-size: .78rem; color: var(--text-dim); }
+    .parsed-val { font-size: .88rem; font-weight: 600; color: var(--text); font-family: monospace; }
+    .parsed-val.accent { color: var(--green); }
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding: 72px 24px 60px; }
+      .hero-text { align-items: center; text-align: center; }
+      .btn-row { justify-content: center; }
+    }
 
     /* SECTIONS */
     .section { padding: 72px 24px; max-width: 1000px; margin: 0 auto; }
@@ -211,20 +284,52 @@
 <!-- HERO -->
 <div class="hero-wrap">
 <section class="hero">
-  <div class="hero-icon-wrap">
-    <img src="icon.png" alt="GreenSMS" />
+  <div class="hero-text">
+    <div class="hero-icon-wrap">
+      <img src="icon.png" alt="GreenSMS" />
+    </div>
+    <div class="badge" data-key="badge">Free · Offline · No Registration</div>
+    <h1><span class="grad" data-key="hero_h1a">Your bank SMS,</span><br /><span data-key="hero_h1b">understood instantly</span></h1>
+    <p data-key="hero_p">Receive a bank notification? GreenSMS reads it, parses the amount and balance, and builds the right transfer command — via SMS or USSD dial, no internet, no account needed.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="https://github.com/Artimed/greensms/releases/latest/download/app-free-release.apk" download>
+        ↓ <span data-key="btn_download">Download APK</span>
+      </a>
+      <a class="btn-secondary" href="#how"><span data-key="btn_how">How it works</span></a>
+    </div>
+    <div class="notice">
+      <strong>Android</strong> · <span data-key="notice">Sideload required — no Google Play. <a href="#install">Installation guide ↓</a></span>
+    </div>
   </div>
-  <div class="badge" data-key="badge">Free · Offline · No Registration</div>
-  <h1><span data-key="hero_h1a">Your bank SMS,</span><br /><span style="color:var(--green)" data-key="hero_h1b">understood instantly</span></h1>
-  <p data-key="hero_p">Receive a bank notification? GreenSMS reads it, parses the amount and balance, and builds the right transfer command — via SMS or USSD dial, no internet, no account needed.</p>
-  <div class="btn-row">
-    <a class="btn-primary" href="https://github.com/Artimed/greensms/releases/latest/download/app-free-release.apk" download>
-      ↓ <span data-key="btn_download">Download APK</span>
-    </a>
-    <a class="btn-secondary" href="#how"><span data-key="btn_how">How it works</span></a>
-  </div>
-  <div class="notice">
-    <strong>Android</strong> · <span data-key="notice">Sideload required — no Google Play. <a href="#install">Installation guide ↓</a></span>
+
+  <div class="sms-demo" aria-hidden="true">
+    <div class="sms-bubble">
+      <div class="sms-bubble-sender">SBERBANK</div>
+      <div class="sms-bubble-text">Перевод 5000р от Иван И.<br>Баланс: 15230р. Карта *4521</div>
+    </div>
+    <div class="sms-arrow">GreenSMS</div>
+    <div class="sms-parsed">
+      <div class="parsed-row">
+        <span class="parsed-label">Bank</span>
+        <span class="parsed-val">Sberbank</span>
+      </div>
+      <div class="parsed-row">
+        <span class="parsed-label">Amount</span>
+        <span class="parsed-val accent">5 000 ₽</span>
+      </div>
+      <div class="parsed-row">
+        <span class="parsed-label">Balance</span>
+        <span class="parsed-val">15 230 ₽</span>
+      </div>
+      <div class="parsed-row">
+        <span class="parsed-label">Card</span>
+        <span class="parsed-val">*4521</span>
+      </div>
+      <div class="parsed-row">
+        <span class="parsed-label">From</span>
+        <span class="parsed-val">Иван И.</span>
+      </div>
+    </div>
   </div>
 </section>
 </div>
