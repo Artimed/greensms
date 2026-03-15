@@ -66,7 +66,7 @@
     }
 
     /* HERO */
-    .hero-wrap { position: relative; }
+    .hero-wrap { position: relative; overflow: hidden; }
     .hero {
       padding: 100px 24px 80px;
       max-width: 1000px;
@@ -176,10 +176,11 @@
     .sms-privacy-icon { color: var(--green); font-size: .85rem; }
 
     @media (max-width: 720px) {
-      .hero { grid-template-columns: 1fr; gap: 36px; padding: 64px 20px 52px; }
-      .hero-text { align-items: center; text-align: center; }
+      .hero { grid-template-columns: 1fr; gap: 36px; padding: 64px 20px 52px; width: 100%; }
+      .hero-text { align-items: center; text-align: center; width: 100%; }
       .btn-row { justify-content: center; }
-      .sms-demo { max-width: 100%; margin: 0 auto; }
+      .sms-demo { max-width: 100%; width: 100%; margin: 0 auto; }
+      .sms-carousel { width: 100%; }
     }
 
     @media (max-width: 480px) {
